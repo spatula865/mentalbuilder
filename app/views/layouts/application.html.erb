@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <title>MentalBuilder</title>
@@ -14,11 +15,13 @@
     <header>
     
       <div class="title">
-      <%=  link_to 'MentalHack' , thermometers_new_path %>
+        <%=  link_to 'MentalBuilder' , home_menu_path %>
       </div>
       <div class="menu">
-      <%= link_to 'thermometer', thermometers_new_path %>
-      <%= link_to 'tests', tests_menu_path %>
+        <%= link_to("記録する", thermometers_new_path, {class: "menu-record"}) %>
+        <%= link_to("振り返る", thermometers_show_path, {class: "menu-reflection"}) %>
+        <%= link_to("強くなる", thermometers_new_path, {class: "menu-arm"}) %>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
       </div>
 
     </header>
@@ -28,8 +31,34 @@
 
   </body>
 
-
-
-
-
 </html>
+
+<style>
+  .menu{display:flex;
+        justify-content:flex-end;
+  }
+  
+  .menu-record, .menu-reflection, .menu-arm{
+    margin-left:25px;   
+  }
+  .menu-arm{
+    margin-right: 25px;
+  }
+
+  header{background-color: rgba(54, 255, 47, 0.568);
+  }
+
+  .title{
+        font-size:24pt;
+        font-family:Book Antiqua;
+        margin-left: 20px;
+        text-decoration: none;
+
+  }
+
+  body{
+    background-image:url('/Users/speci/Pictures/GeekSalon/2.png')
+  }
+
+
+</style>
