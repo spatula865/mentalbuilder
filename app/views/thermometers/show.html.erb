@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="show.scss" type="text/css">
+</head>
+
+<body>
+
+  <div class="graph">
+     <%= column_chart Thermometer.pluck(:created_at, :temperature) %>
+  </div>
+
+  <div class="ichiran">
+    <h3 class="koremade">これまでの記録</h3>
+    <% @thermometers.each do |t| %>
+      <div class="container">
+        <div class="main-box">
+          <div class="container1"><%= t.temperature %></div>
+          <div class="container2"><%= t.memo %></div>
+        </div>
+        <div class="sub-box">
+          <%= link_to '編集', {:controller => "thermometers", :action => "edit", :id => t.id}, :class => 'btn-edit' %>
+          <%= button_to "削除", thermometer_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
+          <p class="time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+        </div>  
+      </div>
+      <br>
+    <% end %>
+  </div>
+
+</body>
+
+<script>
+/*
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [ ], /*ここにcreated_atの値が入るようにしたい*/
+            datasets: [{
+                label: 'temperature',
+                data: [ ],/*ここにtemperatureの値が入るようにしたい*/
+                backgroundColor: ['rgba(255, 99, 132, 0.2)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+*/
+</script>

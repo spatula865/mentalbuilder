@@ -1,0 +1,22 @@
+<body>
+  <div class="pss4sokuhou">
+    <h3 class="pss4result">ストレス度</h3>
+
+    <p class="pssresult1"><%= @sum %>/16</p>
+    <br>
+    <%= link_to 'これまでの推移を見る', :controller => "tests_pssfours", :action => "index" %>
+
+  </div>
+</body>
+
+<style>
+  .pss4sokuhou{
+    text-align: center;
+  }
+  .pss4result{
+    text-align: center;
+  }
+  .pssresult1{
+    font-size: 50px;
+  }
+</style>

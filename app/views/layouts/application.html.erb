@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MentalApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <header>
+    
+      <div class="title">
+      <%=  link_to 'MentalHack' , thermometers_new_path %>
+      </div>
+      <div class="menu">
+      <%= link_to 'thermometer', thermometers_new_path %>
+      <%= link_to 'tests', tests_menu_path %>
+      </div>
+
+    </header>
+
+    <%= yield %>
+
+
+  </body>
+</html>

@@ -1,0 +1,91 @@
+/*ここから<header>*/
+
+header{background-color: rgba(54, 255, 47, 0.568);
+}
+
+.title{
+      font-size:24pt;
+      font-family:Book Antiqua;
+      margin-left: 20px;
+      text-decoration: none;
+
+}
+
+.menu{display:flex;
+      justify-content:space-around;
+}
+
+/*ここまで<header>*/
+
+/* ここから<thermometer>*/
+.thermometer{display:flex;
+             justify-content:space-around;
+             background-image: url("../../images/nature.png")
+}
+
+.thermometer{
+      background-color:rgba(0, 128, 0, 0.11);
+}
+
+.progress{
+      background-color:transparent;
+
+}
+
+#progress{margin-top: 50px;
+          margin-bottom: 50px;
+          margin-left: 100px;
+}
+
+#progress10, #progress9, #progress8, #progress7, #progress6, #progress5, #progress4, #progress3, #progress2, #progress1{
+      display:flex;
+}
+
+#box10, #box9, #box8, #box8, #box7, #box6, #box5, #box4, #box3, #box2, #box1{
+      background-color:transparent;
+      height:50px;
+      width:100px;
+      border-style: solid;
+      border-top:none;
+}
+
+#box10, #note10{
+      margin-top: 20px;
+}
+
+#box10, #box9, #box8, #box7, #box6, #box5, #box4, #box3, #box2 {
+      border-bottom-color: gray;
+      border-bottom-width: 1px;
+      border-bottom-style: dotted;
+}
+
+#box1{
+      border-radius: 0px 0px 50px 50px;
+}
+
+
+#note10, #note9, #note8, #note7, #note6, #note5, #note4, #note3, #note2, #note1{
+      margin-left:10px;
+}
+
+.stresslevel{
+      height:60%;
+      margin-top: 75px;
+      margin-bottom: 50px;
+      padding: 20px;
+      background-color: rgba(54, 255, 47, 0.568);
+      text-align: center;
+      border-radius: 10px;
+             
+}
+
+input[type="text"] {
+      height: 100px;
+  }
+
+
+textarea{
+      resize:none;
+      height: 100px;
+      width: 400px;
+}

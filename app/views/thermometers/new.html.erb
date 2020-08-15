@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="new.scss" type="text/css">
+  </head>
+
+  <body>
+
+    <div class="thermometer">
+
+      <div id="progress"> <!-- プログレスバー -->
+        <div id="progress10">
+        <div id="box10"></div><div id="note10">10(すさまじいストレスを感じる)  </div>
+        </div>
+        <div id="progress9">
+        <div id="box9"></div><div id="note9">9</div>
+        </div>
+        <div id="progress8">
+        <div id="box8"></div><div id="note8">8</div>
+        </div>
+        <div id="progress7">
+        <div id="box7"></div><div id="note7">7</div>
+        </div>
+        <div id="progress6">
+        <div id="box6"></div><div id="note6">6(そこそこのストレスを感じる)</div>
+        </div>
+        <div id="progress5">
+        <div id="box5"></div><div id="note5">5</div>
+        </div>
+        <div id="progress4">
+        <div id="box4"></div><div id="note4">4</div>
+        </div>
+        <div id="progress3">
+        <div id="box3"></div><div id="note3">3</div>
+        </div>
+        <div id="progress2">
+        <div id="box2"></div><div id="note2">2(ほんの少しストレスを感じる)</div>
+        </div>
+        <div id="progress1">
+        <div id="box1"></div><div id="note1">1</div>
+        </div>
+      </div><!-- progress終わり -->
+
+      <div class="stresslevel"><!-- ストレスレベルの表示・解説 -->
+
+        <p>あなたは今どれくらいストレスを感じていますか？</p>
+        <br>
+        <%= form_for @thermometer do |f| %>
+          <%= f.label :ストレスレベル %>
+          <br>
+          <%= f.number_field :temperature %>
+          <br>
+          <br>
+          <%= f.label :memo %>
+          <br>
+          <%= f.text_area :memo %>
+          <br>
+          <br>
+          <%= f.submit "送信" %>
+        <% end %>
+        <br>
+        <br>
+        <br>
+        <%= link_to 'これまでの推移を見る', :controller => "thermometers", :action => "show" %>
+
+      </div><!--stresslevelの終わり -->
+
+    </div><!-- thermometer終わり -->
+
+    <div class="commentary">
+    <p>自分のストレス度をつかむために、もっともお手軽なのが「ストレスサーモメータ」。心理カウンセリングの世界でも使われる、定番のテクニックです。方法は簡単で、下の温度計を見ながら、「今のストレスは何点だろう？」と採点してください。「主観で決めて大丈夫なの？」と思われるかもしれませんが、これがバカにできない精度を持っています。アメリカで行われたある実験では、学生たちに自分のストレスを10点満点で採点させたところ、数十問で構成された大がかりなストレス診断を受けた場合と、さほど結果は変わりませんでした。とりあえず、大まかに現状をつかむには十分でしょう。また、このテクニックが良いのは、ストレスに点数をつけただけでも、ある程度イライラ解消の効果が得られるところです。「なんだかイライラする…」と思うだけではどうすればいいのか分かりませんが、数字で示されると「いまは7点だから、せめて4点くらいには下げよう」といった明確な指針ができます。その安心感が、心にゆとりを生むのです。</p>
+    </div>
+
+
+  </body>    
+ 
+  <script type="text/javascript">
+  
+  
+    for (i = 1; i <= 10; i++) {
+      var elem = document.getElementById("box" + i );
+      elem.addEventListener("mouseover", function (event) {
+        event.target.style.backgroundColor = "orange";    
+      }, false);
+    }
+
+
+  
+
+    /*
+      for (i 1; i <= 10; i++) {
+        document.getElementById("progress" + i ).onclick = function() {
+          document.getElementById("result").innerHTML = "クリックされた！";
+        };
+      }
+    */
+    
+    var num;
+
+
+
+    /*
+      // 要素を取得 
+      const counter = document.getElementById("level1");
+
+      const addCount = () => {
+
+      // 文字列を数値に変換 
+      let num = parseInt(counter.textContent, 10);
+
+      // 追加する 
+      counter.textContent = num + 1;
+      };
+
+      // addEventListenerで登録 
+      counter.addEventListener("click", addCount);
+    */
+
+  </script>
+
+</html>

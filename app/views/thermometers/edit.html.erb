@@ -1,0 +1,31 @@
+
+
+
+<body>
+
+ <div class="edit">
+  <%= form_for @memo do |f| %>
+    <%= f.label :memo %>
+    <br>
+    <%= f.text_area :memo, :size => 140 %> 
+    <br>
+    <%= f.submit "編集する" %>
+  <% end %>
+ </div>
+
+</body>
+
+<style>
+
+  .edit{
+    text-align: center;
+    margin: 100px;
+  }
+
+  textarea{
+      resize:none;
+      height: 400px;
+      width: 800px;
+}
+
+</style>

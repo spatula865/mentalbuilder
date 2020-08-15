@@ -1,0 +1,2 @@
+module ThermometerHelper
+end

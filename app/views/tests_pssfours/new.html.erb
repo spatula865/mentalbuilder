@@ -1,0 +1,67 @@
+
+<body>
+    <h1>PSS4</h1>
+    <div class="question">
+        <%= form_for @pss4, :url => { :controller => :tests_pssfours, :action => :create } do |f| %>
+
+            <p class="question1">この1ヵ月で、人生の大きな問題をコントロールすることができないと、どれぐらい感じましたか？</p>
+            <label><%= f.radio_button :question1,0 %>一度もない</label>
+            <label><%= f.radio_button :question1,1 %>ほとんどない</label>
+            <label><%= f.radio_button :question1,2 %>時々ある</label>
+            <label><%= f.radio_button :question1,3 %>よくある</label>
+            <label><%= f.radio_button :question1,4 %>とてもよくある</label>
+            <br>
+            <br>
+            <p class="question2">この1ヵ月で、個人的な問題をうまく処理する能力があると、どれくらいの感じましたか？</p>
+            <label><%= f.radio_button :question2,4 %>一度もない</label>
+            <label><%= f.radio_button :question2,3 %>ほとんどない</label>
+            <label><%= f.radio_button :question2,2 %>時々ある</label>
+            <label><%= f.radio_button :question2,1 %>よくある</label>
+            <label><%= f.radio_button :question2,0 %>とてもよくある</label>
+            <br>
+            <br>
+            <p class="question3">この1ヵ月で、人生がうまく進んでるなあとどれくらい感じましたか？</p>
+            <label><%= f.radio_button :question3,4 %>一度もない</label>
+            <label><%= f.radio_button :question3,3 %>ほとんどない</label>
+            <label><%= f.radio_button :question3,2 %>時々ある</label>
+            <label><%= f.radio_button :question3,1 %>よくある</label>
+            <label><%= f.radio_button :question3,0 %>とてもよくある</label>
+            <br>
+            <br>
+            <p class="question4">この1ヵ月で、困難が山積みになって乗り越えるのが無理だと、どれくらい感じましたか？</p>
+            <label><%= f.radio_button :question4,0 %>一度もない</label>
+            <label><%= f.radio_button :question4,1 %>ほとんどない</label>
+            <label><%= f.radio_button :question4,2 %>時々ある</label>
+            <label><%= f.radio_button :question4,3 %>よくある</label>
+            <label><%= f.radio_button :question4,4 %>とてもよくある</label>
+            <br>
+            <br>
+
+            <%= f.submit "送信" %>
+
+        <% end %>
+    </div>
+    <div class="seni">
+    
+        <%= link_to 'これまでの推移を見る', :controller => "tests_pssfours", :action => "index" %>
+    
+    </div>
+</body>
+
+<style>
+    .question{
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
+    .question1, .question2, .question3, .question4{
+        font-size: 24px
+    }
+    h1{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .seni{
+        text-align: center;
+    }
+</style>

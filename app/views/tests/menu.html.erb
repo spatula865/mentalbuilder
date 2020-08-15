@@ -1,0 +1,38 @@
+<body>
+
+
+  <div class="ichiran">
+    <p>テスト一覧</p>
+  </div>
+
+  <div class="tests">
+    <div class="PSS4">
+      <%= link_to 'PSS4', tests_pssfours_new_path %>
+      <p>４つの簡単な質問で抑うつ度を測れるテストです。一ヵ月に一度、定期的にテストすることで、抑うつ度を客観的にモニタリングできます。</p>
+    </div>
+    <div class="sss">
+      <%= link_to('ストレス・シンプトム・スケール', tests_stresssymptomscales_new_path, {class: "link-stresssymptomscale"}) %>
+      <p>PSS4よりもさらに詳しいテストです。</p>
+    </div>
+    <div class="seigyo">
+    制御焦点
+      <p>あなたのパーソナリティを攻撃型or防御型の2タイプに分類し、あなたがどのようなときにストレスを感じやすいのかを知るヒントを提示します</p>
+    </div>
+  </div>
+
+</body>
+
+<style>
+  .PSS4, .sss, .seigyo{
+    border: solid;
+    border-radius: 10px;
+    width: 66%;
+    height: 100px;
+    margin: 50px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+</style>
+

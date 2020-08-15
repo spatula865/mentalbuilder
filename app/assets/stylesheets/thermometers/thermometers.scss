@@ -1,0 +1,23 @@
+// Place all the styles related to the thermometers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+/*ここから<header>*/
+
+header{background-color: rgba(54, 255, 47, 0.568);
+}
+
+.title{
+      font-size:24pt;
+      font-family:Book Antiqua;
+      margin-left: 20px;
+      text-decoration: none;
+
+}
+
+.menu{display:flex;
+      justify-content:space-around;
+}
+
+/*ここまで<header>*/

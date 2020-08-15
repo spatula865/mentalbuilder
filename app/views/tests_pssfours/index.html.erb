@@ -1,0 +1,59 @@
+
+<body>
+
+    <div>
+        <div class="graph">
+            <%= column_chart Pssfour.pluck(:created_at, :question1) %>
+        </div>
+
+        <h3 class="koremade-pss4">これまでの記録</h3>
+
+        <% @pss4.each do |t| %>
+        <div class="container-pss4">
+            <div class="main-box2">
+                <div class="container-pss4-1"><%= [t.question1, t.question2, t.question3, t.question4].sum %></div>
+            </div>
+            <div class="sub-box2">
+                <%= button_to "削除", tests_pssfours_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
+                <p class="time-pss4"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+            </div>  
+        </div>
+        <br>
+    <% end %>
+
+    </div>
+
+</body>
+
+<style>
+    .koremade-pss4{
+        text-align: center;
+        margin: 100px;
+    }
+    .container-pss4{
+        margin-left: auto;
+        margin-right: auto;
+        width: 66%;
+        border: solid;
+        border-radius: 30px;
+        text-align: center;
+    }
+    .container-pss4-1{
+        font-size: 30px;
+    }
+    .sub-box2{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .btn-edit-pss4{
+        margin-right: 10px;
+    }
+
+    .time-pss4{
+        text-align: right;
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+</style>

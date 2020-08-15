@@ -1,0 +1,2 @@
+class Pssfour < ApplicationRecord
+end
