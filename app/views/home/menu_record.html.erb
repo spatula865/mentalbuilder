@@ -1,0 +1,86 @@
+<html>
+    <h1 class="home-menu-record-title">記録する</h1>
+    <div class="home-menu-record-matome">
+        <div class="home-menu-record-thermometer">
+            <div class="home-menu-record-thermometer-sign">
+                <%= link_to 'thermometer', thermometers_new_path, :class => "home-menu-record-thermometer-sign-link" %>
+            </div>
+        </div>
+        <div class="home-menu-record-PSS4">
+            <div class="home-menu-record-PSS4-sign">
+                <%= link_to 'PSS4', tests_pssfours_new_path, :class => "home-menu-record-PSS4-sign-link" %>
+            </div>
+        </div>
+        <div class="home-menu-record-arm">
+            <div class="home-menu-record-arm-sign">
+                <%= link_to '雑談', thermometers_show_path, :class => "home-menu-record-arm-sign-link" %>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-menu-record-thermometer-note" >ストレスを10段階で評価します。<br>毎日記録をつけることで、自分がどのような状況でストレスを感じやすいのか、客観的に把握することができるようになります。
+    </div>
+    <div class="home-menu-record-PSS4-note">4つの質問に答えることで簡単に抑うつ度を測ることができます。月に一度行うことで定期的に自分の精神状態をモニタリングしましょう。
+    </div>
+    <div class="home-menu-record-arm-note">アンケートを通して自分の雑談力を定量的に振り返ります。</div>
+
+
+</html>
+
+<style>
+
+    .home-menu-record-title{
+        text-align: center;
+    }
+    .home-menu-record-matome{
+        display: flex;
+    }
+    .home-menu-record-thermometer, .home-menu-record-PSS4, .home-menu-record-arm{
+    }
+
+    .home-menu-record-thermometer-sign, .home-menu-record-PSS4-sign, .home-menu-record-arm-sign{
+        border-radius: 50% ;
+        background-color: rgba(0, 128, 0, 0.6);
+        height: 250px; width: 250px;
+        justify-content: center;
+        display:flex;
+        align-items: center;
+        font-size: 24px;
+    }
+
+    .home-menu-record-thermometer-sign{
+        position: absolute; left: 28%
+    }
+
+    .home-menu-record-PSS4-sign{
+        position: absolute; left: 0; right: 0; margin: auto;
+    }
+
+    .home-menu-record-arm-sign{
+        position: absolute; right: 28% ;
+    }
+    .home-menu-record-thermometer-sign-link, .home-menu-record-PSS4-sign-link, .home-menu-record-arm-sign-link{
+        text-decoration: none;
+        color: white;
+    }
+
+    .home-menu-record-thermometer-note, .home-menu-record-PSS4-note, .home-menu-record-arm-note{
+        font-size: 16px;
+        width: 80%;
+        margin: 0 auto;
+        padding: 24px;
+        position: absolute; top: 60%; left: 10%;
+        border: solid;
+        background-color: white;
+        border-radius: 24px;
+        opacity: 0;
+
+    }
+
+    .home-menu-record-thermometer-sign:hover + .home-menu-record-thermometer-note{
+        opacity:0;
+    }
+
+
+
+</style>

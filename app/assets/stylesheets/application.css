@@ -15,19 +15,462 @@
  */
 
 
-/*ここから<header>*/
+/*application.html.erbのheader*/
 
-header{background-color: rgba(54, 255, 47, 0.568);
+      .menu{display:flex;
+            justify-content:flex-end;
+      }
+
+      .headertext{
+        font-size:24pt;
+        color:white;
+        font-family:Book Antiqua;
+          text-decoration: none;
+      }
+      .menu-record, .menu-reflection, .menu-arm{
+        margin-left:25px;   
+        text-decoration: none;
+      }
+      .menu-arm{
+      margin-right: 25px;
+      }
+
+
+      header{
+            background-color: rgba(0, 128, 0, 0.8);
+      }
+
+      .title{
+        display:flex;
+        margin-bottom: 10px;
+      }
+
+      .header-title-span{
+        font-size: 14px;
+        margin-bottom: 0px;
+        margin-left: 5px;
+        color: white;
+        text-align: bottom;
+      }
+
+      .headertext-logout{
+        margin-left: auto;
+        text-decoration: none;
+        font-size: 14px;
+        padding: 10px 10px 0px 10px;
+        color: white;
+      }
+
+      ul.header-dropmenu {
+        list-style: none;
+        width: 100%;
+        height: 40px;
+        margin: 0 auto;
+        padding: 0;
+        display: table;
+        table-layout: fixed;
+      }
+
+      ul.header-dropmenu > li {
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+
+      }
+
+      .list {
+        display: block;
+        text-align: center;
+        line-height: 40px;
+        font-weight: bold;
+        text-decoration: none;
+        font-size: 24px;
+        font-weight: lighter;
+        color:white;
+      }
+
+      ul.header-dropmenu li ul {
+        visibility: hidden;
+        width: 100%;
+        list-style: none;
+        position: absolute;
+        top: 100%;
+        left: -1px;
+        margin: 0;
+        padding: 0;
+        border: 1px solid rgba(0, 128, 0, 0.8); /* マウスオーバー時の枠線 */
+        border-top: none;
+      }
+      ul.header-dropmenu li:hover ul {
+        visibility: visible;
+      }
+      ul.header-dropmenu li ul li {
+        background:rgba(0, 128, 0, 0.8);
+        transition: all .2s ease;
+      }
+      ul.header-dropmenu > li:hover {
+        border: 1px solid transparent; /* マウスオーバー時の枠線 */
+        border-bottom: none;
+      }
+      ul.header-dropmenu li:hover ul li:hover {
+        background:rgba(0, 128, 0, 1) ;
+      }
+
+      .record-note-span, .reflection-note-span, .arm-note-span{
+        color:red;
+        font-size:36px;
+      }
+
+/*application.html.erbのheader終わり*/
+
+/*application.html.erbのbody*/
+
+      body {background-image: url("/lucabravo.jpg");
+            background-size: cover;
+            margin: 0;
+            z-index:0;
+
+      }
+
+/*application.html.erbのbody終わり*/
+
+/*hello/index*/
+
+  .firsttitle{
+    font-size: 72px;
+    text-align: center;
+    margin-top:100px;
+    font-family:Book Antiqua;
+  }
+
+  
+  .login{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .hello-index-login{
+    text-decoration: none;
+  }
+  .hello-index-sinki{
+    text-decoration: none;
+  }
+/*holleo/index終わり*/
+
+
+/*home/menu.html.erb*/
+
+  .record{
+    margin-right: 240px;
+    position: absolute; top: 62%; left: 10%;
+  }
+
+  .reflection{
+    margin-right: 80px;
+    position: absolute; top: 40%; left: 20%;
+  }
+
+  .arm{
+    position: absolute; top: 18%; left: 30%;
+  }
+
+  .record-sign, .reflection-sign, .arm-sign{
+    text-decoration: none;
+        
+  }
+
+  .record-sign-link, .reflection-sign-link, .arm-sign-link{
+    text-decoration: none;
+    color:white;
+  }
+  
+  .record-note, .reflection-note, .arm-note{
+        font-size: 20px;
+        font-weight: bolder;
+  }
+
+  .record, .reflection, .arm{
+    display:flex;
+    align-items:center;
+    justify-content: flex-end;
+    
 }
 
-.title{
-      font-size:24pt;
-      font-family:Book Antiqua;
+.record-sign:hover + .record-sign, .record-note, .record-image-entity{
+  opacity: 1;
+}
+
+.record:hover{
+  opacity: 1;
+}
+
+.reflection:hover, .arm:hover{
+  opacity:1;
+}
+
+.record-sign, .reflection-sign, .arm-sign{
+    width:250px;
+    height:250px;
+    margin-right:50px;
+    border-radius: 50%;
+    border: solid;
+    background-color:rgba(0, 128, 0, 0.6);
+    border-color:transparent;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.record-note, .reflection-note, .arm-note{
+    margin-top:50px;
+    opacity:0.4;
+}
+
+img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
+  height: 154px;
+  opacity: 0.4;
+}
+
+/*home/menu.html.erb終わり*/
+
+
+/*thermometers/new*/
+
+  .thermometersnewtitle{
+    text-align: center;
+  }
+
+  .thermometer{display:flex;
+    justify-content:space-around;
+    background-image: url("../../images/nature.png")
+  }
+
+  .commentary{
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 60%; height: 65%;
+  padding: 20px;
+  display: table;
+  border: solid;
+  border-radius: 20px;
+  border-color: rgba(0, 0, 0, 0.5);
+  position: absolute; top: 25%; left:20%;
+  opacity: 0;
+
+  }
+
+  .commentary-inner{
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .thermometersnewtitle:hover + .commentary{
+    opacity: 1;
+  }
+
+  .progress{
+  background-color:transparent;
+
+  }
+
+  #progress{
+    margin-bottom: 50px;
+    margin-left: 100px;
+  }
+
+  #progress10, #progress9, #progress8, #progress7, #progress6, #progress5, #progress4, #progress3, #progress2, #progress1{
+    display:flex;
+  }
+
+  #box10, #box9, #box8, #box8, #box7, #box6, #box5, #box4, #box3, #box2, #box1{
+    background-color:transparent;
+    height:50px;
+    width:100px;
+    border-style: solid;
+    border-top:none;
+  }
+
+  #box10, #box9, #box8, #box7, #box6, #box5, #box4, #box3, #box2 {
+    border-bottom-color: gray;
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+  }
+
+  #box1{
+    border-radius: 0px 0px 50px 50px;
+  }
+
+
+  #note10, #note9, #note8, #note7, #note6, #note5, #note4, #note3, #note2, #note1{
+    margin-left:10px;
+    font-weight: bolder;
+  }
+
+  .stresslevel{
+    height:60%;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: rgba(54, 255, 47, 0.568);
+    text-align: center;
+    border-radius: 10px;
+      
+  }
+
+  input[type="text"] {
+  height: 100px;
+  }
+
+
+  textarea{
+  resize:none;
+  height: 100px;
+  width: 400px;
+  }
+/*thermometers/new終わり*/
+
+/*thermometers/show*/
+
+    .container{
+        background-color:white;
+        
+    }
+
+    .stressnarabikae{
+        margin: 10px;
+    }
+
+
+  
+  .graph{
+      margin: 50px;
+  }
+  
+  .ichiran{
+      width: 60%;
+      margin: 0 auto;
+  }
+  
+  .container{
+      border: solid;
+      border-radius: 20px;
+      border-color: gray;
+  }
+  
+  .container1{
+      font-size: 24px;
+      margin: 10px;
+  }
+  
+  .container2{
+      margin: 10px;
+      text-align: left;
+  }
+  
+  
+  .koremade{
+      text-align:center;
+  }
+  
+  .main-box{
+      display: flex;
+  }
+  
+  .sub-box{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  }
+  
+  .btn-edit{
+      margin-right: 10px;
+  }
+  
+  .time{
+      text-align: right;
       margin-left: 20px;
-      text-decoration: none;
+      margin-right: 10px;
+  }
 
-}
+  .chart{
+        background-color:white ;
+  }
 
+  body{
+    background-attachment: fixed;
+  }
 
+  .graph{
+      background-color: white;
+      padding: 10px;
+  }
 
-/*ここまで<header>*/
+/*thermometers/show終わり*/
+
+/*tests_pssfours/new*/
+  .question{
+    background-color: white;
+    border: solid;
+    border-radius: 50px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .question{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
+  .question1, .question2, .question3, .question4{
+    font-size: 24px
+  }
+  h1{
+    text-align: center;
+    margin-top: 30px;
+  }
+  .seni{
+    text-align: center;
+  }
+/*tests_pssfours/new*終わり/
+
+/*tests_pssfours/index*/
+  .koremade-pss4{
+    text-align: center;
+    margin: 100px;
+  }
+  .container-pss4{
+    margin-left: auto;
+    margin-right: auto;
+    width: 66%;
+    border: solid;
+    border-radius: 30px;
+    text-align: center;
+  }
+  .container-pss4-1{
+    font-size: 30px;
+  }
+  .sub-box2{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .btn-edit-pss4{
+    margin-right: 10px;
+  }
+
+  .time-pss4{
+    text-align: right;
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+/*tests_pssfours/index終わり*/
+
+/*zatsudans_new*/
+  .hajimekata1, .hajimekata2, .hajimekata3, .hajimekata4, .hajimekata5, .hajimekata6{
+    font-size: 24px
+  }
+  .hajimekata1{
+    background-color: rgba(0, 128, 0, 0.2);
+  }
+/*zatsudans_new終わり*/

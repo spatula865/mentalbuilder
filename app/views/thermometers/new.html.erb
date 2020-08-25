@@ -6,7 +6,7 @@
   </head>
 
   <body>
-
+    <h1 class="thermometersnewtitle">thermometer</h1>
     <div class="thermometer">
 
       <div id="progress"> <!-- プログレスバー -->
@@ -49,7 +49,7 @@
         <%= form_for @thermometer do |f| %>
           <%= f.label :ストレスレベル %>
           <br>
-          <%= f.number_field :temperature %>
+          <%= f.number_field :temperature ,id:"temperature" %>
           <br>
           <br>
           <%= f.label :memo %>
@@ -69,54 +69,25 @@
     </div><!-- thermometer終わり -->
 
     <div class="commentary">
-    <p>自分のストレス度をつかむために、もっともお手軽なのが「ストレスサーモメータ」。心理カウンセリングの世界でも使われる、定番のテクニックです。方法は簡単で、下の温度計を見ながら、「今のストレスは何点だろう？」と採点してください。「主観で決めて大丈夫なの？」と思われるかもしれませんが、これがバカにできない精度を持っています。アメリカで行われたある実験では、学生たちに自分のストレスを10点満点で採点させたところ、数十問で構成された大がかりなストレス診断を受けた場合と、さほど結果は変わりませんでした。とりあえず、大まかに現状をつかむには十分でしょう。また、このテクニックが良いのは、ストレスに点数をつけただけでも、ある程度イライラ解消の効果が得られるところです。「なんだかイライラする…」と思うだけではどうすればいいのか分かりませんが、数字で示されると「いまは7点だから、せめて4点くらいには下げよう」といった明確な指針ができます。その安心感が、心にゆとりを生むのです。</p>
+      <p class="commentary-inner">自分のストレス度をつかむために、もっともお手軽なのが「ストレスサーモメータ」。心理カウンセリングの世界でも使われる、定番のテクニックです。方法は簡単で、下の温度計を見ながら、「今のストレスは何点だろう？」と採点してください。「主観で決めて大丈夫なの？」と思われるかもしれませんが、これがバカにできない精度を持っています。アメリカで行われたある実験では、学生たちに自分のストレスを10点満点で採点させたところ、数十問で構成された大がかりなストレス診断を受けた場合と、さほど結果は変わりませんでした。とりあえず、大まかに現状をつかむには十分でしょう。また、このテクニックが良いのは、ストレスに点数をつけただけでも、ある程度イライラ解消の効果が得られるところです。「なんだかイライラする…」と思うだけではどうすればいいのか分かりませんが、数字で示されると「いまは7点だから、せめて4点くらいには下げよう」といった明確な指針ができます。その安心感が、心にゆとりを生むのです。</p>
     </div>
 
 
+
+
   </body>    
- 
-  <script type="text/javascript">
-  
-  
-    for (i = 1; i <= 10; i++) {
-      var elem = document.getElementById("box" + i );
-      elem.addEventListener("mouseover", function (event) {
-        event.target.style.backgroundColor = "orange";    
-      }, false);
-    }
-
-
-  
-
-    /*
-      for (i 1; i <= 10; i++) {
-        document.getElementById("progress" + i ).onclick = function() {
-          document.getElementById("result").innerHTML = "クリックされた！";
-        };
-      }
-    */
-    
-    var num;
-
-
-
-    /*
-      // 要素を取得 
-      const counter = document.getElementById("level1");
-
-      const addCount = () => {
-
-      // 文字列を数値に変換 
-      let num = parseInt(counter.textContent, 10);
-
-      // 追加する 
-      counter.textContent = num + 1;
-      };
-
-      // addEventListenerで登録 
-      counter.addEventListener("click", addCount);
-    */
-
-  </script>
 
 </html>
+
+<script type="text/javascript">
+
+for (i = 1; i <= 10; i++) {
+  var elem = document.getElementById("box" + i );
+  elem.addEventListener("mouseover", function (event) {
+    event.target.style.backgroundColor = "orange";
+    document.getElementById( "temperature" ).value = i ;
+
+  }, false);
+}
+
+</script>

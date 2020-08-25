@@ -1,17 +1,57 @@
 
 <body>
 
- <div class="login">
+<header>
+    
+  <div class="title">
+    <%=  link_to 'MentalBuilder' , home_menu_path, :class => "headertext" %>
+    <p class="header-title-span">~3ステップでメンタルを強くするWebアプリ~</p>
+    <%= link_to "ログイン", home_menu_path, :class => "hello-index-login" %>
+    <%= link_to "新規登録", new_user_registration_path, :class=>"hello-index-sinki"  %>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => "headertext-logout" %>
+  </div>
 
-    <%= link_to "ログイン", home_menu_path %>
-    <%= link_to "新規登録", new_user_registration_path %>
+  <ul class="header-dropmenu">
+    <li>
+      <%= link_to '記録する', home_menu_record_path, :class => "list" %>
+      <ul>
+        <li><%= link_to 'thermometer', thermometers_new_path, :class => "list" %></li>
+        <li><%= link_to 'PSS4', tests_pssfours_new_path, :class => "list" %></li>
+        <li><%= link_to '雑談', new_zatsudan_path, :class => "list" %></li>
+      </ul>
+    </li>
+    <li>
+      <%= link_to '振り返る', home_menu_reflection_path, :class => "list" %>
+      <ul>
+        <li><%= link_to 'thermometer', thermometers_show_path, :class => "list" %></li>
+        <li><%= link_to 'PSS4', tests_pssfours_path, :class => "list" %></li>
+        <li><%= link_to '雑談', zatsudans_path, :class => "list" %></li>
+      </ul>
+    </li>
+    <li>
+      <%= link_to '強くなる', tests_pssfours_new_path, :class => "list" %>
+      <ul>
+        <li><%= link_to 'thermometer', thermometers_show_path, :class => "list" %></li>
+        <li><%= link_to 'PSS4', tests_pssfours_path, :class => "list" %></li>
+        <li><%= link_to '雑談', tests_pssfours_path, :class => "list" %></li>
+      </ul>
+    </li>
+  </ul>
 
- </div>
+</header>
+
+  <p class="firsttitle">MentalBuilder</div>
+  <div class="login">
+  <%= link_to "ログイン", home_menu_path, :class => "hello-index-login" %>
+  <%= link_to "新規登録", new_user_registration_path, :class=>"hello-index-sinki"  %>
+  </div>
 
 </body>
 
 <style>
+
   header{
     display:none;
   }
+
 </style>

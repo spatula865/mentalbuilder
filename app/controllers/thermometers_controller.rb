@@ -16,7 +16,11 @@ class ThermometersController < ApplicationController
   end
 
   def show
-    @thermometers = Thermometer.all.order("id DESC")
+    @thermometers = Thermometer.all.order("id DESC").page(params[:page]).per(7)
+  end
+
+  def show2
+    @thermometers = Thermometer.all.order("temperature DESC").page(params[:page]).per(7)
   end
 
   def edit

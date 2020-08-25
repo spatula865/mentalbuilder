@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_005824) do
+ActiveRecord::Schema.define(version: 2020_08_22_123615) do
 
   create_table "pssfours", force: :cascade do |t|
     t.integer "question1"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_07_27_005824) do
     t.integer "question4"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "body"
   end
 
   create_table "thermometers", force: :cascade do |t|
@@ -38,6 +39,17 @@ ActiveRecord::Schema.define(version: 2020_07_27_005824) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "zatsudans", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "hajimekata1"
+    t.integer "hajimekata2"
+    t.integer "hajimekata3"
+    t.integer "hajimekata4"
+    t.integer "hajimekata5"
+    t.integer "hajimekata6"
   end
 
 end

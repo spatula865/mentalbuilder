@@ -1,0 +1,86 @@
+
+    <h1>雑談</h1>
+
+    <div class="question">
+
+        <%= form_for @zatsudan, :url => { :controller => :zatsudans, :action => :create } do |f| %>
+        
+        <div class="hajimekata">
+
+            <h3 class="hajimekata-h3">始め方</h3>
+            
+            <div class="hajimekata1">
+                <p class="hajimekata1">相手が話題の中心になるように話を振った</p>
+            </div>
+            <label><%= f.radio_button :hajimekata1,3 %>大いにできている</label>
+            <label><%= f.radio_button :hajimekata1,2 %>できている</label>
+            <label><%= f.radio_button :hajimekata1,1 %>できていない</label>
+            
+            <p class="hajimekata2">自分から質問して話しかけた</p>
+            <label><%= f.radio_button :hajimekata2,3 %>大いにできている</label>
+            <label><%= f.radio_button :hajimekata2,2 %>できている</label>
+            <label><%= f.radio_button :hajimekata2,1 %>できていない</label>
+
+            <p class="hajimekata3">挨拶に二言付け加えた</p>
+            <label><%= f.radio_button :hajimekata3,3 %>大いにできている</label>
+            <label><%= f.radio_button :hajimekata3,2 %>できている</label>
+            <label><%= f.radio_button :hajimekata3,1 %>できていない</label>
+
+            <p class="hajimekata4">話すネタは「食事」「運動」「睡眠」「仕事」「お金」から探すのが基本！</p>
+            <label><%= f.radio_button :hajimekata4,3 %>大いにできている</label>
+            <label><%= f.radio_button :hajimekata4,2 %>できている</label>
+            <label><%= f.radio_button :hajimekata4,1 %>できていない</label>
+
+            <p class="hajimekata5">「会えてうれしい！」という気持ちを顔で表現した</p>
+            <label><%= f.radio_button :hajimekata5,3 %>大いにできている</label>
+            <label><%= f.radio_button :hajimekata5,2 %>できている</label>
+            <label><%= f.radio_button :hajimekata5,1 %>できていない</label>
+
+            <p class="hajimekata6">会話の中で繰り返し相手の名前を反復して覚えた</p>
+            <label><%= f.radio_button :hajimekata6,3 %>大いにできている</label>
+            <label><%= f.radio_button :hajimekata6,2 %>できている</label>
+            <label><%= f.radio_button :hajimekata6,1 %>できていない</label>
+        
+        </div>
+        <div class="hirogekata">
+
+            <h3 class="hirogekata-h3">広げ方</h3>
+
+            <p class="question7">話を進める接続詞「ということは」「そうすると」「ちなみに」を使って会話を広げた</p>
+
+            <p class="question8">「○○と言えば」を使って会話のネタをどんどん広げた</p>
+
+            <p class="question9">具体的な質問をすることで相手に脳疲労を起こさせない</p>
+
+            <p class="question10">「なぜ？」「他には？」「それで？」の3種類の質問を使い分けた</p>
+
+            <p class="question11"></p>
+
+
+        
+        <br>
+        <br>
+
+        <%= f.submit "送信" %>
+
+        <% end %>
+
+    </div>
+
+<style>
+    .question{
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 25px;
+    }
+    .question1, .question2, .question3, .question4{
+        font-size: 24px
+    }
+    h1{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .seni{
+        text-align: center;
+    }
+</style>

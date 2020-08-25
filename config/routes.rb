@@ -6,15 +6,31 @@ Rails.application.routes.draw do
 
   resources :tests_pssfours
 
+  resources :zatsudans
+
   root 'hello#index'
 
   get 'home/menu' => 'home#menu'
 
+  get 'home/menu_record' => 'home#menu_record'
+  
+  get 'home/menu_reflection' => 'home#menu_reflection'
+
   get '/thermometers' => 'thermometers#new'
+
+  patch 'thermometers/:id' => 'thermometers#update'
+
+  get 'thermometers/:id/edit' => 'thermometers#edit', as:'edit_tweet'
 
   get 'thermometers/new' => 'thermometers#new'
 
   get 'thermometers/show' => 'thermometers#show'
+
+  post 'thermometers/show' => 'thermometers#show'
+
+  get 'thermometers/show2' => 'thermometers#show2'
+
+  post 'thermometers/show2' => 'thermometers#show2'
 
   get 'diaries/new' => 'diaries#new'
 
@@ -29,5 +45,9 @@ Rails.application.routes.draw do
   post 'tests_pssfours/show' => 'tests_pssfours#show'
 
   get 'tests_pssfours/index' => 'tests_pssfours#index'
+
+  get 'zatsudans/index' => 'zatsudans#index'
+
+  post 'zatsudans/show' => 'zatsudans#show'
 
 end

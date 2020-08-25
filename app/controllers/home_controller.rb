@@ -1,6 +1,15 @@
 class HomeController < ApplicationController
 
-def menu
-end
+    before_action :authenticate_user!
 
-end
+    def menu
+    end
+
+    def menu_record
+    end
+
+    def menu_reflection
+    end
+
+
+end 

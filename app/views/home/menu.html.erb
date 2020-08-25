@@ -1,63 +1,52 @@
 <html>
-    <div class="record">
-        <div class="record-sign">
-            <%= link_to '記録する', thermometers_new_path %>
+
+    <div class="arm">
+        <div class="arm-sign">
+            <%= link_to '強くなる', thermometers_show_path, :class => "arm-sign-link" %>
         </div>
-        <div class="record-note">自分のストレス度について記録をとることで、ストレスの被害者からストレスの観察者になる。</div>
+        <div class="arm-note">
+            ストレスを解消するための武器を手に入れることで、<br>ストレスの
+            <span class="arm-note-span">分析者</span>
+            からストレスへの
+            <span class="arm-note-span">反撃者</span>
+            になる。
+        </div>
+        <div class="arm-image">
+            <%= image_tag '/Arm.jpg', :class=>"arm-image-entity" %>
+        </div>
     </div>
     <div class="reflection">
         <div class="reflection-sign">
-            <%= link_to '振り返る', thermometers_show_path %>
+            <%= link_to '振り返る', thermometers_show_path, :class => "reflection-sign-link" %>
         </div>
-        <div class="reflection-note">自分がどのような条件下でストレスを感じるのか振り返ることで、ストレスの観察者からストレスの分析者になる。</div>
-    </div>
-    <div class="arm">
-        <div class="arm-sign">
-            <%= link_to '強くなる', thermometers_show_path %>
+        <div class="reflection-note">
+            自分がどのような条件下でストレスを感じるのか振り返ることで、<br>ストレスの
+            <span class="reflection-note-span">観察者</span>
+            からストレスの
+            <span class="reflection-note-span">分析者</span>
+            になる。
         </div>
-        <div class="arm-note">ストレスを解消するための武器を手に入れることで、ストレスの分析者からストレスへの反撃者になる。</div>
+        <div class="reflection-image">
+            <%= image_tag '/Reflection.jpg', :class=>"reflection-image-entity" %>
+        </div>
+    </div>
+    <div class="record">
+        <div class="record-sign">
+            <%= link_to '記録する', home_menu_record_path, :class => "record-sign-link" %>
+        </div>
+        <div class="record-note">
+            自分のストレス度について記録をとることで、<br>ストレスの
+            <span class="record-note-span">被害者</span>
+            からストレスの
+            <span class="record-note-span">観察者</span>
+            になる。
+        </div>
+        <div class="record-image">
+            <%= image_tag '/Record.jpg', :class=>"record-image-entity" %>
+        </div>
     </div>
 
-<html>
-
-
-
-
-<style>
-    body.background-image{
-        url('Users/speci/Pictures/GeekSalon/1.png')
-    }
-
-    .record, .reflection, .arm{
-        display:flex;
-        align-items:center;
-    }
-
-    .record-sign, .reflection-sign, .arm-sign{
-        width:150px;
-        height:150px;
-        margin-top:50px;
-        margin-right:50px;
-        margin-left:50px;
-        border-radius: 50%;
-        border: solid;
-        background-color:lightgreen;
-        border-color:lightgreen;
-        font-size: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-
-    }
-
-    .record-note, .reflection-note, .arm-note{
-        margin-top:50px;
-    }
-
-
-    
-</style>
+</html>
 
 <script>
 var ctx = document.getElementById("cv").getContext("2d");

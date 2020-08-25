@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+<link rel="stylesheet" href="show.scss" type="text/css">
+</head>
+
 <body>
 
   <div class="graph">
@@ -11,7 +15,7 @@
   <div class="ichiran">
     <div class="koremadenokiroku">
       <h3 class="koremade">これまでの記録</h3>
-      <%= button_to "ストレス度順に並び替え", thermometers_show2_path, :class => 'stressnarabikae' %>
+      <%= button_to "新着順に並び替え", thermometers_show_path, :class => 'stressnarabikae' %>
     </div>
     <% @thermometers.each do |t| %>
       <div class="container">

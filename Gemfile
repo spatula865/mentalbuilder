@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem "chartkick" 
   # 20200719にthermometers/showページのグラフを作る時に追記した。↓のchart-js-railsはrails6ではうまくいかないことが多いらしい。
 
+gem 'groupdate'
+  # 20200821に追記。chartkickのグラフの横軸を日付ごとに表示できる。https://freesworder.net/rails-chartkick/
+
 gem 'chart-js-rails', '~> 0.1.4'
   # 20200719にthermometers/showページのグラフを作る時に追記した。
 
@@ -62,3 +65,5 @@ group :production do
   gem 'pg'
   #デプロイで書き足した。Railsでは、デフォルトで「sqlite3」もしくは「mysql2」というデータベースが利用されるようになっています。しかし、herokuでは「PostgreSQL」というデーターベースを利用するので設定を変更する必要があるのです。ただ、PostgreSQLを利用するのは「本番環境のみ」なので、「group:production」というオプションを追加して本番環境のみで使うようにしています。
 end
+
+gem 'kaminari'
