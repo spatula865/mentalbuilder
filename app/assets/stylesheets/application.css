@@ -125,7 +125,7 @@
 
 /*application.html.erbのbody*/
 
-      body {background-image: url("/lucabravo.jpg");
+      body {
             background-size: cover;
             margin: 0;
             z-index:0;
@@ -176,7 +176,6 @@
 
   .record-sign, .reflection-sign, .arm-sign{
     text-decoration: none;
-        
   }
 
   .record-sign-link, .reflection-sign-link, .arm-sign-link{
@@ -193,20 +192,16 @@
     display:flex;
     align-items:center;
     justify-content: flex-end;
-    
 }
 
-.record-sign:hover + .record-sign, .record-note, .record-image-entity{
-  opacity: 1;
-}
+  .record, .reflection, .arm{
+    opacity: 0.5;
+    transition: 0.3s ease-in-out;
+  }
+  .record:hover, .reflection:hover, .arm:hover{
+    opacity: 1 ;
 
-.record:hover{
-  opacity: 1;
-}
-
-.reflection:hover, .arm:hover{
-  opacity:1;
-}
+  }
 
 .record-sign, .reflection-sign, .arm-sign{
     width:250px;
@@ -214,27 +209,93 @@
     margin-right:50px;
     border-radius: 50%;
     border: solid;
-    background-color:rgba(0, 128, 0, 0.6);
+    background-color:rgba(0, 128, 0);
     border-color:transparent;
     font-size: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
 .record-note, .reflection-note, .arm-note{
     margin-top:50px;
-    opacity:0.4;
 }
 
 img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
   height: 154px;
-  opacity: 0.4;
 }
 
 /*home/menu.html.erb終わり*/
+
+/*home/menu_record.html.erb*/
+  .home-menu-record-title{
+    text-align: center;
+  }
+  .home-menu-record-matome{
+    display: flex;
+  }
+
+  .home-menu-record-thermometer-sign, .home-menu-record-PSS4-sign, .home-menu-record-zatsudan-sign{
+    border-radius: 50% ;
+    background-color: rgba(0, 128, 0);
+    height: 250px; width: 250px;
+    justify-content: center;
+    display:flex;
+    align-items: center;
+    font-size: 24px;
+    opacity: 0.5;
+    transition: 0.3s ease-in-out;
+  }
+
+  .home-menu-record-thermometer-sign{
+    position: absolute; left: 28%
+  }
+
+  .home-menu-record-PSS4-sign{
+    position: absolute; left: 0; right: 0; margin: auto;
+  }
+
+  .home-menu-record-zatsudan-sign{
+    position: absolute; right: 28% ;
+  }
+  .home-menu-record-thermometer-sign-link, .home-menu-record-PSS4-sign-link, .home-menu-record-zatsudan-sign-link{
+    text-decoration: none;
+    color: white;
+  }
+
+  .home-menu-record-thermometer-note, .home-menu-record-PSS4-note, .home-menu-record-zatsudan-note{
+    font-size: 16px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 24px;
+    position: absolute; top: 70%; left: 10%;
+    border: solid;
+    background-color: white;
+    border-radius: 24px;
+    display: none;
+  }
+
+  .home-menu-record-thermometer-sign:hover{
+    opacity:1;
+  }
+  .home-menu-record-thermometer-sign:hover + .home-menu-record-thermometer-note{
+    display:block;
+  }
+
+  .home-menu-record-PSS4-sign:hover{
+    opacity:1;
+  }
+  .home-menu-record-PSS4-sign:hover + .home-menu-record-PSS4-note{
+    display:block;
+  }
+
+  .home-menu-record-zatsudan-sign:hover{
+    opacity:1;
+  }
+  .home-menu-record-zatsudan-sign:hover + .home-menu-record-zatsudan-note{
+    display:block;
+  }
+/*home/menu_record.html.erb*/
 
 
 /*thermometers/new*/
@@ -248,7 +309,7 @@ img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
     background-image: url("../../images/nature.png")
   }
 
-  .commentary{
+  .commentary, .pssfour-new-commentary, .zatsudan-new-commentary{
   background-color: rgba(255, 255, 255, 0.9);
   width: 60%; height: 65%;
   padding: 20px;
@@ -261,12 +322,20 @@ img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
 
   }
 
-  .commentary-inner{
+  .commentary-inner, .pssfour-new-commentary-inner, .zatsudan-new-commentary-inner{
     display: table-cell;
     vertical-align: middle;
   }
 
   .thermometersnewtitle:hover + .commentary{
+    opacity: 1;
+  }
+
+  .pssfour-new-title:hover + .pssfour-new-commentary{
+    opacity: 1;
+  }
+
+  .zatsudan-new-title:hover + .zatsudan-new-commentary{
     opacity: 1;
   }
 
@@ -415,18 +484,15 @@ img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
     border-radius: 50px;
     width: 80%;
     margin: 0 auto;
-  }
-  .question{
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
+    box-shadow: 4px 4px black ;
   }
   .question1, .question2, .question3, .question4{
-    font-size: 24px
+    font-size: 20px
   }
   h1{
     text-align: center;
-    margin-top: 30px;
   }
   .seni{
     text-align: center;
@@ -467,10 +533,57 @@ img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
 /*tests_pssfours/index終わり*/
 
 /*zatsudans_new*/
-  .hajimekata1, .hajimekata2, .hajimekata3, .hajimekata4, .hajimekata5, .hajimekata6{
-    font-size: 24px
-  }
-  .hajimekata1{
+
+  .zatsudan-new-hajimekata-question{
     background-color: rgba(0, 128, 0, 0.2);
   }
+
+  .zatsudan-new-hirogekata-question{
+    background-color: rgba(255, 255, 0, 0.2);
+  }
+
+  .zatsudan-new-kikikata-question{
+    background-color: rgba(0, 0, 255, 0.2);
+  }
+
+  .zatsudan-new-moriagekata-question{
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+
+  .zatsudan-new-hajimekata-question-A, .zatsudan-new-hirogekata-question-A, .zatsudan-new-kikikata-question-A, .zatsudan-new-moriagekata-question-A{
+    font-size: 24px;
+    margin-bottom: 0px;
+  }
+
+  .zatsudan-new-question-B{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 16px;
+  }
+  .zatsudan-new-question-B-orikaesi{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    text-align: left;
+  }
+  .zatsudan-new-question-B-orikaesi-center{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    text-align: center;
+  }
+  
 /*zatsudans_new終わり*/
+
+/*ifthens/new.html.erb*/
+  #ifthen, #todo{
+    width: 100%;
+  }
+  .ifthen-new-input{
+    width: 50%;
+    position:absolute; left:25%;
+    text-align: center;
+    margin-top: 50px;
+  }
+/*ifthens/new.html.erb*/

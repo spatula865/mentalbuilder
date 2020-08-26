@@ -1,10 +1,55 @@
 <body>
-  <div class="pss4sokuhou">
-    <h3 class="pss4result">雑談力スコア</h3>
+  <div class="zatsudan-show-container">
+    <h3 class="zatsudan-show-title">雑談力スコア</h3>
 
-    <p class="pssresult1"><%= @sumofhajimekata/16*100 %></p>
+    <div class="zatsudan-show-scoreboard">
+      <p class="zatsudan-show-category">始め方</p>
+
+      <p class="zatsudan-show-score"><%= @scoreofhajimekata %>/100</p>
+    </div>
+    <div class="zatsudan-show-scoreboard">
+      <p class="zatsudan-show-category">広げ方</p>
+      <p class="zatsudan-show-score"><%= @scoreofhirogekata %>/100</p>
+    </div>
+    <div class="zatsudan-show-scoreboard">
+      <p class="zatsudan-show-category">聞き方</p>
+      <p class="zatsudan-show-score"><%= @scoreofkikikata %>/100</p>
+    </div>
+    <div class="zatsudan-show-scoreboard">
+      <p class="zatsudan-show-category">盛り上げ方</p>
+      <p class="zatsudan-show-score"><%= @scoreofmoriagekata %>/100</p>
+    </div>
+    <div class="zatsudan-show-scoreboard">
+      <p class="zatsudan-show-category">総合点（平均）</p>
+      <p class="zatsudan-show-score"><%= @totalscore %>/100</p>
+    </div>
+
     <br>
     <%= link_to 'これまでの推移を見る', :controller => "zatsudans", :action => "index" %>
 
   </div>
 </body>
+
+<style>
+
+  .zatsudan-show-container{
+    text-align: center;
+  }
+
+  .zatsudan-show-scoreboard{
+    display:flex;
+    width: 30% ;
+    margin: 0 auto;
+    font-size: 24px;
+  }
+
+  .zatsudan-show-category{
+    margin-right: auto;
+  }
+
+  .zatsudan-show-score{
+    margin-left: auto;
+  }
+
+
+</style>

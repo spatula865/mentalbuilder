@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_22_123615) do
+ActiveRecord::Schema.define(version: 2020_08_26_033710) do
+
+  create_table "ifthens", force: :cascade do |t|
+    t.text "ifthen"
+    t.text "todo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "pssfours", force: :cascade do |t|
     t.integer "question1"
@@ -50,6 +57,29 @@ ActiveRecord::Schema.define(version: 2020_08_22_123615) do
     t.integer "hajimekata4"
     t.integer "hajimekata5"
     t.integer "hajimekata6"
+    t.integer "hirogekata1"
+    t.integer "hirogekata2"
+    t.integer "hirogekata3"
+    t.integer "hirogekata4"
+    t.integer "hirogekata5"
+    t.integer "hirogekata6"
+    t.integer "hirogekata7"
+    t.integer "hirogekata8"
+    t.integer "kikikata1"
+    t.integer "kikikata2"
+    t.integer "kikikata3"
+    t.integer "kikikata4"
+    t.integer "kikikata5"
+    t.integer "kikikata6"
+    t.integer "moriagekata1"
+    t.integer "moriagekata2"
+    t.integer "moriagekata3"
+    t.integer "moriagekata4"
+    t.integer "moriagekata5"
+    t.integer "moriagekata6"
+    t.integer "moriagekata7"
+    t.integer "moriagekata8"
+    t.integer "moriagekata9"
   end
 
 end

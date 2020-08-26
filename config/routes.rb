@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :zatsudans
 
+  resources :ifthens
+
   root 'hello#index'
 
   get 'home/menu' => 'home#menu'
@@ -50,4 +52,5 @@ Rails.application.routes.draw do
 
   post 'zatsudans/show' => 'zatsudans#show'
 
+  get 'ifthens/new' =>'ifthens#new'
 end

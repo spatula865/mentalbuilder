@@ -1,0 +1,28 @@
+
+<h1 class="ifthen-new-title">if・thenプランニングで武装する</h1>
+
+<div class="ifthen-new-input">
+    <%= form_for @ifthen do |f| %>
+        <%= f.label :もし・いつ %>
+        <br>
+        <%= f.text_area :ifthen ,id:"ifthen" %>
+        <br>
+        <br>
+        <%= f.label :どうする %>
+        <br>
+        <%= f.text_area :todo ,id:"todo"%>
+        <br>
+        <br>
+        <%= f.submit "送信" %>
+    <% end %>
+
+    <br><%= link_to 'これまでの推移を見る', :controller => "ifthens", :action => "index" %>
+
+</div>
+
+<style>
+
+    .ifthen-new-title{
+        text-align: center;
+    }
+</style>

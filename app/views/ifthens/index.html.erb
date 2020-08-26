@@ -1,0 +1,76 @@
+
+<body>
+
+    <h1 class="ifthen-index-title">if・thenプランニングで武装する</h1>
+    <h3 class="ifthen-index-koremade">これまでの記録</h3>
+    <%= Ifthen.count %>
+    <% @ifthen.each do |t| %>
+        <div class="ifthen-index-container">
+            <div class="ifthen-index-mainbox">
+                <div class="ifthen-index-ifthen"><%= t.ifthen %></div>
+                <div class="ifthen-index-ifthen"><%= t.todo %></div>
+            </div>
+            <div class="ifthen-index-subbox">
+                <%= button_to "編集", edit_ifthen_path(t.id), method: :get, :class => 'btn-edit' %>
+                <%= button_to "削除", ifthens_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>  
+                <p class="ifthen-index-time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+            </div>  
+        </div>
+        <br>
+    <% end %>
+
+</body>
+
+<style>
+
+    .ifthen-index-container{
+        background-color:white;
+        border: solid;
+        border-radius: 20px;
+        border-color: gray;
+        width:60% ;
+        margin: 0 auto;
+    }
+
+
+    .container1{
+        font-size: 24px;
+        margin: 10px;
+    }
+
+    .container2{
+        margin: 10px;
+        text-align: left;
+    }
+
+
+    .ifthen-index-koremade{
+        text-align:center;
+    }
+
+    .ifthen-index-mainbox{
+        padding-top: 20px;
+        padding-left: 20px;
+    }
+
+    .ifthen-index-subbox{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    }
+
+    .btn-edit{
+    margin-right: 10px;
+    }
+
+    .ifthen-index-time{
+        text-align: right;
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+
+    body{
+        background-attachment: fixed;
+    }
+
+</style>

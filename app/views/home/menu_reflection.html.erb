@@ -1,66 +1,29 @@
 <html>
-    <div class="record">
-        <div class="record-sign">
-            <%= link_to 'thermometer', thermometers_new_path %>
+
+    <h1 class="home-menu-record-title">記録する</h1>
+    <div class="home-menu-record-matome">
+        <div class="home-menu-record-thermometer">
+            <div class="home-menu-record-thermometer-sign">
+                <%= link_to 'thermometer', thermometers_show_path, :class => "home-menu-record-thermometer-sign-link" %>
+            </div>
         </div>
-        <div class="record-note">ストレスを10段階で評価します。毎日記録をつけることで、自分がどのような状況でストレスを感じやすいのか、客観的に把握することができるようになります。</div>
-    </div>
-    <div class="reflection">
-        <div class="reflection-sign">
-            <%= link_to 'PSS4', tests_pssfours_path %>
+        <div class="home-menu-record-PSS4">
+            <div class="home-menu-record-PSS4-sign">
+                <%= link_to 'PSS4', tests_pssfours_index_path, :class => "home-menu-record-PSS4-sign-link" %>
+            </div>
         </div>
-        <div class="reflection-note">4つの質問に答えることで簡単に抑うつ度を測ることができます。月に一度行うことで定期的に自分の精神状態をモニタリングしましょう。</div>
-    </div>
-    <div class="arm">
-        <div class="arm-sign">
-            <%= link_to '強くなる', thermometers_show_path %>
+        <div class="home-menu-record-arm">
+            <div class="home-menu-record-arm-sign">
+                <%= link_to '雑談', zatsudans_index_path, :class => "home-menu-record-arm-sign-link" %>
+            </div>
         </div>
-        <div class="arm-note">ストレスを解消するための武器を手に入れることで、ストレスの分析者からストレスへの反撃者になる。</div>
     </div>
+
+    <div class="home-menu-record-thermometer-note" >ストレスを10段階で評価します。<br>毎日記録をつけることで、自分がどのような状況でストレスを感じやすいのか、客観的に把握することができるようになります。
+    </div>
+    <div class="home-menu-record-PSS4-note">4つの質問に答えることで簡単に抑うつ度を測ることができます。月に一度行うことで定期的に自分の精神状態をモニタリングしましょう。
+    </div>
+    <div class="home-menu-record-arm-note">アンケートを通して自分の雑談力を定量的に振り返ります。</div>
+
 
 </html>
-
-
-
-
-<style>
-
-
-
-    .record, .reflection, .arm{
-        display:flex;
-        align-items:center;
-    }
-
-    .record-sign, .reflection-sign, .arm-sign{
-        width:150px;
-        height:150px;
-        margin-top:50px;
-        margin-right:50px;
-        margin-left:50px;
-        border-radius: 50%;
-        border: solid;
-        background-color:lightgreen;
-        border-color:lightgreen;
-        font-size: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-
-    }
-
-    .record-note, .reflection-note, .arm-note{
-        margin-top:50px;
-    }
-
-
-    
-</style>
-
-<script>
-var ctx = document.getElementById("cv").getContext("2d");
-ctx.beginPath();
-ctx.arc(120, 120, 100, 0, Math.PI*2, true);
-ctx.stroke();
-</script>

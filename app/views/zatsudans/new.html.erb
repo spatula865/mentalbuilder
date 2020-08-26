@@ -1,69 +1,269 @@
 
-    <h1>雑談</h1>
+    <h1 class="zatsudan-new-title">雑談</h1>
+    <div class="zatsudan-new-commentary">
+        <p class="zatsudan-new-commentary-inner">ストレスの発生源は多様です。しかし中でも人間関係からくるストレスは多くの人に共通なのではないでしょうか。<br>「人付き合いが苦手で、毎日学校（職場）に行くのが辛い。」「友達が欲しいけどできなくて寂しい。」<br>そんな人はぜひこの「雑談」機能を使ってみてください。<br>アンケートを通して自分の雑談力を「始め方」「広げ方」「聞き方」「盛り上げ方」の４つの要素に分解し、定量的に評価、得意分野・苦手分野を抽出します。得意分野は伸ばし、苦手分野は改善する。これを繰り返すことで、雑談力を鍛えます。頻度は好きに決めて大丈夫です。</P>
+    </div>
 
     <div class="question">
 
         <%= form_for @zatsudan, :url => { :controller => :zatsudans, :action => :create } do |f| %>
         
-        <div class="hajimekata">
+            <div class="hajimekata">
 
-            <h3 class="hajimekata-h3">始め方</h3>
+                <h3 class="hajimekata-h3">始め方</h3>
+                
+                <div class="zatsudan-new-hajimekata-question">
+                    <p class="zatsudan-new-hajimekata-question-A">相手が話題の中心になるように話を振った</p>
+                    <p class="zatsudan-new-question-B">雑談の一流は必ず会話の主題を自分ではなく相手に置きます</p>
+                </div>
+                <label><%= f.radio_button :hajimekata1,3 %>大いにできている</label>
+                <label><%= f.radio_button :hajimekata1,2 %>できている</label>
+                <label><%= f.radio_button :hajimekata1,1 %>できていない</label>
+
+                <div class="zatsudan-new-hajimekata-question">
+                    <p class="zatsudan-new-hajimekata-question-A">自分から質問して話しかけた</p>
+                </div>
+                <label><%= f.radio_button :hajimekata2,3 %>大いにできている</label>
+                <label><%= f.radio_button :hajimekata2,2 %>できている</label>
+                <label><%= f.radio_button :hajimekata2,1 %>できていない</label>
+
+                <div class="zatsudan-new-hajimekata-question">
+                    <p class="zatsudan-new-hajimekata-question-A">挨拶に二言付け加えた</p>
+                </div>
+                <label><%= f.radio_button :hajimekata3,3 %>大いにできている</label>
+                <label><%= f.radio_button :hajimekata3,2 %>できている</label>
+                <label><%= f.radio_button :hajimekata3,1 %>できていない</label>
+
+                <div class="zatsudan-new-hajimekata-question">
+                    <p class="zatsudan-new-hajimekata-question-A">話すネタは「食事」「運動」「睡眠」「仕事」「お金」から探すのが基本！</p>
+                </div>
+                <label><%= f.radio_button :hajimekata4,3 %>大いにできている</label>
+                <label><%= f.radio_button :hajimekata4,2 %>できている</label>
+                <label><%= f.radio_button :hajimekata4,1 %>できていない</label>
+
+                <div class="zatsudan-new-hajimekata-question">
+                    <p class="zatsudan-new-hajimekata-question-A">「会えてうれしい！」という気持ちを顔で表現した</p>
+                </div>
+                <label><%= f.radio_button :hajimekata5,3 %>大いにできている</label>
+                <label><%= f.radio_button :hajimekata5,2 %>できている</label>
+                <label><%= f.radio_button :hajimekata5,1 %>できていない</label>
+
+                <div class="zatsudan-new-hajimekata-question">
+                    <p class="zatsudan-new-hajimekata-question-A">会話の中で繰り返し相手の名前を反復して覚えた</p>
+                </div>
+                <label><%= f.radio_button :hajimekata6,3 %>大いにできている</label>
+                <label><%= f.radio_button :hajimekata6,2 %>できている</label>
+                <label><%= f.radio_button :hajimekata6,1 %>できていない</label>
             
-            <div class="hajimekata1">
-                <p class="hajimekata1">相手が話題の中心になるように話を振った</p>
             </div>
-            <label><%= f.radio_button :hajimekata1,3 %>大いにできている</label>
-            <label><%= f.radio_button :hajimekata1,2 %>できている</label>
-            <label><%= f.radio_button :hajimekata1,1 %>できていない</label>
+            <div class="hirogekata">
+
+                <h3 class="hirogekata-h3">広げ方</h3>
+                
+                <div class="zatsudan-new-hirogekata-question">
+                    <p class="zatsudan-new-hirogekata-question-A">話を進める接続詞「ということは」「そうすると」「ちなみに」を使って会話を広げた</p>
+                    <p class="zatsudan-new-question-B"></p>
+                </div>
+                <label><%= f.radio_button :hirogekata1,3 %>大いにできている</label>
+                <label><%= f.radio_button :hirogekata1,2 %>できている</label>
+                <label><%= f.radio_button :hirogekata1,1 %>できていない</label>
+
+                <div class="zatsudan-new-hirogekata-question">
+                    <p class="zatsudan-new-hirogekata-question-A">「○○と言えば」を使って会話のネタをどんどん広げた</p>
+                    <p class="zatsudan-new-question-B"></p>
+                </div>
+                <label><%= f.radio_button :hirogekata2,3 %>大いにできている</label>
+                <label><%= f.radio_button :hirogekata2,2 %>できている</label>
+                <label><%= f.radio_button :hirogekata2,1 %>できていない</label>
+                
+                <div class="zatsudan-new-hirogekata-question">
+                    <p class="zatsudan-new-hirogekata-question-A">具体的な質問をすることで相手に脳疲労を起こさせない</p>
+                    <p class="zatsudan-new-question-B">答えるためにうんうんと考えなければならないような質問ばかりすると、相手は疲れて居心地悪く感じてしまいます。</p>
+                </div>
+                <label><%= f.radio_button :hirogekata3,3 %>大いにできている</label>
+                <label><%= f.radio_button :hirogekata3,2 %>できている</label>
+                <label><%= f.radio_button :hirogekata3,1 %>できていない</label>
+                
+                <div class="zatsudan-new-hirogekata-question">
+                    <p class="zatsudan-new-hirogekata-question-A">「なぜ？」「他には？」「それで？」の3種類の質問を使い分けた</p>
+                    <p class="zatsudan-new-question-B">質問には、①深める（なぜ？）②広げる（他には？）③進める（それで？）の3種類があります。同じタイプの質問ばかりすると、尋問のようになってしまいます。</p>
+                </div>
+                <label><%= f.radio_button :hirogekata4,3 %>大いにできている</label>
+                <label><%= f.radio_button :hirogekata4,2 %>できている</label>
+                <label><%= f.radio_button :hirogekata4,1 %>できていない</label>
+                
+                <div class="zatsudan-new-hirogekata-question">
+                    <p class="zatsudan-new-hirogekata-question-A">踏襲話法で話をつなげた</p>
+                    <p class="zatsudan-new-question-B-orikaesi-center">沈黙が起きたとき、雑談の一流は無理やり話題を探そうとするのではなく、前の話題を踏襲して自然に話題を繋げます。<br>例）「そうそう、その話で思い出したけど」「それでいうと」</p>
+                </div>
+                <label><%= f.radio_button :hirogekata5,3 %>大いにできている</label>
+                <label><%= f.radio_button :hirogekata5,2 %>できている</label>
+                <label><%= f.radio_button :hirogekata5,1 %>できていない</label>
+                
+                <div class="zatsudan-new-hirogekata-question">
+                    <p class="zatsudan-new-hirogekata-question-A">ほめ＋ワンポイントで話を膨らませた</p>
+                    <p class="zatsudan-new-question-B-orikaesi">ほめるだけだと会話はすぐに止まり、ほめまくると薄っぺらい印象を与えてしまいます。雑談の一流は、「いつも明るいですね。何か秘訣はあるんですか？」のように、ほめた後にさらに一歩踏み込むことで話を膨らませます。そうすると、話が広がるだけでなく、相手は「本当に私に興味をもって接してくれている」と感じます。</p>
+                </div>
+                <label><%= f.radio_button :hirogekata6,3 %>大いにできている</label>
+                <label><%= f.radio_button :hirogekata6,2 %>できている</label>
+                <label><%= f.radio_button :hirogekata6,1 %>できていない</label>
+                
+                <div class="zatsudan-new-hirogekata-question">
+                    <p class="zatsudan-new-hirogekata-question-A">Before→Afterをほめた</p>
+                    <p class="zatsudan-new-question-B-orikaesi-center">ほめるところが見つからないとき、雑談の一流は過去を現在を比較してほめるポイントを見つけます。<br>例）「以前は何をされていたんですか？」「え～、以前は△△をされていたのに今は○○されているんですか！すごいですね！」</p>
+                </div>
+                <label><%= f.radio_button :hirogekata7,3 %>大いにできている</label>
+                <label><%= f.radio_button :hirogekata7,2 %>できている</label>
+                <label><%= f.radio_button :hirogekata7,1 %>できていない</label>
+
+                <div class="zatsudan-new-hirogekata-question">
+                    <p class="zatsudan-new-hirogekata-question-A">相違点を探して距離を縮めた</p>
+                    <p class="zatsudan-new-question-B-orikaesi-center">「相手との共通点を探しましょう」と言われることは多いですが、人間は、共通点より相違点の方が圧倒的に多い生き物です。雑談の一流は相違点を探しています。<br>例）「私は苦手だけど、なんで好きなんですか？」「私はやったことないけど、どんな感じなんですか？」</p>
+                </div>
+                <label><%= f.radio_button :hirogekata8,3 %>大いにできている</label>
+                <label><%= f.radio_button :hirogekata8,2 %>できている</label>
+                <label><%= f.radio_button :hirogekata8,1 %>できていない</label>
+            </div>
+
+            <div class="kikikata">
+
+                <h3 class="kikikata-h3">聞き方</h3>
+                
+                <div class="zatsudan-new-kikikata-question">
+                    <p class="zatsudan-new-kikikata-question-A">映像化して聴いた</p>
+                    <p class="zatsudan-new-question-B">相手の話を聞くとき、相手の頭の中にある映像と同じ映像をイメージして聴くことで、ただ耳で聞くよりも共感が生まれ、会話が盛り上がります。</p>
+                </div>
+                <label><%= f.radio_button :kikikata1,3 %>大いにできている</label>
+                <label><%= f.radio_button :kikikata1,2 %>できている</label>
+                <label><%= f.radio_button :kikikata1,1 %>できていない</label>
+
+                <div class="zatsudan-new-kikikata-question">
+                    <p class="zatsudan-new-kikikata-question-A">頷き＋感嘆詞を使って聞いた</p>
+                    <p class="zatsudan-new-question-B">「へぇ～、はぁ～、ほぉ～」を使って反応すると、相手の承認欲求が満たされます。</p>
+                </div>
+                <label><%= f.radio_button :kikikata2,3 %>大いにできている</label>
+                <label><%= f.radio_button :kikikata2,2 %>できている</label>
+                <label><%= f.radio_button :kikikata2,1 %>できていない</label>
+                
+                <div class="zatsudan-new-kikikata-question">
+                    <p class="zatsudan-new-kikikata-question-A">普段使わないような一段上の表現を使って承認した</p>
+                    <p class="zatsudan-new-question-B">普段あまり言われたことがないフレーズでほめられると、相手はいつもより喜びます。相手が喜びそうな表現を普段からストックしておきましょう。<br>例）ただ「すごいですね」と言うのではなく、「熱量が桁違いですね！」「迫力がありますね」「オーラがありますね」「覚醒していますね」「幸せですね」と言う。</p>
+                </div>
+                <label><%= f.radio_button :kikikata3,3 %>大いにできている</label>
+                <label><%= f.radio_button :kikikata3,2 %>できている</label>
+                <label><%= f.radio_button :kikikata3,1 %>できていない</label>
+                
+                <div class="zatsudan-new-kikikata-question">
+                    <p class="zatsudan-new-kikikata-question-A">全力で励ました</p>
+                    <p class="zatsudan-new-question-B-orikaesi">雑談の一流は、人がプラスの気持ちになる三大欲求①認められたい②ほめられたい③励まされたいを満たし、相手をプラスの気持ちにさせます。ネガティブな話を持ち掛けられた時、受け流したり同調するのではなく、積極的に励ましましょう。</p>
+                </div>
+                <label><%= f.radio_button :kikikata4,3 %>大いにできている</label>
+                <label><%= f.radio_button :kikikata4,2 %>できている</label>
+                <label><%= f.radio_button :kikikata4,1 %>できていない</label>
+                
+                <div class="zatsudan-new-kikikata-question">
+                    <p class="zatsudan-new-kikikata-question-A">意見が異なった時、興味に変えた</p>
+                    <p class="zatsudan-new-question-B">意見が違った時は、少しずらした質問をしましょう。反論ばかりすると嫌われます。「なぜこの人はそう思ったのだろう？」と考えて質問してみることが大切です。</p>
+                </div>
+                <label><%= f.radio_button :kikikata5,3 %>大いにできている</label>
+                <label><%= f.radio_button :kikikata5,2 %>できている</label>
+                <label><%= f.radio_button :kikikata5,1 %>できていない</label>
+                
+                <div class="zatsudan-new-kikikata-question">
+                    <p class="zatsudan-new-kikikata-question-A">SNSでは、さりげなく承認する。</p>
+                    <p class="zatsudan-new-question-B">相手の投稿心理（知ってほしい、見てほしい、承認してほしい）を考え、さりげなく承認する。スルーと被せ（私も行きました！やりました！）はNG。</p>
+                </div>
+                <label><%= f.radio_button :kikikata6,3 %>大いにできている</label>
+                <label><%= f.radio_button :kikikata6,2 %>できている</label>
+                <label><%= f.radio_button :kikikata6,1 %>できていない</label>
+
+            </div>
+
+            <div class="moriagekata">
+
+                <h3 class="moriagekata-h3">盛り上げ方</h3>
+
+                <div class="zatsudan-new-moriagekata-question">
+                    <p class="zatsudan-new-moriagekata-question-A">15秒から30秒話したら相手に渡した</p>
+                    <p class="zatsudan-new-question-B">雑談では30秒くらいで会話を回すのがベストです。人間は興味が無いことに関して、30秒くらい経過すると急激に集中力が落ちます。ベラベラ一人で話すのはNG。</p>
+                </div>
+                <label><%= f.radio_button :moriagekata1,3 %>大いにできている</label>
+                <label><%= f.radio_button :moriagekata1,2 %>できている</label>
+                <label><%= f.radio_button :moriagekata1,1 %>できていない</label>
+                
+                <div class="zatsudan-new-moriagekata-question">
+                    <p class="zatsudan-new-moriagekata-question-A">説明する時、たとえ話にして一発で伝えた</p>
+                    <p class="zatsudan-new-question-B">人間は文字で認識するより、絵で認識する方が圧倒的に速いです。似ているものを連想して、たとえ話を作って伝えましょう。ダラダラ話すのはNG。</p>
+                </div>
+                <label><%= f.radio_button :moriagekata2,3 %>大いにできている</label>
+                <label><%= f.radio_button :moriagekata2,2 %>できている</label>
+                <label><%= f.radio_button :moriagekata2,1 %>できていない</label>
+                
+                <div class="zatsudan-new-moriagekata-question">
+                    <p class="zatsudan-new-moriagekata-question-A">オノマトペを使った</p>
+                    <p class="zatsudan-new-question-B">擬声語、擬音語、擬態語を使って話にインパクトを出しましょう</p>
+                </div>
+                <label><%= f.radio_button :moriagekata3,3 %>大いにできている</label>
+                <label><%= f.radio_button :moriagekata3,2 %>できている</label>
+                <label><%= f.radio_button :moriagekata3,1 %>できていない</label>
+                
+                <div class="zatsudan-new-moriagekata-question">
+                    <p class="zatsudan-new-moriagekata-question-A">結論の手前にギャップを持たせて笑いをとった</p>
+                    <p class="zatsudan-new-question-B"></p>
+                </div>
+                <label><%= f.radio_button :moriagekata4,3 %>大いにできている</label>
+                <label><%= f.radio_button :moriagekata4,2 %>できている</label>
+                <label><%= f.radio_button :moriagekata4,1 %>できていない</label>
             
-            <p class="hajimekata2">自分から質問して話しかけた</p>
-            <label><%= f.radio_button :hajimekata2,3 %>大いにできている</label>
-            <label><%= f.radio_button :hajimekata2,2 %>できている</label>
-            <label><%= f.radio_button :hajimekata2,1 %>できていない</label>
+                <div class="zatsudan-new-moriagekata-question">
+                    <p class="zatsudan-new-moriagekata-question-A">会話を描写して説明した</p>
+                    <p class="zatsudan-new-question-B"></p>
+                </div>
+                <label><%= f.radio_button :moriagekata5,3 %>大いにできている</label>
+                <label><%= f.radio_button :moriagekata5,2 %>できている</label>
+                <label><%= f.radio_button :moriagekata5,1 %>できていない</label>
+            
+                <div class="zatsudan-new-moriagekata-question">
+                    <p class="zatsudan-new-moriagekata-question-A">一人質問をした</p>
+                    <p class="zatsudan-new-question-B"></p>
+                </div>
+                <label><%= f.radio_button :moriagekata6,3 %>大いにできている</label>
+                <label><%= f.radio_button :moriagekata6,2 %>できている</label>
+                <label><%= f.radio_button :moriagekata6,1 %>できていない</label>
+            
+                <div class="zatsudan-new-moriagekata-question">
+                    <p class="zatsudan-new-moriagekata-question-A">相手が「話したいこと」と「聞きたいこと」にテーマを置いた</p>
+                    <p class="zatsudan-new-question-B"></p>
+                </div>
+                <label><%= f.radio_button :moriagekata7,3 %>大いにできている</label>
+                <label><%= f.radio_button :moriagekata7,2 %>できている</label>
+                <label><%= f.radio_button :moriagekata7,1 %>できていない</label>
+                
+                <div class="zatsudan-new-moriagekata-question">
+                    <p class="zatsudan-new-moriagekata-question-A">状況次第で空気を変えた</p>
+                    <p class="zatsudan-new-question-B"></p>
+                </div>
+                <label><%= f.radio_button :moriagekata8,3 %>大いにできている</label>
+                <label><%= f.radio_button :moriagekata8,2 %>できている</label>
+                <label><%= f.radio_button :moriagekata8,1 %>できていない</label>
+            
+                <div class="zatsudan-new-moriagekata-question">
+                    <p class="zatsudan-new-moriagekata-question-A">役割を見極めた</p>
+                    <p class="zatsudan-new-question-B"></p>
+                </div>
+                <label><%= f.radio_button :moriagekata9,3 %>大いにできている</label>
+                <label><%= f.radio_button :moriagekata9,2 %>できている</label>
+                <label><%= f.radio_button :moriagekata9,1 %>できていない</label>
+            
+            </div>
+            <br>
+            <br>
 
-            <p class="hajimekata3">挨拶に二言付け加えた</p>
-            <label><%= f.radio_button :hajimekata3,3 %>大いにできている</label>
-            <label><%= f.radio_button :hajimekata3,2 %>できている</label>
-            <label><%= f.radio_button :hajimekata3,1 %>できていない</label>
-
-            <p class="hajimekata4">話すネタは「食事」「運動」「睡眠」「仕事」「お金」から探すのが基本！</p>
-            <label><%= f.radio_button :hajimekata4,3 %>大いにできている</label>
-            <label><%= f.radio_button :hajimekata4,2 %>できている</label>
-            <label><%= f.radio_button :hajimekata4,1 %>できていない</label>
-
-            <p class="hajimekata5">「会えてうれしい！」という気持ちを顔で表現した</p>
-            <label><%= f.radio_button :hajimekata5,3 %>大いにできている</label>
-            <label><%= f.radio_button :hajimekata5,2 %>できている</label>
-            <label><%= f.radio_button :hajimekata5,1 %>できていない</label>
-
-            <p class="hajimekata6">会話の中で繰り返し相手の名前を反復して覚えた</p>
-            <label><%= f.radio_button :hajimekata6,3 %>大いにできている</label>
-            <label><%= f.radio_button :hajimekata6,2 %>できている</label>
-            <label><%= f.radio_button :hajimekata6,1 %>できていない</label>
-        
-        </div>
-        <div class="hirogekata">
-
-            <h3 class="hirogekata-h3">広げ方</h3>
-
-            <p class="question7">話を進める接続詞「ということは」「そうすると」「ちなみに」を使って会話を広げた</p>
-
-            <p class="question8">「○○と言えば」を使って会話のネタをどんどん広げた</p>
-
-            <p class="question9">具体的な質問をすることで相手に脳疲労を起こさせない</p>
-
-            <p class="question10">「なぜ？」「他には？」「それで？」の3種類の質問を使い分けた</p>
-
-            <p class="question11"></p>
-
-
-        
-        <br>
-        <br>
-
-        <%= f.submit "送信" %>
+            <%= f.submit "送信" %>
 
         <% end %>
+
+        <br>
 
     </div>
 
@@ -83,4 +283,8 @@
     .seni{
         text-align: center;
     }
+</style>
+
+<style>
+
 </style>
