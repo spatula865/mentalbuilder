@@ -48,6 +48,8 @@ Rails.application.routes.draw do
 
   get 'tests_pssfours/index' => 'tests_pssfours#index'
 
+  delete 'tests_pssfours/:id' => 'tests_pssfours#destroy'
+
   get 'zatsudans/index' => 'zatsudans#index'
 
   post 'zatsudans/show' => 'zatsudans#show'

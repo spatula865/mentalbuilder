@@ -27,6 +27,11 @@ class IfthensController < ApplicationController
         @todo = Ifthen.find(params[:id])
     end
 
+    def destroy
+        Ifthen.find(params[:id]).destroy
+        redirect_to action: :index
+    end
+
     private
     def ifthen_params
         params.require(:ifthen).permit(:ifthen, :todo)

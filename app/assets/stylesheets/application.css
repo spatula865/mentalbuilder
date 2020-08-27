@@ -75,7 +75,12 @@
         position: relative;
         display: table-cell;
         vertical-align: middle;
-
+        padding: 0.5em 1em;
+        text-decoration: none;
+        color: #FFF;
+        border-bottom: solid 2px #627295;
+        border-radius: 3px;
+        box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
       }
 
       .list {
@@ -98,7 +103,6 @@
         left: -1px;
         margin: 0;
         padding: 0;
-        border: 1px solid rgba(0, 128, 0, 0.8); /* マウスオーバー時の枠線 */
         border-top: none;
       }
       ul.header-dropmenu li:hover ul {
@@ -318,7 +322,7 @@ img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
   border-radius: 20px;
   border-color: rgba(0, 0, 0, 0.5);
   position: absolute; top: 25%; left:20%;
-  opacity: 0;
+  display: none;
 
   }
 
@@ -328,15 +332,15 @@ img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
   }
 
   .thermometersnewtitle:hover + .commentary{
-    opacity: 1;
+    display: block;
   }
 
   .pssfour-new-title:hover + .pssfour-new-commentary{
-    opacity: 1;
+    display: block;
   }
 
   .zatsudan-new-title:hover + .zatsudan-new-commentary{
-    opacity: 1;
+    display: block;
   }
 
   .progress{

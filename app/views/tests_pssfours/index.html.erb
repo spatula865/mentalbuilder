@@ -3,7 +3,7 @@
 
     <div>
         <div class="graph">
-            <%= column_chart Pssfour.pluck(:created_at, ) %>
+            <%= column_chart @data %>
         </div>
 
         <h3 class="koremade-pss4">これまでの記録</h3>
@@ -14,7 +14,7 @@
                 <div class="container-pss4-1"><%= [t.question1, t.question2, t.question3, t.question4].sum %></div>
             </div>
             <div class="sub-box2">
-                <%= button_to "削除", tests_pssfours_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
+                <%= button_to "削除", tests_pssfour_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
                 <p class="time-pss4"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
             </div>  
         </div>

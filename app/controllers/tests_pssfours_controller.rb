@@ -7,6 +7,7 @@ class TestsPssfoursController < ApplicationController
     def create
       @pss4 = Pssfour.new(pssfour_params)
       if @pss4.save
+
         redirect_to tests_pssfours_show_path(@pss4)
       else
         redirect_to :action => "new"
@@ -20,12 +21,12 @@ class TestsPssfoursController < ApplicationController
 
     def index
       @pss4 = Pssfour.all.order("id DESC")
-      
+      @data = [['2019-06-01', 100], ['2019-06-02', 200], ['2019-06-03', 150]]
     end
 
     def destroy
-      Thermometer.find(params[:id]).destroy
-      redirect_to action: :show
+      Pssfour.find(params[:id]).destroy
+      redirect_to action: :index
     end
 
 
