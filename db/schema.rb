@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_033710) do
+ActiveRecord::Schema.define(version: 2020_08_27_121153) do
 
   create_table "ifthens", force: :cascade do |t|
     t.text "ifthen"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_033710) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "body"
+    t.text "memo"
   end
 
   create_table "thermometers", force: :cascade do |t|

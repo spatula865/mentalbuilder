@@ -29,12 +29,27 @@ class TestsPssfoursController < ApplicationController
       redirect_to action: :index
     end
 
+    def edit
+      @memo = Pssfour.find(params[:id])
+    end
+
+    def update
+      @memo = Pssfour.find(params[:id])
+      if @memo.update(pssfour_params)
+        redirect_to :action => "index"
+      else
+        redirect_to :action => "index"
+      end
+    end
+
+
+
 
 
     private
 
     def pssfour_params
-      params.require(:pssfour).permit(:question1, :question2, :question3, :question4)
+      params.require(:pssfour).permit(:question1, :question2, :question3, :question4, :memo)
     end
 
 
