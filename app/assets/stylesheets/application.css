@@ -213,7 +213,7 @@
     margin-right:50px;
     border-radius: 50%;
     border: solid;
-    background-color:rgba(0, 128, 0);
+    background-color:rgb(0, 128, 0);
     border-color:transparent;
     font-size: 30px;
     display: flex;
@@ -241,7 +241,7 @@ img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
 
   .home-menu-record-thermometer-sign, .home-menu-record-PSS4-sign, .home-menu-record-zatsudan-sign{
     border-radius: 50% ;
-    background-color: rgba(0, 128, 0);
+    background-color: rgb(0, 128, 0);
     height: 250px; width: 250px;
     justify-content: center;
     display:flex;
