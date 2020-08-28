@@ -11,5 +11,8 @@ class HomeController < ApplicationController
     def menu_reflection
     end
 
+    def menu_arm
+    end
+
 
 end 

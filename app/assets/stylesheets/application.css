@@ -25,7 +25,7 @@
         font-size:24pt;
         color:white;
         font-family:Book Antiqua;
-          text-decoration: none;
+        text-decoration: none;
       }
       .menu-record, .menu-reflection, .menu-arm{
         margin-left:25px;   
@@ -42,7 +42,7 @@
 
       .title{
         display:flex;
-        margin-bottom: 10px;
+        padding-bottom: 10px;
       }
 
       .header-title-span{
@@ -54,7 +54,14 @@
       }
 
       .headertext-logout{
-        margin-left: auto;
+        text-decoration: none;
+        font-size: 14px;
+        padding: 10px 10px 0px 10px;
+        color: white;
+      }
+
+      .headertext-mypage{
+        margin: 0 0 0 auto;
         text-decoration: none;
         font-size: 14px;
         padding: 10px 10px 0px 10px;
@@ -151,7 +158,8 @@
   
   .login{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    margin-top: 200px;
   }
 
   .hello-index-login{
@@ -160,55 +168,101 @@
   .hello-index-sinki{
     text-decoration: none;
   }
-/*holleo/index終わり*/
 
+  .hello-index-sinki{
+    margin-left: 10px;
+  }
 
-/*home/menu.html.erb*/
+  .hello-index-subtitle{
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .firsttitle{
+    margin-bottom: 0px;
+  }
+
+  .home-menu{
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    position: relative;
+    height: 700px;
+    width: 98%;
+    background-color: white;
+    border: solid;
+    border-color: white;
+    border-radius: 24px;
+  }
 
   .record{
     margin-right: 240px;
-    position: absolute; top: 62%; left: 10%;
+    position: absolute; top: 54%; left: 10%;
   }
 
   .reflection{
     margin-right: 80px;
-    position: absolute; top: 40%; left: 20%;
+    position: absolute; top: 32%; left: 20%;
   }
 
   .arm{
-    position: absolute; top: 18%; left: 30%;
-  }
-
-  .record-sign, .reflection-sign, .arm-sign{
-    text-decoration: none;
-  }
-
-  .record-sign-link, .reflection-sign-link, .arm-sign-link{
-    text-decoration: none;
-    color:white;
-  }
-  
-  .record-note, .reflection-note, .arm-note{
-        font-size: 20px;
-        font-weight: bolder;
+    position: absolute; top: 10%; left: 30%;
   }
 
   .record, .reflection, .arm{
     display:flex;
     align-items:center;
     justify-content: flex-end;
-}
-
-  .record, .reflection, .arm{
     opacity: 0.5;
     transition: 0.3s ease-in-out;
   }
+  
   .record:hover, .reflection:hover, .arm:hover{
     opacity: 1 ;
 
   }
 
-.record-sign, .reflection-sign, .arm-sign{
+/*holleo/index終わり*/
+
+
+/*home/menu.html.erb*/
+
+  .home-menu-1{
+    margin: 0 auto;
+    margin-bottom: 100px;
+    position: relative;
+    height:700px;
+  }
+
+  .record-1{
+    margin-right: 240px;
+    position: absolute; top: 62%; left: 10%;
+  }
+
+  .reflection-1{
+    margin-right: 80px;
+    position: absolute; top: 40%; left: 20%;
+  }
+
+  .arm-1{
+    position: absolute; top: 18%; left: 30%;
+  }
+
+  .record-1, .reflection-1, .arm-1{
+    display:flex;
+    align-items:center;
+    justify-content: flex-end;
+    opacity: 0.5;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .record-1:hover, .reflection-1:hover, .arm-1:hover{
+    opacity: 1 ;
+
+  }
+
+  .record-sign, .reflection-sign, .arm-sign{
+    text-decoration: none;
     width:250px;
     height:250px;
     margin-right:50px;
@@ -220,15 +274,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.record-note, .reflection-note, .arm-note{
-    margin-top:50px;
-}
+  .record-sign-link, .reflection-sign-link, .arm-sign-link{
+    text-decoration: none;
+    color:white;
+  }
+  
+  .record-note, .reflection-note, .arm-note{
+        font-size: 20px;
+        font-weight: bolder;
+        margin-top:50px;
+  }
 
-img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
-  height: 154px;
-}
+  img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
+    height: 154px;
+  }
 
 /*home/menu.html.erb終わり*/
 
@@ -506,6 +567,7 @@ img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
 /*tests_pssfours/new*終わり/
 
 /*tests_pssfours/index*/
+
   .koremade-pss4{
     text-align: center;
     margin: 100px;
@@ -516,10 +578,18 @@ img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
     width: 66%;
     border: solid;
     border-radius: 30px;
-    text-align: center;
+    background-color: white;
+    padding: 20px;
   }
+
+  .pss4-index-mainbox-memo{
+    display:flex;
+    align-items:center;
+  }
+
   .container-pss4-1{
     font-size: 30px;
+    text-align:center;
   }
   .sub-box2{
     display: flex;
@@ -536,6 +606,7 @@ img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
     margin-left: 20px;
     margin-right: 10px;
   }
+
 /*tests_pssfours/index終わり*/
 
 /*zatsudans_new*/

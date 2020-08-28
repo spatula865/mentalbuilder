@@ -7,12 +7,15 @@
         </div>
 
         <h3 class="koremade-pss4">これまでの記録</h3>
+        <div class="commentary">
+            <p class="commentary-inner">最大値が100最小値が0です。値が大きいほど、ストレスがたまっています。50以上は要注意。今のうちに何かできる対策を講じることをお勧めします。75以上は一人で解決するのではなく、誰か他の人に相談するか病院に行った方が良いでしょう。</p>
+        </div>
 
         <% @pss4.each do |t| %>
         <div class="container-pss4">
             <div class="main-box2">
-                <div class="container-pss4-1"><%= [t.question1, t.question2, t.question3, t.question4].sum %></div>
-                <div class="pss4-index-mainbox-memo"><%= t.memo %></div>
+                <div class="container-pss4-1"><%= (([t.question1, t.question2, t.question3, t.question4].sum.to_f/16).to_f/0.01).round %></div>
+                <div class="pss4-index-mainbox-memo"><p>Memo:</p><%= t.memo %></div>
             </div>
             <div class="sub-box2">
                 <%= button_to "メモを追加・編集する", edit_tests_pssfour_path(t.id), method: :get, :class => 'btn-edit' %>
@@ -28,35 +31,8 @@
 </body>
 
 <style>
-    .koremade-pss4{
-        text-align: center;
-        margin: 100px;
-    }
-    .container-pss4{
-        margin-left: auto;
-        margin-right: auto;
-        width: 66%;
-        border: solid;
-        border-radius: 30px;
-        text-align: center;
-        background-color: white;
-    }
-    .container-pss4-1{
-        font-size: 30px;
-    }
-    .sub-box2{
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
 
-    .btn-edit-pss4{
-        margin-right: 10px;
-    }
-
-    .time-pss4{
-        text-align: right;
-        margin-left: 20px;
-        margin-right: 10px;
+    .koremade-pss4:hover + .commentary{
+        display: block;
     }
 </style>

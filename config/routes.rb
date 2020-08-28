@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resources :ifthens
 
+  resources :weapons
+
   root 'hello#index'
 
   get 'home/menu' => 'home#menu'
@@ -17,6 +19,8 @@ Rails.application.routes.draw do
   get 'home/menu_record' => 'home#menu_record'
   
   get 'home/menu_reflection' => 'home#menu_reflection'
+
+  get 'home/menu_arm' => 'home#menu_arm'
 
   get '/thermometers' => 'thermometers#new'
 

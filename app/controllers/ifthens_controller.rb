@@ -42,7 +42,7 @@ class IfthensController < ApplicationController
 
     private
     def ifthen_params
-        params.require(:ifthen).permit(:ifthen, :todo)
+        params.require(:ifthen).permit(:ifthen, :todo, :memo)
     end
 
 end

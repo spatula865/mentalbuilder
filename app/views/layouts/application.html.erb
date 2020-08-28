@@ -17,6 +17,7 @@
       <div class="title">
         <%=  link_to 'MentalBuilder' , home_menu_path, :class => "headertext" %>
         <p class="header-title-span">~3ステップでメンタルを強くするWebアプリ~</p>
+        <%= link_to 'マイページ', home_menu_path, :class => "headertext-mypage" %>
         <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => "headertext-logout" %>
       </div>
 
@@ -38,9 +39,9 @@
           </ul>
         </li>
         <li>
-          <%= link_to '強くなる', tests_pssfours_new_path, :class => "list" %>
+          <%= link_to '強くなる', home_menu_arm_path, :class => "list" %>
           <ul>
-            <li><%= link_to '武器一覧', thermometers_show_path, :class => "list" %></li>
+            <li><%= link_to '武器一覧', weapons_path, :class => "list" %></li>
             <li><%= link_to 'if・thenプランニングで武装する', ifthens_new_path, :class => "list" %></li>
           </ul>
         </li>

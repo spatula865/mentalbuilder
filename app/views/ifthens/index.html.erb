@@ -9,9 +9,10 @@
             <div class="ifthen-index-mainbox">
                 <div class="ifthen-index-ifthen"><%= t.ifthen %></div>
                 <div class="ifthen-index-ifthen"><%= t.todo %></div>
+                <div class="ifthen-index-ifthen"><p>Memo:</p><%= t.memo %></div>
             </div>
             <div class="ifthen-index-subbox">
-                <%= button_to "編集", edit_ifthen_path(t.id), method: :get, :class => 'btn-edit' %>
+                <%= button_to "編集・メモを追加", edit_ifthen_path(t.id), method: :get, :class => 'btn-edit' %>
                 <%= button_to "削除", ifthen_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>  
                 <p class="ifthen-index-time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
             </div>  

@@ -1,57 +1,63 @@
 
 <body>
 
-<header>
-    
-  <div class="title">
-    <%=  link_to 'MentalBuilder' , home_menu_path, :class => "headertext" %>
-    <p class="header-title-span">~3ステップでメンタルを強くするWebアプリ~</p>
-    <%= link_to "ログイン", home_menu_path, :class => "hello-index-login" %>
-    <%= link_to "新規登録", new_user_registration_path, :class=>"hello-index-sinki"  %>
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => "headertext-logout" %>
-  </div>
 
-  <ul class="header-dropmenu">
-    <li>
-      <%= link_to '記録する', home_menu_record_path, :class => "list" %>
-      <ul>
-        <li><%= link_to 'thermometer', thermometers_new_path, :class => "list" %></li>
-        <li><%= link_to 'PSS4', tests_pssfours_new_path, :class => "list" %></li>
-        <li><%= link_to '雑談', new_zatsudan_path, :class => "list" %></li>
-      </ul>
-    </li>
-    <li>
-      <%= link_to '振り返る', home_menu_reflection_path, :class => "list" %>
-      <ul>
-        <li><%= link_to 'thermometer', thermometers_show_path, :class => "list" %></li>
-        <li><%= link_to 'PSS4', tests_pssfours_path, :class => "list" %></li>
-        <li><%= link_to '雑談', zatsudans_path, :class => "list" %></li>
-      </ul>
-    </li>
-    <li>
-      <%= link_to '強くなる', tests_pssfours_new_path, :class => "list" %>
-      <ul>
-        <li><%= link_to 'thermometer', thermometers_show_path, :class => "list" %></li>
-        <li><%= link_to 'PSS4', tests_pssfours_path, :class => "list" %></li>
-        <li><%= link_to '雑談', tests_pssfours_path, :class => "list" %></li>
-      </ul>
-    </li>
-  </ul>
-
-</header>
-
-  <p class="firsttitle">MentalBuilder</div>
+  <p class="firsttitle">MentalBuilder</p>
+  <p class="hello-index-subtitle">~3ステップでメンタルを強くするWebアプリ~</P>
+  
   <div class="login">
-  <%= link_to "ログイン", home_menu_path, :class => "hello-index-login" %>
-  <%= link_to "新規登録", new_user_registration_path, :class=>"hello-index-sinki"  %>
+    <%= button_to "ログイン", home_menu_path, method: :get, :class => "hello-index-login" %>
+    <%= button_to "新規登録", new_user_registration_path, method: :get, :class=>"hello-index-sinki"  %>
   </div>
+  
+  <div class="home-menu">
+
+    <div class="arm">
+        <div class="arm-sign">
+            <%= link_to '強くなる', thermometers_show_path, :class => "arm-sign-link" %>
+        </div>
+        <div class="arm-note">
+            ストレスを解消するための武器を手に入れることで、<br>ストレスの
+            <span class="arm-note-span">分析者</span>
+            からストレスへの
+            <span class="arm-note-span">反撃者</span>
+            になる。
+        </div>
+        <div class="arm-image">
+            <%= image_tag '/Arm.jpg', :class=>"arm-image-entity" %>
+        </div>
+    </div>
+    <div class="reflection">
+        <div class="reflection-sign">
+            <%= link_to '振り返る', thermometers_show_path, :class => "reflection-sign-link" %>
+        </div>
+        <div class="reflection-note">
+            自分がどのような条件下でストレスを感じるのか振り返ることで、<br>ストレスの
+            <span class="reflection-note-span">観察者</span>
+            からストレスの
+            <span class="reflection-note-span">分析者</span>
+            になる。
+        </div>
+        <div class="reflection-image">
+            <%= image_tag '/Reflection.jpg', :class=>"reflection-image-entity" %>
+        </div>
+    </div>
+    <div class="record">
+        <div class="record-sign">
+            <%= link_to '記録する', home_menu_record_path, :class => "record-sign-link" %>
+        </div>
+        <div class="record-note">
+            自分のストレス度について記録をとることで、<br>ストレスの
+            <span class="record-note-span">被害者</span>
+            からストレスの
+            <span class="record-note-span">観察者</span>
+            になる。
+        </div>
+        <div class="record-image">
+            <%= image_tag '/Record.jpg', :class=>"record-image-entity" %>
+        </div>
+    </div>
 
 </body>
 
-<style>
 
-  header{
-    display:none;
-  }
-
-</style>
