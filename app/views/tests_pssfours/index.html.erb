@@ -12,6 +12,7 @@
         <div class="container-pss4">
             <div class="main-box2">
                 <div class="container-pss4-1"><%= [t.question1, t.question2, t.question3, t.question4].sum %></div>
+                <div class="pss4-index-mainbox-memo"><%= t.memo %></div>
             </div>
             <div class="sub-box2">
                 <%= button_to "メモを追加・編集する", edit_tests_pssfour_path(t.id), method: :get, :class => 'btn-edit' %>
@@ -38,6 +39,7 @@
         border: solid;
         border-radius: 30px;
         text-align: center;
+        background-color: white;
     }
     .container-pss4-1{
         font-size: 30px;

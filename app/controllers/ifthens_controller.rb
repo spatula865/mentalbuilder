@@ -24,7 +24,15 @@ class IfthensController < ApplicationController
 
     def edit
         @ifthen = Ifthen.find(params[:id])
-        @todo = Ifthen.find(params[:id])
+    end
+
+    def update
+        @ifthen = Ifthen.find(params[:id])
+        if @ifthen.update(ifthen_params)
+          redirect_to :action => "index"
+        else
+          redirect_to :action => "index"
+        end
     end
 
     def destroy

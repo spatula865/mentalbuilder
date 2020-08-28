@@ -20,10 +20,6 @@ Rails.application.routes.draw do
 
   get '/thermometers' => 'thermometers#new'
 
-  patch 'thermometers/:id' => 'thermometers#update'
-
-  get 'thermometers/:id/edit' => 'thermometers#edit', as:'edit_tweet'
-
   get 'thermometers/new' => 'thermometers#new'
 
   get 'thermometers/show' => 'thermometers#show'

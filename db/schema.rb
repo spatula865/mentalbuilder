@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_121153) do
+ActiveRecord::Schema.define(version: 2020_08_28_013847) do
 
   create_table "ifthens", force: :cascade do |t|
     t.text "ifthen"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2020_08_27_121153) do
     t.integer "question4"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "body"
     t.text "memo"
+    t.integer "sum"
   end
 
   create_table "thermometers", force: :cascade do |t|
@@ -81,6 +81,11 @@ ActiveRecord::Schema.define(version: 2020_08_27_121153) do
     t.integer "moriagekata7"
     t.integer "moriagekata8"
     t.integer "moriagekata9"
+    t.text "memo"
+    t.integer "sumofhajimekata"
+    t.integer "sumofhirogekata"
+    t.integer "sumofkikikata"
+    t.integer "sumofmoriagekata"
   end
 
 end

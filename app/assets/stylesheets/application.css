@@ -130,6 +130,7 @@
 /*application.html.erbのbody*/
 
       body {
+            background-image: url("/523824.jpg");
             background-size: cover;
             margin: 0;
             z-index:0;
@@ -269,6 +270,7 @@ img.record-image-entity, img.reflection-image-entity, img.arm-image-entity{
 
   .home-menu-record-thermometer-note, .home-menu-record-PSS4-note, .home-menu-record-zatsudan-note{
     font-size: 16px;
+    height: 20%;
     width: 80%;
     margin: 0 auto;
     padding: 24px;

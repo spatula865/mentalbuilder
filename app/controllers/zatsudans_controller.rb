@@ -38,10 +38,19 @@ class ZatsudansController < ApplicationController
     def edit
         @memo = Zatsudan.find(params[:id])
     end
+  
+    def update
+        @memo = Zatsudan.find(params[:id])
+        if @memo.update(zatsudan_params)
+          redirect_to :action => "index"
+        else
+          redirect_to :action => "index"
+        end
+    end
 
     private
     def zatsudan_params
-      params.require(:zatsudan).permit(:hajimekata1, :hajimekata2, :hajimekata3, :hajimekata4, :hajimekata5, :hajimekata6, :hirogekata1, :hirogekata2, :hirogekata3, :hirogekata4, :hirogekata5, :hirogekata6, :hirogekata7, :hirogekata8, :kikikata1, :kikikata2, :kikikata3, :kikikata4, :kikikata5, :kikikata6, :moriagekata1, :moriagekata2, :moriagekata3, :moriagekata4, :moriagekata5, :moriagekata6, :moriagekata7, :moriagekata8, :moriagekata9)
+      params.require(:zatsudan).permit(:hajimekata1, :hajimekata2, :hajimekata3, :hajimekata4, :hajimekata5, :hajimekata6, :hirogekata1, :hirogekata2, :hirogekata3, :hirogekata4, :hirogekata5, :hirogekata6, :hirogekata7, :hirogekata8, :kikikata1, :kikikata2, :kikikata3, :kikikata4, :kikikata5, :kikikata6, :moriagekata1, :moriagekata2, :moriagekata3, :moriagekata4, :moriagekata5, :moriagekata6, :moriagekata7, :moriagekata8, :moriagekata9, :memo)
     end
 
 end

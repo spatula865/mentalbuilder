@@ -31,7 +31,9 @@
                         <%= (([t.moriagekata1, t.moriagekata2, t.moriagekata3, t.moriagekata4, t.moriagekata5, t.moriagekata6, t.moriagekata7, t.moriagekata8, t.moriagekata9].sum.to_f/24).to_f/0.01).round %>
                     </div>
                 </div>
+                <div class="zatsudan-index-memo"><%= t.memo %></div>
                 <div class="zatsudan-index-container-subbox">
+                    <%= button_to "メモを追加・編集する", edit_zatsudan_path(t.id), method: :get, :class => 'btn-edit' %>
                     <%= button_to "削除", zatsudan_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
                     <p class="zatsudan-index-time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
                 </div>  
@@ -55,6 +57,7 @@
         border: solid;
         border-radius: 30px;
         text-align: center;
+        background-color: white;
     }
     
     .zatsudan-index-totalscore, .zatsudan-index-eachscore{
