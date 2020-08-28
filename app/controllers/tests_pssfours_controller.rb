@@ -6,8 +6,8 @@ class TestsPssfoursController < ApplicationController
 
     def create
       @pss4 = Pssfour.new(pssfour_params)
+      @pss4.user_id = current_user.id
       if @pss4.save
-
         redirect_to tests_pssfours_show_path(@pss4)
       else
         redirect_to :action => "new"

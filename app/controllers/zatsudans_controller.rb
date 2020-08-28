@@ -6,6 +6,7 @@ class ZatsudansController < ApplicationController
 
     def create
         @zatsudan = Zatsudan.new(zatsudan_params)
+        @tweet.user_id = current_user.id
         if @zatsudan.save
         redirect_to controller: :zatsudans, action: :show, id: @zatsudan.id
         else

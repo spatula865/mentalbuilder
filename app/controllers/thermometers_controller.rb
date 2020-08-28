@@ -8,6 +8,7 @@ class ThermometersController < ApplicationController
 
   def create
     @thermometer = Thermometer.new(thermometer_params)
+    @thermometer.user_id = current_user.id
     if @thermometer.save
       redirect_to :action => "show"
     else

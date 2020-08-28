@@ -11,6 +11,7 @@ class IfthensController < ApplicationController
 
     def create
         @ifthen = Ifthen.new(ifthen_params)
+        @ifthen.user_id = current_user.id
         if @ifthen.save
           redirect_to controller: :ifthens, action: :index
         else

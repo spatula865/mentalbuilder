@@ -22,6 +22,14 @@ Rails.application.routes.draw do
 
   get 'home/menu_arm' => 'home#menu_arm'
 
+  get 'home/menu_weapon' => 'home#menu_weapon'
+
+  get 'home/menu_weapon_ouraring' =>'home#menu_weapon_ouraring'
+
+  get 'home/menu_weapon_prebiotics' =>'home#menu_weapon_prebiotics'
+
+  get 'home/menu_weapon_bearfootrunning' => 'home#menu_weapon_bearfootrunning'
+
   get '/thermometers' => 'thermometers#new'
 
   get 'thermometers/new' => 'thermometers#new'

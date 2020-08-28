@@ -5,19 +5,21 @@
     <h3 class="ifthen-index-koremade">これまでの記録</h3>
     <%= Ifthen.count %>
     <% @ifthen.each do |t| %>
-        <div class="ifthen-index-container">
-            <div class="ifthen-index-mainbox">
-                <div class="ifthen-index-ifthen"><%= t.ifthen %></div>
-                <div class="ifthen-index-ifthen"><%= t.todo %></div>
-                <div class="ifthen-index-ifthen"><p>Memo:</p><%= t.memo %></div>
+        <% if user_signed_in? && current_user.id == t.user_id %>
+            <div class="ifthen-index-container">
+                <div class="ifthen-index-mainbox">
+                    <div class="ifthen-index-ifthen"><%= t.ifthen %></div>
+                    <div class="ifthen-index-ifthen"><%= t.todo %></div>
+                    <div class="ifthen-index-ifthen"><p>Memo:</p><%= t.memo %></div>
+                </div>
+                <div class="ifthen-index-subbox">
+                    <%= button_to "編集・メモを追加", edit_ifthen_path(t.id), method: :get, :class => 'btn-edit' %>
+                    <%= button_to "削除", ifthen_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>  
+                    <p class="ifthen-index-time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+                </div>  
             </div>
-            <div class="ifthen-index-subbox">
-                <%= button_to "編集・メモを追加", edit_ifthen_path(t.id), method: :get, :class => 'btn-edit' %>
-                <%= button_to "削除", ifthen_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>  
-                <p class="ifthen-index-time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
-            </div>  
-        </div>
-        <br>
+            <br>
+        <% end %>
     <% end %>
 
 </body>

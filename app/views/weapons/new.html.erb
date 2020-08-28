@@ -1,0 +1,23 @@
+<html>
+
+    <div class="weapon-new-form">    
+        <%= form_for @weapon do |f| %>
+            <%= f.label :あなたのストレス解消の武器を教えてください %>
+            <br>
+            <%= f.text_area :body  %>
+            <br>
+            <%= f.submit "送信" %>
+        <% end %>
+    </div>
+
+</html>
+
+<style>
+    
+    .weapon-new-form{
+        width: 60% ;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 200px;
+    }
+</style>

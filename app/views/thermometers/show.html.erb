@@ -9,23 +9,28 @@
 
 
   <div class="ichiran">
+    
     <div class="koremadenokiroku">
       <h3 class="koremade">これまでの記録</h3>
       <%= button_to "ストレス度順に並び替え", thermometers_show2_path, :class => 'stressnarabikae' %>
     </div>
+
+    
     <% @thermometers.each do |t| %>
-      <div class="container">
-        <div class="main-box">
-          <div class="container1"><%= t.temperature %></div>
-          <div class="container2"><%= t.memo %></div>
+      <% if user_signed_in? && current_user.id == t.user_id %>
+        <div class="container">
+          <div class="main-box">
+            <div class="container1"><%= t.temperature %></div>
+            <div class="container2"><%= t.memo %></div>
+          </div>
+          <div class="sub-box">
+            <%= button_to "編集", edit_thermometer_path(t.id), method: :get, :class => 'btn-edit' %>
+            <%= button_to "削除", thermometer_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
+            <p class="time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+          </div>  
         </div>
-        <div class="sub-box">
-          <%= button_to "編集", edit_thermometer_path(t.id), method: :get, :class => 'btn-edit' %>
-          <%= button_to "削除", thermometer_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
-          <p class="time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
-        </div>  
-      </div>
-      <br>
+        <br>　
+      <% end %>
     <% end %>
 
     <%= paginate @thermometers %>

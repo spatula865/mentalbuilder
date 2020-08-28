@@ -664,3 +664,31 @@
     margin-top: 50px;
   }
 /*ifthens/new.html.erb*/
+
+/*home/menu_weapon*/
+
+.home-menu-weapon-container{
+  width: 50% ;
+  margin: 0 auto;
+  background-color: white;
+  border: solid;
+  border-color: black;
+  border-radius: 24px;
+  padding: 36px 24px 36px 24px;
+}
+
+.weapontitle{
+  text-align: center;
+}
+
+.weaponcontainer{
+  width: 90% ;
+  margin: 0 auto;
+  background-color: white;
+  border: solid;
+  border-color: black;
+  border-radius: 24px;
+  padding: 36px 24px 36px 24px;
+}
+
+/*home/menu_weapon*/
