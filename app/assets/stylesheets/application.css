@@ -173,6 +173,11 @@
 
       }
 
+      footer{
+        height: 0px;
+        background-color: rgba(0, 128, 0, 0.8);
+      }
+
 /*application.html.erbのbody終わり*/
 
 /*hello/index*/
@@ -219,16 +224,45 @@
 
   .home-menu{
     margin: 0 auto;
-    margin-top: 300px;
-    margin-bottom: 100px;
+    margin-top: 0px;
+    margin-bottom: 00px;
     position: relative;
     height: 700px;
-    width: 98%;
+    width: 100%;
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  .home-menu-record-whiteboard{ 
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    position: relative;
+    height: 600px;
+    width: 85%;
     background-color: white;
     border: solid;
     border-color: white;
     border-radius: 24px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .home-menu-record-whiteboard-top{ 
+    margin: 0 auto;
+    margin-top: 400px;
+    margin-bottom: 100px;
+    position: relative;
+    height: 600px;
+    width: 85%;
+    background-color: white;
+    border: solid;
+    border-color: white;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
   }
 
   .muscleman{
@@ -237,8 +271,8 @@
   }
 
   .catchflase{
-    font-size: 36px;
-    position: absolute; top: 2%; left: 40%;
+    font-size: 42px;
+    position: absolute; top: 2%; left: 35%;
     font-family: MS Mincho;
     text-shadow: 1px 1px  gray;
     font-weight: bolder;
@@ -290,8 +324,30 @@
     margin-top:50px;
   }
 
+  .record-note-1, .reflection-note-1, .arm-note-1{
+    font-size: 15px;
+    font-family: ;
+    font-weight: bolder;
+  }
+
   img.record-image-entity-1, img.reflection-image-entity-1, img.arm-image-entity-1{
   height: 78px;
+  }
+
+  .hello-index-second{
+    height: 200px;
+    font-family: MS mincho;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    font-size: 24px;
+    background-color: white;
+  }
+
+  .hello-index-second-span{
+    font-family:Book Antiqua;
   }
 
 /*holleo/index終わり*/
@@ -385,16 +441,34 @@
     transition: 0.3s ease-in-out;
   }
 
+  .home-menu-record-thermometer-sign-1, .home-menu-record-PSS4-sign-1, .home-menu-record-zatsudan-sign-1{
+    border-radius: 50% ;
+    background-color: rgb(0, 128, 0);
+    height: 250px; width: 250px;
+    justify-content: center;
+    display:flex;
+    align-items: center;
+    font-size: 24px;
+    opacity: 0.5;
+    transition: 0.3s ease-in-out;
+    margin: 0px 0px 0px 10%;
+  }
+
+  .home-menu-record-thermometer-note-1{
+    width: 50%;
+    margin-left: 10%;
+  }
+
   .home-menu-record-thermometer-sign{
-    position: absolute; left: 28%
+    position: absolute; top: 30%; left: 28%
   }
 
   .home-menu-record-PSS4-sign{
-    position: absolute; left: 0; right: 0; margin: auto;
+    position: absolute; top: 30%; left: 0; right: 0; margin: auto;
   }
 
   .home-menu-record-zatsudan-sign{
-    position: absolute; right: 28% ;
+    position: absolute; top: 30%; right: 28% ;
   }
   .home-menu-record-thermometer-sign-link, .home-menu-record-PSS4-sign-link, .home-menu-record-zatsudan-sign-link{
     text-decoration: none;
@@ -417,6 +491,11 @@
   .home-menu-record-thermometer-sign:hover{
     opacity:1;
   }
+
+  .home-menu-record-thermometer-sign-1:hover{
+    opacity:1;
+  }
+
   .home-menu-record-thermometer-sign:hover + .home-menu-record-thermometer-note{
     display:block;
   }
