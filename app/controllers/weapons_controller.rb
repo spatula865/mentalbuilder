@@ -1,7 +1,5 @@
 class WeaponsController < ApplicationController
 
-    before_action :authenticate_user!
-
     def index
         @weapons = Weapon.all
     end
@@ -14,7 +12,7 @@ class WeaponsController < ApplicationController
         @weapon = Weapon.new(weapon_params)
         @weapon.user_id = current_user.id
         if @weapon.save
-            redirect_to :action => "show"
+            redirect_to :action => "index"
         else
             redirect_to :action => "new"
         end
@@ -38,10 +36,18 @@ class WeaponsController < ApplicationController
         redirect_to action: :index
     end
 
+    def index_indiv
+        @weapons = Weapon.all
+    end
+
+    def show
+    end
+
+
     private
 
         def weapon_params
-            params.require(:weapons).permit(:body)
+            params.require(:weapon).permit(:body)
         end
 
 end

@@ -1,7 +1,5 @@
 class IfthensController < ApplicationController
 
-    before_action :authenticate_user!
-
     def new
         @ifthen = Ifthen.new
     end

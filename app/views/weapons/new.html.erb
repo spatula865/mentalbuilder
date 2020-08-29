@@ -6,9 +6,21 @@
             <br>
             <%= f.text_area :body  %>
             <br>
-            <%= f.submit "送信" %>
+            <% if user_signed_in? %>
+                <%= f.submit "送信" %>
+            <% end %>
         <% end %>
     </div>
+
+    <% unless user_signed_in? %>
+    
+        <p class="pleaselogin">ログインユーザーのみ利用できます。</p>
+        <div class="pleaselogin-button">
+            <%= button_to "ログイン", new_user_session_path, method: :get, :class => "hello-index-login" %>
+            <%= button_to "新規登録", new_user_registration_path, method: :get, :class=>"hello-index-sinki"  %>
+        </div>
+
+    <% end %>
 
 </html>
 

@@ -1,1 +1,39 @@
-ここはweaponのindexページです。
+
+<% if user_signed_in? %>
+
+    <h1 class="weapon-index-title">みんなの武器</h1>
+
+    <div class="koremadenokiroku">
+        <% @weapons.each do |t| %>
+            <div class="container">
+                <div class="main-box">
+                    <div class="container1"><%= t.body %></div>
+                </div>
+                <div class="sub-box">
+                    <a href="/users/<%= t.user.id %>"><%= t.user.name %></a>
+                    <% if user_signed_in? && current_user.id == t.user_id %>
+                        <%= button_to "編集", edit_weapon_path(t.id), method: :get, :class => 'btn-edit' %>
+                        <%= button_to "削除", weapon_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
+                    <% end %>
+                    <p class="time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+                </div>  
+            </div>
+            <br>
+        <% end %>
+    </div>
+    <div class="weapon-index-link">
+        <%= link_to 'My武器', :controller => "weapons", :action => "index_indiv", :class => "home-menu-weapon-link-entity" %><br>
+        <%= link_to '自分で武器を作る', new_weapon_path, :class => "home-menu-weapon-link-entity" %>
+    </div>
+
+<% else %>
+    
+    <div class="pleaselogin-container">
+        <p class="pleaselogin">ログインユーザーのみ利用できます。</p>
+        <div class="pleaselogin-button">
+            <%= button_to "ログイン", new_user_session_path, method: :get, :class => "hello-index-login" %>
+            <%= button_to "新規登録", new_user_registration_path, method: :get, :class=>"hello-index-sinki"  %>
+        </div>
+    </div>
+
+<% end %>

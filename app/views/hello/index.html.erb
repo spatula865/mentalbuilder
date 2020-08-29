@@ -1,22 +1,29 @@
 
 <body>
 
-
-  <p class="firsttitle">MentalBuilder</p>
-  <p class="hello-index-subtitle">~3ステップでメンタルを強くするWebアプリ~</P>
-  
+    <div class="firsttitle-container">
+        <p class="firsttitle">MentalBuilder</p>
+    </div>
   <div class="login">
-    <%= button_to "ログイン", home_menu_path, method: :get, :class => "hello-index-login" %>
+  <% unless user_signed_in? %>
+    <%= button_to "ログイン", new_user_session_path, method: :get, :class => "hello-index-login" %>
     <%= button_to "新規登録", new_user_registration_path, method: :get, :class=>"hello-index-sinki"  %>
-  </div>
+  <% end %>
+    </div>
   
   <div class="home-menu">
 
+    <%= image_tag '/muscleman.png', :class=>"muscleman" %>
+
+    <div class="catchflase">
+        <p class=""catchflase-p">３つのステップであなたのメンタルを強くします</p>
+    </div>
+
     <div class="arm">
-        <div class="arm-sign">
-            <%= link_to '強くなる', thermometers_show_path, :class => "arm-sign-link" %>
+        <div class="arm-sign-1">
+            <%= link_to '強くなる', home_menu_record_path, :class => "arm-sign-link" %>
         </div>
-        <div class="arm-note">
+        <div class="arm-note-1">
             ストレスを解消するための武器を手に入れることで、<br>ストレスの
             <span class="arm-note-span">分析者</span>
             からストレスへの
@@ -24,14 +31,14 @@
             になる。
         </div>
         <div class="arm-image">
-            <%= image_tag '/Arm.jpg', :class=>"arm-image-entity" %>
+            <%= image_tag '/Arm.jpg', :class=>"arm-image-entity-1" %>
         </div>
     </div>
     <div class="reflection">
-        <div class="reflection-sign">
-            <%= link_to '振り返る', thermometers_show_path, :class => "reflection-sign-link" %>
+        <div class="reflection-sign-1">
+            <%= link_to '振り返る', home_menu_reflection_path, :class => "reflection-sign-link" %>
         </div>
-        <div class="reflection-note">
+        <div class="reflection-note-1">
             自分がどのような条件下でストレスを感じるのか振り返ることで、<br>ストレスの
             <span class="reflection-note-span">観察者</span>
             からストレスの
@@ -39,14 +46,14 @@
             になる。
         </div>
         <div class="reflection-image">
-            <%= image_tag '/Reflection.jpg', :class=>"reflection-image-entity" %>
+            <%= image_tag '/Reflection.jpg', :class=>"reflection-image-entity-1" %>
         </div>
     </div>
     <div class="record">
-        <div class="record-sign">
+        <div class="record-sign-1">
             <%= link_to '記録する', home_menu_record_path, :class => "record-sign-link" %>
         </div>
-        <div class="record-note">
+        <div class="record-note-1">
             自分のストレス度について記録をとることで、<br>ストレスの
             <span class="record-note-span">被害者</span>
             からストレスの
@@ -54,7 +61,7 @@
             になる。
         </div>
         <div class="record-image">
-            <%= image_tag '/Record.jpg', :class=>"record-image-entity" %>
+            <%= image_tag '/Record.jpg', :class=>"record-image-entity-1" %>
         </div>
     </div>
 

@@ -1,0 +1,13 @@
+<body>
+
+    <div class="edit">
+        <%= form_for @memo do |f| %>
+            <%= f.label :あなたのストレス解消の武器を教えてください %>
+            <br>
+            <%= f.text_area :body, :size => 140 %> 
+            <br>
+            <%= f.submit "編集する" %>
+        <% end %>
+    </div>
+
+ </body>

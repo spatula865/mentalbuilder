@@ -1,0 +1,34 @@
+
+<h1 class="weapon-index-indiv-title">MY武器</h1>
+
+<div class="koremadenokiroku">
+    <% @weapons.each do |t| %>
+        <% if user_signed_in? && current_user.id == t.user_id %>
+        <div class="container">
+            <div class="main-box">
+            <div class="container1"><%= t.body %></div>
+            </div>
+            <div class="sub-box">
+            <%= button_to "編集", edit_weapon_path(t.id), method: :get, :class => 'btn-edit' %>
+            <%= button_to "削除", weapon_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
+            <p class="time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+            </div>  
+        </div>
+        <br>　
+        <% end %>
+    <% end %>
+</div>
+<div class="weapon-index-indiv-link">
+    <%= link_to 'みんなの武器を見る', :controller => "weapons", :action => "index_indiv", :class => "home-menu-weapon-link-entity" %><br>
+    <%= link_to '自分で武器を作る', new_weapon_path, :class => "home-menu-weapon-link-entity" %>
+</div>
+
+<style>
+
+    .container{
+        width: 60% ;
+    }
+    .weapon-index-indiv-link{
+        text-align: center;
+    }
+</style>

@@ -62,12 +62,23 @@
           <%= f.text_area :memo %>
           <br>
           <br>
+          <% if user_signed_in? %>
           <%= f.submit "送信" %>
+          <% end %>
         <% end %>
-        <br>
-        <br>
-        <br>
-        <%= link_to 'これまでの推移を見る', :controller => "thermometers", :action => "show" %>
+
+        <% if user_signed_in? %>
+          <br>
+          <br>
+          <br>
+          <%= link_to 'これまでの推移を見る', :controller => "thermometers", :action => "show" %>
+        <% else %>
+          <p class="pleaselogin">ログインユーザーのみ利用できます。</p>
+          <div class="pleaselogin-button">
+            <%= button_to "ログイン", new_user_session_path, method: :get, :class => "hello-index-login" %>
+            <%= button_to "新規登録", new_user_registration_path, method: :get, :class=>"hello-index-sinki"  %>
+          </div>
+        <% end %>
 
       </div><!--stresslevelの終わり -->
 

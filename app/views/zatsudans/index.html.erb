@@ -1,49 +1,62 @@
 <body>
 
-    <div>
-        <div class="graph">
-            <%= column_chart Zatsudan.pluck(:created_at, :hajimekata1) %>
+    <% if user_signed_in? %>
+        <div>
+            <div class="graph">
+                <%= column_chart Zatsudan.pluck(:created_at, :hajimekata1) %>
+            </div>
+
+            <h3 class="zatsudan-index-title">これまでの記録</h3>
+
+            <% @zatsudan.each do |t| %>
+                <% if user_signed_in? && current_user.id == t.user_id %>
+                    <div class="zatsudan-index-container">
+                        <div class="zatsudan-index-container-mainbox">
+                            <div class="zatsudan-index-totalscore">
+                                <p class="zatsudan-index-categorytotal">総合点（平均）：</p>
+                                <%= ([(([t.hajimekata1, t.hajimekata2, t.hajimekata3, t.hajimekata4, t.hajimekata5, t.hajimekata6].sum.to_f/18).to_f/0.01).round, (([t.hirogekata1, t.hirogekata2, t.hirogekata3, t.hirogekata4, t.hirogekata5, t.hirogekata6, t.hirogekata7, t.hirogekata8].sum.to_f/24).to_f/0.01).round, (([t.kikikata1, t.kikikata2, t.kikikata3, t.kikikata4, t.kikikata5, t.kikikata6].sum.to_f/18).to_f/0.01).round, (([t.moriagekata1, t.moriagekata2, t.moriagekata3, t.moriagekata4, t.moriagekata5, t.moriagekata6, t.moriagekata7, t.moriagekata8, t.moriagekata9].sum.to_f/24).to_f/0.01).round].sum.to_f/4).round %>
+                            </div>
+                            <div class="zatsudan-index-eachscore">
+                                <p class="zatsudan-index-eachcategory">始め方：</p>
+                                <%= (([t.hajimekata1, t.hajimekata2, t.hajimekata3, t.hajimekata4, t.hajimekata5, t.hajimekata6].sum.to_f/18).to_f/0.01).round %>
+                            </div>
+                            <div class="zatsudan-index-eachscore">
+                                <p class="zatsudan-index-eachcategory">広げ方：</p>
+                                <%= (([t.hirogekata1, t.hirogekata2, t.hirogekata3, t.hirogekata4, t.hirogekata5, t.hirogekata6, t.hirogekata7, t.hirogekata8].sum.to_f/24).to_f/0.01).round %>
+                            </div>
+                            <div class="zatsudan-index-eachscore">
+                                <p class="zatsudan-index-eachcategory">聞き方：</p>
+                                <%= (([t.kikikata1, t.kikikata2, t.kikikata3, t.kikikata4, t.kikikata5, t.kikikata6].sum.to_f/18).to_f/0.01).round %>
+                            </div>
+                            <div class="zatsudan-index-eachscore">
+                                <p class="zatsudan-index-eachcategory">盛り上げ方：</p>
+                                <%= (([t.moriagekata1, t.moriagekata2, t.moriagekata3, t.moriagekata4, t.moriagekata5, t.moriagekata6, t.moriagekata7, t.moriagekata8, t.moriagekata9].sum.to_f/24).to_f/0.01).round %>
+                            </div>
+                        </div>
+                        <div class="zatsudan-index-memo"><%= t.memo %></div>
+                        <div class="zatsudan-index-container-subbox">
+                            <%= button_to "メモを追加・編集する", edit_zatsudan_path(t.id), method: :get, :class => 'btn-edit' %>
+                            <%= button_to "削除", zatsudan_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
+                            <p class="zatsudan-index-time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+                        </div>  
+                    </div>
+                    <br>
+                <% end %>
+            <% end %>
+
+        </div>
+    
+    <% else %>
+
+        <div class="pleaselogin-container">
+            <p class="pleaselogin">ログインユーザーのみ利用できます。</p>
+            <div class="pleaselogin-button">
+                <%= button_to "ログイン", new_user_session_path, method: :get, :class => "hello-index-login" %>
+                <%= button_to "新規登録", new_user_registration_path, method: :get, :class=>"hello-index-sinki"  %>
+            </div>
         </div>
 
-        <h3 class="zatsudan-index-title">これまでの記録</h3>
-
-        <% @zatsudan.each do |t| %>
-            <% if user_signed_in? && current_user.id == t.user_id %>
-                <div class="zatsudan-index-container">
-                    <div class="zatsudan-index-container-mainbox">
-                        <div class="zatsudan-index-totalscore">
-                            <p class="zatsudan-index-categorytotal">総合点（平均）：</p>
-                            <%= ([(([t.hajimekata1, t.hajimekata2, t.hajimekata3, t.hajimekata4, t.hajimekata5, t.hajimekata6].sum.to_f/18).to_f/0.01).round, (([t.hirogekata1, t.hirogekata2, t.hirogekata3, t.hirogekata4, t.hirogekata5, t.hirogekata6, t.hirogekata7, t.hirogekata8].sum.to_f/24).to_f/0.01).round, (([t.kikikata1, t.kikikata2, t.kikikata3, t.kikikata4, t.kikikata5, t.kikikata6].sum.to_f/18).to_f/0.01).round, (([t.moriagekata1, t.moriagekata2, t.moriagekata3, t.moriagekata4, t.moriagekata5, t.moriagekata6, t.moriagekata7, t.moriagekata8, t.moriagekata9].sum.to_f/24).to_f/0.01).round].sum.to_f/4).round %>
-                        </div>
-                        <div class="zatsudan-index-eachscore">
-                            <p class="zatsudan-index-eachcategory">始め方：</p>
-                            <%= (([t.hajimekata1, t.hajimekata2, t.hajimekata3, t.hajimekata4, t.hajimekata5, t.hajimekata6].sum.to_f/18).to_f/0.01).round %>
-                        </div>
-                        <div class="zatsudan-index-eachscore">
-                            <p class="zatsudan-index-eachcategory">広げ方：</p>
-                            <%= (([t.hirogekata1, t.hirogekata2, t.hirogekata3, t.hirogekata4, t.hirogekata5, t.hirogekata6, t.hirogekata7, t.hirogekata8].sum.to_f/24).to_f/0.01).round %>
-                        </div>
-                        <div class="zatsudan-index-eachscore">
-                            <p class="zatsudan-index-eachcategory">聞き方：</p>
-                            <%= (([t.kikikata1, t.kikikata2, t.kikikata3, t.kikikata4, t.kikikata5, t.kikikata6].sum.to_f/18).to_f/0.01).round %>
-                        </div>
-                        <div class="zatsudan-index-eachscore">
-                            <p class="zatsudan-index-eachcategory">盛り上げ方：</p>
-                            <%= (([t.moriagekata1, t.moriagekata2, t.moriagekata3, t.moriagekata4, t.moriagekata5, t.moriagekata6, t.moriagekata7, t.moriagekata8, t.moriagekata9].sum.to_f/24).to_f/0.01).round %>
-                        </div>
-                    </div>
-                    <div class="zatsudan-index-memo"><%= t.memo %></div>
-                    <div class="zatsudan-index-container-subbox">
-                        <%= button_to "メモを追加・編集する", edit_zatsudan_path(t.id), method: :get, :class => 'btn-edit' %>
-                        <%= button_to "削除", zatsudan_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
-                        <p class="zatsudan-index-time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
-                    </div>  
-                </div>
-                <br>
-            <% end %>
-        <% end %>
-
-    </div>
+    <% end %>
 
 </body>
 
@@ -53,9 +66,7 @@
     }
 
     .zatsudan-index-container{
-        margin-left: auto;
-        margin-right: auto;
-        width: 66%;
+        width: 66% ;
         border: solid;
         border-radius: 30px;
         text-align: center;

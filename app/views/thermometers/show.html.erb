@@ -3,6 +3,8 @@
 
 <body>
 
+<% if user_signed_in? %>
+
   <div class="graph">
      <%= column_chart Thermometer.pluck(:created_at, :temperature) %>
   </div>
@@ -36,6 +38,18 @@
     <%= paginate @thermometers %>
 
   </div>
+
+<% else %>
+    
+  <div class="pleaselogin-container">
+      <p class="pleaselogin">ログインユーザーのみ利用できます。</p>
+      <div class="pleaselogin-button">
+          <%= button_to "ログイン", new_user_session_path, method: :get, :class => "hello-index-login" %>
+          <%= button_to "新規登録", new_user_registration_path, method: :get, :class=>"hello-index-sinki"  %>
+      </div>
+  </div>
+
+<% end %>
 
 </body>
 

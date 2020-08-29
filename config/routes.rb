@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :users, only: [:show] #追記 ユーザーマイページへのルーティング
 
   resources :thermometers
 
@@ -62,5 +65,6 @@ Rails.application.routes.draw do
 
   post 'zatsudans/show' => 'zatsudans#show'
 
-  get 'ifthens/new' =>'ifthens#new'
+  get 'weapons/index_indiv' => 'weapons#index_indiv'
+
 end
