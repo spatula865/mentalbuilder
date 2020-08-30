@@ -5,12 +5,12 @@
 
     <div class="koremadenokiroku">
         <% @weapons.each do |t| %>
-            <div class="container">
+            <div class="container-weapon">
                 <div class="main-box">
                     <div class="container1"><%= t.body %></div>
                 </div>
                 <div class="sub-box">
-                    <a href="/users/<%= t.user.id %>"><%= t.user.name %></a>
+                    <a href="/users/<%= t.user.id %>" class="username"><%= t.user.name %></a>
                     <% if user_signed_in? && current_user.id == t.user_id %>
                         <%= button_to "編集", edit_weapon_path(t.id), method: :get, :class => 'btn-edit' %>
                         <%= button_to "削除", weapon_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
@@ -22,7 +22,6 @@
         <% end %>
     </div>
     <div class="weapon-index-link">
-        <%= link_to 'My武器', :controller => "weapons", :action => "index_indiv", :class => "home-menu-weapon-link-entity" %><br>
         <%= link_to '自分で武器を作る', new_weapon_path, :class => "home-menu-weapon-link-entity" %>
     </div>
 

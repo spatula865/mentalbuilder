@@ -18,18 +18,32 @@
         <p>プロフィール : <%= @user.profile %></p>
 
         <% if current_user.id == @user.id %>
-            <%= link_to "編集する", edit_user_registration_path %>
+            <%= link_to "編集する", edit_user_registration_path, :class => "uers-show-edit-link" %>
         <% end %>
 
     </div>
 
-    <div class="users-show-container2">
-        <% @user.weapons.each do |t| %>
-        <%= t.body %>
-        <% end %>
-    </div>
+    <br>
+
+    <% @user.weapons.each do |t| %>
+
+        <div class="users-show-container2">
+            <div class="main-box">
+                <div class="container1"><%= t.body %></div>
+            </div>
+            <div class="sub-box">
+                <% if user_signed_in? && current_user.id == t.user_id %>
+                    <%= button_to "編集", edit_weapon_path(t.id), method: :get, :class => 'btn-edit' %>
+                    <%= button_to "削除", weapon_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
+                <% end %>
+                <p class="time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+            </div>  
+        </div>
+        <br>
+
+    <% end %>
     
-    <div class="users-show-container3"
+    <div class="users-show-container3">
         <%= link_to "ホーム画面に戻る", root_path, :class => "users-show-link" %>
     </div>
 
@@ -50,7 +64,7 @@
         border: solid;
         border-color: black;
         border-radius: 24px;
-        padding: 36px 24px 36px 24px;
+        padding: 24px 24px 0px 24px;
         margin: 0 auto;
     }
 
@@ -59,8 +73,9 @@
         text-align: center;
     }
 
-    .users-show-link{
+    .users-show-link, .uers-show-edit-link{
         text-decoration: none;
+        color: green;
     }
 
 </style>

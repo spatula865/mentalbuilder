@@ -341,7 +341,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 100px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     font-size: 24px;
     background-color: white;
   }
@@ -630,8 +630,21 @@
 
     .container{
         background-color:white;
-        
+        border: solid;
+        border-radius: 20px;
+        border-color: gray;
+        padding: 24px 24px 0px 24px ;
     }
+    
+    .container-weapon{
+      background-color:white;
+      border: solid;
+      border-radius: 20px;
+      border-color: gray;       
+      width: 60% ;
+      margin: 0 auto;
+      padding: 24px 24px 0px 24px;
+      }
 
     .stressnarabikae{
         margin: 10px;
@@ -646,12 +659,6 @@
   .ichiran{
       width: 60%;
       margin: 0 auto;
-  }
-  
-  .container{
-      border: solid;
-      border-radius: 20px;
-      border-color: gray;
   }
   
   .container1{
@@ -680,7 +687,7 @@
   }
   
   .btn-edit{
-      margin-right: 10px;
+      margin: 0px 10px 0px 10px;
   }
   
   .time{
@@ -813,6 +820,20 @@
   
 /*zatsudans_new終わり*/
 
+/*zatsudan-index*/
+
+  .zatsudan-index-container{
+    background-color:white;
+    border: solid;
+    border-radius: 20px;
+    border-color: gray;       
+    width: 60% ;
+    margin: 0 auto;
+    padding: 24px 24px 0px 24px;
+  }
+
+/*zatsudan-index終わり*/
+
 /*ifthens/new.html.erb*/
   #ifthen, #todo{
     width: 100%;
@@ -826,6 +847,11 @@
 /*ifthens/new.html.erb*/
 
 /*home/menu_weapon*/
+
+.weapon-index-link{
+  margin: 0 auto;
+  text-align: center;
+}
 
 .home-menu-weapon-container{
   width: 50% ;
@@ -849,6 +875,11 @@
   border-color: black;
   border-radius: 24px;
   padding: 36px 24px 36px 24px;
+}
+
+.username{
+  text-decoration: none;
+  color: green;
 }
 
 /*home/menu_weapon*/
