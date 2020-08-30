@@ -1,53 +1,74 @@
-<div class="users-registrations-new">
 
-  <h2>新規登録</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "users/shared/error_messages", resource: resource %>
+<div class="users-registrations-new-container">
 
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true %>
-    </div>
+  <div>
+    <%= image_tag '/strechingwoman.png', :class=>"strechingwoman" %>
+  </div>
 
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
+  </div>
+  <div class="users-registrations-new">
 
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
+    <h2>新規登録</h2>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
 
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-  <% end %>
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_area :name, autofocus: true, :class => "users-registration-name" %>
+      </div>
 
-  <%= render "users/shared/links" %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <br>
+
+      <div class="actions">
+        <%= f.submit "新規登録" %>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+
+  </div>
 
 </div>
 
 
 <style>
 
+  .users-registrations-new-container{
+    display: flex;
+    justify-content: center;
+  }
+
   .users-registrations-new{
     text-align: center;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    -webkit- transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(30%);
+    -webkit- transform: translateY(-25%) translateX(-25%);
     margin: auto;
+    background-color:white;
+    padding: 36px;
+    border-radius: 24px;
   }
 
 

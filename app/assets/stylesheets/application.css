@@ -17,6 +17,10 @@
 
 /*application.html.erbのheader*/
 
+      .users-registration-name{
+        height: 16px; width: 165px;
+      }
+
       .menu{display:flex;
             justify-content:flex-end;
       }
@@ -269,6 +273,17 @@
   .muscleman{
     height: 700px;
     position: absolute; left: -20%;
+  }
+
+  .strechingwoman{
+    height: 700px;
+    position: absolute; left: 0%;
+  }
+
+  .musclewoman{
+    height: 700px;
+    position: absolute; left: 50%;
+
   }
 
   .catchflase{
