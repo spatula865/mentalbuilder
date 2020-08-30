@@ -26,4 +26,6 @@ class HomeController < ApplicationController
     def menu_weapon_bearfootrunning
     end
 
+    def menu_weapon_hasunoha
+    end
 end 

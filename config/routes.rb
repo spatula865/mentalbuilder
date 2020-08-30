@@ -33,6 +33,8 @@ Rails.application.routes.draw do
 
   get 'home/menu_weapon_bearfootrunning' => 'home#menu_weapon_bearfootrunning'
 
+  get 'home/menu_weapon_hasunoha' => 'home#menu_weapon_hasunoha'
+
   get '/thermometers' => 'thermometers#new'
 
   get 'thermometers/new' => 'thermometers#new'

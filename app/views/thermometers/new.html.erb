@@ -8,42 +8,44 @@
   <body>
     <h1 class="thermometersnewtitle">thermometer</h1>
     
-    <div class="commentary">
-      <p class="commentary-inner">自分のストレス度をつかむために、もっともお手軽なのが「ストレスサーモメータ」。心理カウンセリングの世界でも使われる、定番のテクニックです。方法は簡単で、下の温度計を見ながら、「今のストレスは何点だろう？」と採点してください。「主観で決めて大丈夫なの？」と思われるかもしれませんが、これがバカにできない精度を持っています。アメリカで行われたある実験では、学生たちに自分のストレスを10点満点で採点させたところ、数十問で構成された大がかりなストレス診断を受けた場合と、さほど結果は変わりませんでした。とりあえず、大まかに現状をつかむには十分でしょう。また、このテクニックが良いのは、ストレスに点数をつけただけでも、ある程度イライラ解消の効果が得られるところです。「なんだかイライラする…」と思うだけではどうすればいいのか分かりませんが、数字で示されると「いまは7点だから、せめて4点くらいには下げよう」といった明確な指針ができます。その安心感が、心にゆとりを生むのです。</p>
-    </div>
+    <!--
+      <div class="commentary">
+        <p class="commentary-inner">自分のストレス度をつかむために、もっともお手軽なのが「ストレスサーモメータ」。心理カウンセリングの世界でも使われる、定番のテクニックです。方法は簡単で、下の温度計を見ながら、「今のストレスは何点だろう？」と採点してください。「主観で決めて大丈夫なの？」と思われるかもしれませんが、これがバカにできない精度を持っています。アメリカで行われたある実験では、学生たちに自分のストレスを10点満点で採点させたところ、数十問で構成された大がかりなストレス診断を受けた場合と、さほど結果は変わりませんでした。とりあえず、大まかに現状をつかむには十分でしょう。また、このテクニックが良いのは、ストレスに点数をつけただけでも、ある程度イライラ解消の効果が得られるところです。「なんだかイライラする…」と思うだけではどうすればいいのか分かりませんが、数字で示されると「いまは7点だから、せめて4点くらいには下げよう」といった明確な指針ができます。その安心感が、心にゆとりを生むのです。</p>
+      </div>
+    -->
 
     <div class="thermometer">
 
       <div id="progress"> <!-- プログレスバー -->
         <div id="progress10">
-        <div id="box10"></div><div id="note10">10(すさまじいストレスを感じる)  </div>
+          <div id="box10"></div><div id="note10">10</div><p class="note10-comment">(すさまじいストレスを感じる) </p>
         </div>
         <div id="progress9">
-        <div id="box9"></div><div id="note9">9</div>
+          <div id="box9"></div><div id="note9">9</div>
         </div>
         <div id="progress8">
-        <div id="box8"></div><div id="note8">8</div>
+          <div id="box8"></div><div id="note8">8</div>
         </div>
         <div id="progress7">
-        <div id="box7"></div><div id="note7">7</div>
+          <div id="box7"></div><div id="note7">7</div>
         </div>
         <div id="progress6">
-        <div id="box6"></div><div id="note6">6(そこそこのストレスを感じる)</div>
+          <div id="box6"></div><div id="note6">6</div><p class="note10-comment">(そこそこのストレスを感じる)</p>
         </div>
         <div id="progress5">
-        <div id="box5"></div><div id="note5">5</div>
+          <div id="box5"></div><div id="note5">5</div>
         </div>
         <div id="progress4">
-        <div id="box4"></div><div id="note4">4</div>
+          <div id="box4"></div><div id="note4">4</div>
         </div>
         <div id="progress3">
-        <div id="box3"></div><div id="note3">3</div>
+          <div id="box3"></div><div id="note3">3</div>
         </div>
         <div id="progress2">
-        <div id="box2"></div><div id="note2">2(ほんの少しストレスを感じる)</div>
+          <div id="box2"></div><div id="note2">2</div><p class="note10-comment">(ほんの少しストレスを感じる)</p>
         </div>
         <div id="progress1">
-        <div id="box1"></div><div id="note1">1</div>
+          <div id="box1"></div><div id="note1">1</div>
         </div>
       </div><!-- progress終わり -->
 
@@ -99,5 +101,18 @@ for (i = 1; i <= 10; i++) {
 
   }, false);
 }
+
+/*
+  for (i = 1;){
+    var elem = document.getElementById("box" + i);
+    elem.addEventListener("mouseover", function (event) {
+      elem.addEventListener("mouseover", function (event) {
+        document.getElementById( "temperature" ).value = i ;
+      } 
+    } , false);
+  }
+
+*/
+
 
 </script>

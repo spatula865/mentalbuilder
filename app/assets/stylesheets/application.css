@@ -167,7 +167,7 @@
 /*application.html.erbのbody*/
 
       body {
-            background-image: url("/523824.jpg");
+            background-image: url("/background0.jpg");
             background-size: cover;
             margin: 0;
 
@@ -230,6 +230,7 @@
     height: 700px;
     width: 100%;
     background-color: transparent;
+    background-size: cover;
     overflow: hidden;
   }
 
@@ -242,7 +243,7 @@
     width: 85%;
     background-color: white;
     border: solid;
-    border-color: white;
+    border-color: transparent;
     border-radius: 24px;
     overflow: hidden;
     display: flex;
@@ -340,7 +341,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 50px 0px 0px 0px;
+    margin: 100px 0px 0px 0px;
     font-size: 24px;
     background-color: white;
   }
@@ -592,6 +593,15 @@
   #note10, #note9, #note8, #note7, #note6, #note5, #note4, #note3, #note2, #note1{
     margin-left:10px;
     font-weight: bolder;
+  }
+
+  .note10-comment{
+    margin: 0;
+    font-weight: bolder;
+  }
+
+  #box1:hover + .box10{
+    background-color: red;
   }
 
   .stresslevel{
