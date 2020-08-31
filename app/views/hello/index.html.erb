@@ -74,30 +74,58 @@
         <p><span class=""hello-index-second-span">MentalBuilder</span>は、「記録する」「振り返る」「強くなる」の3ステップであなたのメンタルを強くする無料のWebアプリです。</p>
     </div>
 
-    <div class="home-menu-record-whiteboard">
-        <div class="home-menu-record-thermometer-sign-1">
-            <%= link_to '記録する', home_menu_record_path, :class => "home-menu-record-thermometer-sign-link" %>
+    <div class="home-menu-record-whiteboard-container">
+
+        <div class="home-menu-record-whiteboard-bottom">
+            <div class="home-menu-record-thermometer-sign-1">
+                <%= link_to '記録する', home_menu_record_path, :class => "home-menu-record-thermometer-sign-link" %>
+            </div>
+            <div class="home-menu-record-thermometer-note-1">
+                記録はストレス対策の基本であり、強いメンタルづくりのためには欠かせません。<br>一流のアスリートはトレーニングノートをつけています。自分のプレーの特徴は何か、どのような条件下で自分が良いプレーをできるのか、後で振り返るためです。<br>鍛えるのが肉体でなくメンタルでも、同じことが言えます。<br>「ストレスサーモメータ」を使って短期的なストレス度を、「PSS4」を使って中長期的なストレス度を測ります。継続的にデータを取ることによって、自分のパーソナリティやどのような条件下でストレスを感じやすいのか、といったことが後で振り返られるようになります。「雑談」は、人間関係の改善によってストレスを解消することに特化した機能です。雑談が苦手で学校（職場）の人間関係に悩んでいる、という人はぜひ試してみてください。
+            </div>
         </div>
-        <div class="home-menu-record-thermometer-note-1">
-            記録はストレス対策の基本であり、強いメンタルづくりのためには欠かせません。<br>一流のアスリートはトレーニングノートをつけています。自分のプレーの特徴は何か、どのような条件下で自分が良いプレーをできるのか、後で振り返るためです。<br>鍛えるのが肉体でなくメンタルでも、同じことが言えます。<br>「ストレスサーモメータ」を使って短期的なストレス度を、「PSS4」を使って中長期的なストレス度を測ります。継続的にデータを取ることによって、自分のパーソナリティやどのような条件下でストレスを感じやすいのか、といったことが後で振り返られるようになります。「雑談」は、人間関係の改善によってストレスを解消することに特化した機能です。雑談が苦手で学校（職場）の人間関係に悩んでいる、という人はぜひ試してみてください。
-        </div>
+
+        <%= image_tag '/rockcrimingwoman.png', :class=>"rockcrimingwoman" %>
+
     </div>
 
-    <div class="home-menu-record-whiteboard">
-        <div class="home-menu-record-thermometer-sign-1">
-            <%= link_to '振り返る', home_menu_reflection_path, :class => "home-menu-record-PSS4-sign-link" %>
+    <div class="home-menu-record-whiteboard-container">
+
+        <%= image_tag '/abroalerman.png', :class=>"abroalerman" %>
+
+        <div class="home-menu-record-whiteboard-middle">
+            <div class="home-menu-record-thermometer-sign-1">
+                <%= link_to '振り返る', home_menu_reflection_path, :class => "home-menu-record-PSS4-sign-link" %>
+            </div>
+            <div class="home-menu-record-thermometer-note-1">
+                約2週日程度記録を続けると、データが充実してきます。ストレスサーモメータの記録をストレス度順に並び替えることで、記録をとった期間であなたがどのようなことにストレスを感じたのかが一目瞭然になります。逆に、ストレスを感じていない時は、どのような状態であったかも同様にはっきりと分かります。<br>また、グラフを通じて、あなたのストレスの周期を測ってみましょう。「何日おきに強いストレスを感じている」「ストレスサーモメータのストレス度が８以上に達した直後は、食事の内容が乱れてさらにストレス度が悪化する傾向がある」こういったことまで分かるようになれば、そうでない場合と比べて劇的にストレスに強くなります。対策を立てやすくなるからです。
+            </div>
         </div>
-        <div class="home-menu-record-thermometer-note-1">
-            約2週日程度記録を続けると、データが充実してきます。ストレスサーモメータの記録をストレス度順に並び替えることで、記録をとった期間であなたがどのようなことにストレスを感じたのかが一目瞭然になります。逆に、ストレスを感じていない時は、どのような状態であったかも同様にはっきりと分かります。<br>また、グラフを通じて、あなたのストレスの周期を測ってみましょう。「何日おきに強いストレスを感じている」「ストレスサーモメータのストレス度が８以上に達した直後は、食事の内容が乱れてさらにストレス度が悪化する傾向がある」こういったことまで分かるようになれば、そうでない場合と比べて劇的にストレスに強くなります。対策を立てやすくなるからです。
-        </div>
+
     </div>
 
-    <div class="home-menu-record-whiteboard">
-        <div class="home-menu-record-thermometer-sign-1">
-            <%= link_to '強くなる', home_menu_arm_path, :class => "home-menu-record-zatsudan-sign-link" %>
+    <div class="home-menu-record-whiteboard-container">
+
+        <div class="home-menu-record-whiteboard-bottom">
+            <div class="home-menu-record-thermometer-sign-1">
+                <%= link_to '強くなる', home_menu_arm_path, :class => "home-menu-record-zatsudan-sign-link" %>
+            </div>
+            <div class="home-menu-record-thermometer-note-1">
+            「記録する」「振り返る」を通して、「自分がどのような条件下でストレスを感じるのか」を知ることができたら、次は、「どのようなストレス対処法があるか」を知りましょう。<br>「武器一覧」では、様々なストレス解消テクニックを掲載しています。<br>「みんなの武器」では、SNSを通じて自分以外の人のストレス解消法を知ることができます。<br>そして最後は、それらを組み合わせます。「if・thenプランニング」で、「もし・いつ」になったら、「どうする」かを決めてください。そして実際にその時になれば、その行動をとる。うまくいけば続ける。うまくいかなければ他の方法を試す。この一連の流れの繰り返しでメンタルは強くなっていきます。<br>「世界最高のコーチ」と称されるトニーロビンズは、こう言っています。<br>「Mental is muscle.」<br>心はある出来事をきっかけに突然強くなるようなものでは無く、コツコツと鍛えていく中で漸進的に強くなっていくものです。<br>このアプリを通じて、みなさんもぜひMentalをMuscleのようにBuildしていきましょう。
+            </div>
         </div>
-        <div class="home-menu-record-thermometer-note-1">
-        「記録する」「振り返る」を通して、「自分がどのような条件下でストレスを感じるのか」を知ることができたら、次は、「どのようなストレス対処法があるか」を知りましょう。<br>「武器一覧」では、様々なストレス解消テクニックを掲載しています。<br>「みんなの武器」では、SNSを通じて自分以外の人のストレス解消法を知ることができます。<br>そして最後は、それらを組み合わせます。「if・thenプランニング」で、「もし・いつ」になったら、「どうする」かを決めてください。そして実際にその時になれば、その行動をとる。うまくいけば続ける。うまくいかなければ他の方法を試す。この一連の流れの繰り返しでメンタルは強くなっていきます。<br>「世界最高のコーチ」と称されるトニーロビンズは、こう言っています。<br>「Mental is muscle.」<br>心はある出来事をきっかけに突然強くなるようなものでは無く、コツコツと鍛えていく中で漸進的に強くなっていくものです。<br>このアプリを通じて、みなさんもぜひMentalをMuscleのようにBuildしていきましょう。
+
+        <%= image_tag '/musclewoman.png', :class=>"musclewoman" %>
+
+    </div>
+
+    <div class="hello-index-bottom">
+        <p>さあ、メンタルビルディングの旅に出かけよう！</p>
+        <div class="login">
+            <% unless user_signed_in? %>
+                <%= button_to "ログイン", new_user_session_path, method: :get, :class => "hello-index-login" %>
+                <%= button_to "新規登録", new_user_registration_path, method: :get, :class=>"hello-index-sinki"  %>
+            <% end %>
         </div>
     </div>
 
@@ -105,4 +133,14 @@
 
 </body>
 
+<style>
+    .home-menu-record-whiteboard-container{
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+
+</style>
 

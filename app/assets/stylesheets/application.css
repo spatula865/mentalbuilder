@@ -203,7 +203,7 @@
   .login{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin: 50px 0px 0px 0px;
   }
 
   .hello-index-login{
@@ -227,9 +227,6 @@
   }
 
   .home-menu{
-    margin: 0 auto;
-    margin-top: 0px;
-    margin-bottom: 00px;
     position: relative;
     height: 700px;
     width: 100%;
@@ -247,11 +244,41 @@
     width: 85%;
     background-color: white;
     border: solid;
+    border-color: white;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .home-menu-record-whiteboard-bottom{ 
+    margin: 100px 20% 100px 5%;
+    position: relative;
+    height: 600px;
+    width: 85%;
+    background-color: white;
+    border: solid;
     border-color: transparent;
     border-radius: 24px;
     overflow: hidden;
     display: flex;
     align-items: center;
+    padding: 0% 5% 0% 5%;
+  }
+
+  .home-menu-record-whiteboard-middle{
+    margin: 100px 5% 100px 30%;
+    position: relative;
+    height: 600px;
+    width: 85%;
+    background-color: white;
+    border: solid;
+    border-color: transparent;
+    border-radius: 24px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0% 5% 0% 5%;
   }
 
   .home-menu-record-whiteboard-top{ 
@@ -281,9 +308,21 @@
   }
 
   .musclewoman{
-    height: 700px;
-    position: absolute; left: 50%;
+    height: 600px;
+    position: absolute; left: 65%;
+    z-index: 0;
+  }
 
+  .rockcrimingwoman{
+    height: 600px;
+    position: absolute; left: 65%;
+    z-index: 0;
+  }
+
+  .abroalerman{
+    height: 600px;
+    position: absolute; top: 20%; left: -10%;
+    z-index: 2;
   }
 
   .catchflase{
@@ -363,6 +402,17 @@
 
   .hello-index-second-span{
     font-family:Book Antiqua;
+  }
+
+  .hello-index-bottom{
+    height: 200px;
+    font-family: MS mincho;
+    font-weight: bolder;
+    text-align: center;
+    margin: 100px 0px 00px 0px;
+    padding: 50px 0px 0px 0px;
+    font-size: 24px;
+    background-color: white;
   }
 
 /*holleo/index終わり*/
@@ -472,6 +522,7 @@
   .home-menu-record-thermometer-note-1{
     width: 50%;
     margin-left: 10%;
+    z-index: 1;
   }
 
   .home-menu-record-thermometer-sign{
