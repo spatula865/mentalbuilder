@@ -12,66 +12,81 @@
 
   <body>
 
-    <header>
-    
-      <div class="title">
-        
-        <%=  link_to 'MentalBuilder' , root_path, :class => "headertext" %>
+    <div class="wrapper">
 
-        <ul class="header-dropmenu">
-          <li>
-            <%= link_to '記録する', home_menu_record_path, :class => "list" %>
-            <ul>
-              <li><%= link_to 'thermometer', thermometers_new_path, :class => "list" %></li>
-              <li><%= link_to 'PSS4', tests_pssfours_new_path, :class => "list" %></li>
-              <li><%= link_to '雑談', new_zatsudan_path, :class => "list" %></li>
-            </ul>
-          </li>
-          <li>
-            <%= link_to '振り返る', home_menu_reflection_path, :class => "list" %>
-            <ul>
-              <li><%= link_to 'thermometer', thermometers_show_path, :class => "list" %></li>
-              <li><%= link_to 'PSS4', tests_pssfours_path, :class => "list" %></li>
-              <li><%= link_to '雑談', zatsudans_path, :class => "list" %></li>
-            </ul>
-          </li>
-          <li>
-            <%= link_to '強くなる', home_menu_arm_path, :class => "list" %>
-            <ul>
-              <li><%= link_to '武器一覧', home_menu_weapon_path, :class => "list" %></li>
-              <li><%= link_to 'みんなの武器', weapons_path, :class => "list" %></li>
-              <li><%= link_to 'if・thenプランニング', new_ifthen_path, :class => "list" %></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="header-dropmenu-2">
-          <li class="header-list-login">
+      <header>
+      
+        <div class="title">
+          
+          <%=  link_to 'MentalBuilder' , root_path, :class => "headertext" %>
+
+          <ul class="header-dropmenu">
+            <li>
+              <%= link_to '記録する', home_menu_record_path, :class => "list" %>
+              <ul>
+                <li><%= link_to 'thermometer', thermometers_new_path, :class => "list" %></li>
+                <li><%= link_to 'PSS4', tests_pssfours_new_path, :class => "list" %></li>
+                <li><%= link_to '雑談', new_zatsudan_path, :class => "list" %></li>
+              </ul>
+            </li>
+            <li>
+              <%= link_to '振り返る', home_menu_reflection_path, :class => "list" %>
+              <ul>
+                <li><%= link_to 'thermometer', thermometers_show_path, :class => "list" %></li>
+                <li><%= link_to 'PSS4', tests_pssfours_path, :class => "list" %></li>
+                <li><%= link_to '雑談', zatsudans_path, :class => "list" %></li>
+              </ul>
+            </li>
+            <li>
+              <%= link_to '強くなる', home_menu_arm_path, :class => "list" %>
+              <ul>
+                <li><%= link_to '武器一覧', home_menu_weapon_path, :class => "list" %></li>
+                <li><%= link_to 'みんなの武器', weapons_path, :class => "list" %></li>
+                <li><%= link_to 'if・thenプランニング', new_ifthen_path, :class => "list" %></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="header-dropmenu-2">
+            <li class="header-list-login">
+              <% if user_signed_in? %>
+                <%= link_to 'マイページ', user_path(current_user.id), :class => "list-2" %>
+              <% else %>
+              <%= link_to "ログイン", new_user_session_path, :class => "list-2" %>
+              <% end %>
+            </li>
+            <li class="header-list-login">
             <% if user_signed_in? %>
-              <%= link_to 'マイページ', user_path(current_user.id), :class => "list-2" %>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => "list-2" %>
             <% else %>
-            <%= link_to "ログイン", new_user_session_path, :class => "list-2" %>
+            <%= link_to "新規登録", new_user_registration_path, :class=>"list-2"  %>
             <% end %>
-          </li>
-          <li class="header-list-login">
-          <% if user_signed_in? %>
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => "list-2" %>
-          <% else %>
-          <%= link_to "新規登録", new_user_registration_path, :class=>"list-2"  %>
-          <% end %>
-          </li>
-        </ul>
+            </li>
+          </ul>
+
+      </div>
+
+      </header>
+      <%= yield %>
+
+      <footer>
+        <div class="footer">
+            © 2020 Yamato Kosuga
+        </div>
+      </footer>
 
     </div>
 
-    </header>
-    <%= yield %>
-
-    <footer>
-      <div class="footer">
-        <div>
-        </div>
-      </div>
-    </footer>
   </body>
 
 </html>
+
+<style>
+
+  .wrapper{
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 25px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+  }
+
+</style>

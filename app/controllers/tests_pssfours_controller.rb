@@ -16,12 +16,14 @@ class TestsPssfoursController < ApplicationController
 
     def show
       @post = Pssfour.find(params[:id])
-      @sum = @post.question1+@post.question2+@post.question3+@post.question4
+      @sum = (((@post.question1+@post.question2+@post.question3+@post.question4).to_f/16).to_f).round
     end
 
     def index
       @pss4 = Pssfour.all.order("id DESC")
       @data = [['2019-06-01', 100], ['2019-06-02', 200], ['2019-06-03', 150]]
+      #@dat = [@pss4.each.created_at, (([@pss4.each.question1, @pss4.each.question2, @pss4.each.question3, @pss4.each.question4].sum.to_f/16).to_f/0.01).round]
+      
     end
 
     def destroy

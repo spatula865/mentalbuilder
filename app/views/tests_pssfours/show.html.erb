@@ -2,7 +2,11 @@
   <div class="pss4sokuhou">
     <h3 class="pss4result">ストレス度</h3>
 
-    <p class="pssresult1"><%= @sum %>/16</p>
+    <p class="pssresult1"><%= @sum %></p>
+
+    <div class="commentary-pss4-show">
+      <p class="commentary-inner">最大値が100最小値が0です。値が大きいほど、ストレスがたまっています。<br>50以上は要注意。今のうちに何かできる対策を講じることをお勧めします。<br>75以上は一人で解決するのではなく、誰か他の人に相談するか病院に行った方が良いでしょう。</p>
+    </div>
 
     <br>
     <%= link_to 'これまでの推移を見る', :controller => "tests_pssfours", :action => "index" %>
@@ -19,5 +23,11 @@
   }
   .pssresult1{
     font-size: 50px;
+  }
+
+  .commentary-inner{
+    margin: 0 auto; 
+    text-align: center;
+    width: 60%;
   }
 </style>

@@ -18,45 +18,49 @@
 
       <div id="progress"> <!-- プログレスバー -->
         <div id="progress10">
-          <div id="box10"></div><div id="note10">10</div><p class="note10-comment">(すさまじいストレスを感じる) </p>
+          <button type="button" id="box10"></button><div id="note10">10</div><p class="note10-comment">(すさまじいストレスを感じる) </p>
         </div>
         <div id="progress9">
-          <div id="box9"></div><div id="note9">9</div>
+          <button type="button" id="box9"></button><div id="note9">9</div>
         </div>
         <div id="progress8">
-          <div id="box8"></div><div id="note8">8</div>
+          <button type="button" id="box8"></button><div id="note8">8</div>
         </div>
         <div id="progress7">
-          <div id="box7"></div><div id="note7">7</div>
+          <button type="button" id="box7"></button><div id="note7">7</div>
         </div>
         <div id="progress6">
-          <div id="box6"></div><div id="note6">6</div><p class="note10-comment">(そこそこのストレスを感じる)</p>
+          <button type="button" id="box6"></button><div id="note6">6</div><p class="note10-comment">(そこそこのストレスを感じる)</p>
         </div>
         <div id="progress5">
-          <div id="box5"></div><div id="note5">5</div>
+          <button type="button" id="box5"></button><div id="note5">5</div>
         </div>
         <div id="progress4">
-          <div id="box4"></div><div id="note4">4</div>
+          <button type="button" id="box4"></button><div id="note4">4</div>
         </div>
         <div id="progress3">
-          <div id="box3"></div><div id="note3">3</div>
+          <button type="button" id="box3"></button><div id="note3">3</div>
         </div>
         <div id="progress2">
-          <div id="box2"></div><div id="note2">2</div><p class="note10-comment">(ほんの少しストレスを感じる)</p>
+          <button type="button" id="box2"></button><div id="note2">2</div><p class="note10-comment">(ほんの少しストレスを感じる)</p>
         </div>
         <div id="progress1">
-          <div id="box1"></div><div id="note1">1</div>
+          <button type="button" id="box1"></button><div id="note1">1</div>
         </div>
       </div><!-- progress終わり -->
 
       <div class="stresslevel"><!-- ストレスレベルの表示・解説 -->
 
-        <p>あなたは今どれくらいストレスを感じていますか？</p>
+        <!--
+          <%= image_tag '/makimono.png', :class=>"makimono" %>
+        -->
+
+        <p class="stresslevel-question">あなたは今どれくらいストレスを感じていますか？</p>
         <br>
         <%= form_for @thermometer do |f| %>
           <%= f.label :ストレスレベル %>
           <br>
-          <%= f.number_field :temperature ,id:"temperature" %>
+          <%= f.number_field :temperature, id:"temperature" %>
           <br>
           <br>
           <%= f.label :memo %>
@@ -65,7 +69,7 @@
           <br>
           <br>
           <% if user_signed_in? %>
-          <%= f.submit "送信" %>
+          <%= f.submit "送信", id: "btn-submit" %>
           <% end %>
         <% end %>
 
@@ -93,26 +97,242 @@
 
 <script type="text/javascript">
 
-for (i = 1; i <= 10; i++) {
-  var elem = document.getElementById("box" + i );
-  elem.addEventListener("mouseover", function (event) {
-    event.target.style.backgroundColor = "orange";
-    document.getElementById( "temperature" ).value = i ;
-
-  }, false);
-}
-
-/*
-  for (i = 1;){
-    var elem = document.getElementById("box" + i);
-    elem.addEventListener("mouseover", function (event) {
+  /*
+    for (i = 1; i <= 10; i++) {
+      var elem = document.getElementById("box" + i );
       elem.addEventListener("mouseover", function (event) {
-        document.getElementById( "temperature" ).value = i ;
-      } 
-    } , false);
-  }
+        event.target.style.backgroundColor = "orange";
 
-*/
+      }, false);
+    }
+  */
+
+  /*
+    for (i = 1;){
+      var elem = document.getElementById("box" + i);
+      elem.addEventListener("mouseover", function (event) {
+        elem.addEventListener("mouseover", function (event) {
+          document.getElementById( "temperature" ).value = i ;
+        } 
+      } , false);
+    }
+
+  */
+
+  //buttonをクリックしたら自動的に入力されるやつ
+
+    document.getElementById('box1').onclick = function(event) {
+        event.preventDefault();
+        document.getElementById( "temperature" ).value = 1
+    };
+
+    document.getElementById('box2').onclick = function(event) {
+        event.preventDefault();
+        document.getElementById( "temperature" ).value = 2
+    };
+
+    document.getElementById('box3').onclick = function(event) {
+        event.preventDefault();
+        document.getElementById( "temperature" ).value = 3
+    };
+
+    document.getElementById('box4').onclick = function(event) {
+        event.preventDefault();
+        document.getElementById( "temperature" ).value = 4
+    };
+
+    document.getElementById('box5').onclick = function(event) {
+        event.preventDefault();
+        document.getElementById( "temperature" ).value = 5
+    };
+
+    document.getElementById('box6').onclick = function(event) {
+        event.preventDefault();
+        document.getElementById( "temperature" ).value = 6
+    };
+
+    document.getElementById('box7').onclick = function(event) {
+        event.preventDefault();
+        document.getElementById( "temperature" ).value = 7
+    };
+
+    document.getElementById('box8').onclick = function(event) {
+        event.preventDefault();
+        document.getElementById( "temperature" ).value = 8
+    };
+
+    document.getElementById('box9').onclick = function(event) {
+        event.preventDefault();
+        document.getElementById( "temperature" ).value = 9
+    };
+
+    document.getElementById('box10').onclick = function(event) {
+        event.preventDefault();
+        document.getElementById( "temperature" ).value = 10
+    };
+
+
+  //buttonをクリックしたら自動的に入力されるやつ終わり
+
+  //マウスオーバーの位置までbackgroundがオレンジになるやつ
+
+    document.getElementById('box1').addEventListener("mouseover", function (event) {
+      document.getElementById('box1').style.backgroundColor = "orange";
+      document.getElementById('box2').style.backgroundColor = "transparent";
+      document.getElementById('box3').style.backgroundColor = "transparent";
+      document.getElementById('box4').style.backgroundColor = "transparent";
+      document.getElementById('box5').style.backgroundColor = "transparent";
+      document.getElementById('box6').style.backgroundColor = "transparent";
+      document.getElementById('box7').style.backgroundColor = "transparent";
+      document.getElementById('box8').style.backgroundColor = "transparent";
+      document.getElementById('box9').style.backgroundColor = "transparent";
+      document.getElementById('box10').style.backgroundColor = "transparent";
+    }, false);
+
+    document.getElementById('box2').addEventListener("mouseover", function (event) {
+      document.getElementById('box1').style.backgroundColor = "orange";
+      document.getElementById('box2').style.backgroundColor = "orange";
+      document.getElementById('box3').style.backgroundColor = "transparent";
+      document.getElementById('box4').style.backgroundColor = "transparent";
+      document.getElementById('box5').style.backgroundColor = "transparent";
+      document.getElementById('box6').style.backgroundColor = "transparent";
+      document.getElementById('box7').style.backgroundColor = "transparent";
+      document.getElementById('box8').style.backgroundColor = "transparent";
+      document.getElementById('box9').style.backgroundColor = "transparent";
+      document.getElementById('box10').style.backgroundColor = "transparent";
+    }, false);
+
+    document.getElementById('box3').addEventListener("mouseover", function (event) {
+      document.getElementById('box1').style.backgroundColor = "orange";
+      document.getElementById('box2').style.backgroundColor = "orange";
+      document.getElementById('box3').style.backgroundColor = "orange";
+      document.getElementById('box4').style.backgroundColor = "transparent";
+      document.getElementById('box5').style.backgroundColor = "transparent";
+      document.getElementById('box6').style.backgroundColor = "transparent";
+      document.getElementById('box7').style.backgroundColor = "transparent";
+      document.getElementById('box8').style.backgroundColor = "transparent";
+      document.getElementById('box9').style.backgroundColor = "transparent";
+      document.getElementById('box10').style.backgroundColor = "transparent";
+    }, false);
+
+    document.getElementById('box4').addEventListener("mouseover", function (event) {
+      document.getElementById('box1').style.backgroundColor = "orange";
+      document.getElementById('box2').style.backgroundColor = "orange";
+      document.getElementById('box3').style.backgroundColor = "orange";
+      document.getElementById('box4').style.backgroundColor = "orange";
+      document.getElementById('box5').style.backgroundColor = "transparent";
+      document.getElementById('box6').style.backgroundColor = "transparent";
+      document.getElementById('box7').style.backgroundColor = "transparent";
+      document.getElementById('box8').style.backgroundColor = "transparent";
+      document.getElementById('box9').style.backgroundColor = "transparent";
+      document.getElementById('box10').style.backgroundColor = "transparent";
+    }, false);
+
+    document.getElementById('box5').addEventListener("mouseover", function (event) {
+      document.getElementById('box1').style.backgroundColor = "orange";
+      document.getElementById('box2').style.backgroundColor = "orange";
+      document.getElementById('box3').style.backgroundColor = "orange";
+      document.getElementById('box4').style.backgroundColor = "orange";
+      document.getElementById('box5').style.backgroundColor = "orange";
+      document.getElementById('box6').style.backgroundColor = "transparent";
+      document.getElementById('box7').style.backgroundColor = "transparent";
+      document.getElementById('box8').style.backgroundColor = "transparent";
+      document.getElementById('box9').style.backgroundColor = "transparent";
+      document.getElementById('box10').style.backgroundColor = "transparent";
+    }, false);
+
+    document.getElementById('box6').addEventListener("mouseover", function (event) {
+      document.getElementById('box1').style.backgroundColor = "orange";
+      document.getElementById('box2').style.backgroundColor = "orange";
+      document.getElementById('box3').style.backgroundColor = "orange";
+      document.getElementById('box4').style.backgroundColor = "orange";
+      document.getElementById('box5').style.backgroundColor = "orange";
+      document.getElementById('box6').style.backgroundColor = "orange";
+      document.getElementById('box7').style.backgroundColor = "transparent";
+      document.getElementById('box8').style.backgroundColor = "transparent";
+      document.getElementById('box9').style.backgroundColor = "transparent";
+      document.getElementById('box10').style.backgroundColor = "transparent";
+    }, false);
+
+    document.getElementById('box7').addEventListener("mouseover", function (event) {
+      document.getElementById('box1').style.backgroundColor = "orange";
+      document.getElementById('box2').style.backgroundColor = "orange";
+      document.getElementById('box3').style.backgroundColor = "orange";
+      document.getElementById('box4').style.backgroundColor = "orange";
+      document.getElementById('box5').style.backgroundColor = "orange";
+      document.getElementById('box6').style.backgroundColor = "orange";
+      document.getElementById('box7').style.backgroundColor = "orange";
+      document.getElementById('box8').style.backgroundColor = "transparent";
+      document.getElementById('box9').style.backgroundColor = "transparent";
+      document.getElementById('box10').style.backgroundColor = "transparent";
+    }, false);
+
+    document.getElementById('box8').addEventListener("mouseover", function (event) {
+      document.getElementById('box1').style.backgroundColor = "orange";
+      document.getElementById('box2').style.backgroundColor = "orange";
+      document.getElementById('box3').style.backgroundColor = "orange";
+      document.getElementById('box4').style.backgroundColor = "orange";
+      document.getElementById('box5').style.backgroundColor = "orange";
+      document.getElementById('box6').style.backgroundColor = "orange";
+      document.getElementById('box7').style.backgroundColor = "orange";
+      document.getElementById('box8').style.backgroundColor = "orange";
+      document.getElementById('box9').style.backgroundColor = "transparent";
+      document.getElementById('box10').style.backgroundColor = "transparent";
+    }, false);
+
+    document.getElementById('box9').addEventListener("mouseover", function (event) {
+      document.getElementById('box1').style.backgroundColor = "orange";
+      document.getElementById('box2').style.backgroundColor = "orange";
+      document.getElementById('box3').style.backgroundColor = "orange";
+      document.getElementById('box4').style.backgroundColor = "orange";
+      document.getElementById('box5').style.backgroundColor = "orange";
+      document.getElementById('box6').style.backgroundColor = "orange";
+      document.getElementById('box7').style.backgroundColor = "orange";
+      document.getElementById('box8').style.backgroundColor = "orange";
+      document.getElementById('box9').style.backgroundColor = "orange";
+      document.getElementById('box10').style.backgroundColor = "transparent";
+    }, false);
+
+    document.getElementById('box10').addEventListener("mouseover", function (event) {
+      document.getElementById('box1').style.backgroundColor = "orange";
+      document.getElementById('box2').style.backgroundColor = "orange";
+      document.getElementById('box3').style.backgroundColor = "orange";
+      document.getElementById('box4').style.backgroundColor = "orange";
+      document.getElementById('box5').style.backgroundColor = "orange";
+      document.getElementById('box6').style.backgroundColor = "orange";
+      document.getElementById('box7').style.backgroundColor = "orange";
+      document.getElementById('box8').style.backgroundColor = "orange";
+      document.getElementById('box9').style.backgroundColor = "orange";
+      document.getElementById('box10').style.backgroundColor = "orange";
+    }, false);
+
+  //マウスオーバーの位置までbackgroundがオレンジになるやつ終わり
+
+  //1から10以外の値になると送信できなくするやつ（うまくいってない）
+    
+    document.getElementById("btn-submit").style.display = "none";
+
+    function clickBtn1(){
+      const p1 = document.getElementById("bt");
+    
+      if(p1.style.display=="block"){
+        // noneで非表示
+        p1.style.display ="none";
+      }else{
+        // blockで表示
+        p1.style.display ="block";
+      }
+
+  //1から10以外の値になると送信できなくするやつ終わり
+
+
 
 
 </script>
+
+<style>
+
+  .btn-submit{
+  }
+
+</style>

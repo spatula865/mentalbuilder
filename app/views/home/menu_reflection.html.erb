@@ -2,42 +2,50 @@
 
     <h1 class="home-menu-record-title">振り返る</h1>
 
-    <div class="home-menu-record-thermometer-sign">
-        <%= link_to 'thermometer', thermometers_show_path, :class => "home-menu-record-thermometer-sign-link" %>
-    </div>
+    <div class="home-menu-sign-wrapper">
 
-    <div class="home-menu-record-PSS4-sign">
-        <%= link_to 'PSS4', tests_pssfours_path, :class => "home-menu-record-PSS4-sign-link" %>
-    </div>
-
-    <div class="home-menu-record-zatsudan-sign">
-        <%= link_to '雑談', zatsudans_path, :class => "home-menu-record-zatsudan-sign-link" %>
-    </div>
-    
-    <div class="home-menu-record-whiteboard-top">
-        <div class="home-menu-record-thermometer-sign-1">
+        <div class="home-menu-record-thermometer-sign">
             <%= link_to 'thermometer', thermometers_show_path, :class => "home-menu-record-thermometer-sign-link" %>
         </div>
-        <div class="home-menu-record-thermometer-note-1">
-        2週間程度記録をつけたら、大分データがたまってきたはず。それらを振り返ることで、「自分がどのような時にストレスを感じやすいのか」分析してみましょう。何がきっかけだった？どんな気持ちだった？場所は？時間は？誰と一緒にいた？いなかった？前日は何時間寝た？食事は体に良いものを食べた？悪いものを食べた？運動はした？ストレスの少ない時と比べて何が少なかった？何が多かった？色々と自分に質問してみると、自分特有のストレスパターンが分かるはず。
-        </div>
-    </div>
 
-    <div class="home-menu-record-whiteboard">
-        <div class="home-menu-record-thermometer-sign-1">
+        <div class="home-menu-record-PSS4-sign">
             <%= link_to 'PSS4', tests_pssfours_path, :class => "home-menu-record-PSS4-sign-link" %>
         </div>
-        <div class="home-menu-record-thermometer-note-1">
-            中長期的な視点で自分のメンタルヘルス状態を振り返ることで、自分がストレスを感じやすい月や期の特徴を把握することができます。<br>「来月は〇〇な月だな。同じようなスケジュールだった△月はかなりストレスを感じていた。来月は今月より早く寝るように心がけよう。念のため精神科でカウンセリングの予約も取っておこう。」このように考えることができれば、何も考えなかった場合よりも安心してストレスを受け入れることができます。
-        </div>
-    </div>
 
-    <div class="home-menu-record-whiteboard">
-        <div class="home-menu-record-thermometer-sign-1">
+        <div class="home-menu-record-zatsudan-sign">
             <%= link_to '雑談', zatsudans_path, :class => "home-menu-record-zatsudan-sign-link" %>
         </div>
-        <div class="home-menu-record-thermometer-note-1">
-            「始め方」「広げ方」「聞き方」「盛り上げ方」のうち、自分が苦手としている分野は分かりましたか？<br>苦手分野が分かったら、もう一度アンケート項目を見直して、「今週はこれを意識して雑談してみよう」というものを何か一つ選択してみてください。<br>例えば、「自分は『盛り上げ方』が苦手だから、今週は雑談で最低一度オノマトペを使ってみよう」など。繰り返すうちに、雑談がうまくなるはずです。
+    
+    </div>
+
+    <div class="home-menu-whiteboard-wrapper">
+    
+        <div class="home-menu-record-whiteboard-top">
+            <div class="home-menu-record-thermometer-sign-1">
+                <%= link_to 'thermometer', thermometers_show_path, :class => "home-menu-record-thermometer-sign-link" %>
+            </div>
+            <div class="home-menu-record-thermometer-note-1">
+            2週間程度記録をつけたら、大分データがたまってきたはず。それらを振り返ることで、「自分がどのような時にストレスを感じやすいのか」分析してみましょう。何がきっかけだった？どんな気持ちだった？場所は？時間は？誰と一緒にいた？いなかった？前日は何時間寝た？食事は体に良いものを食べた？悪いものを食べた？運動はした？ストレスの少ない時と比べて何が少なかった？何が多かった？色々と自分に質問してみると、自分特有のストレスパターンが分かるはず。
+            </div>
+        </div>
+
+        <div class="home-menu-record-whiteboard">
+            <div class="home-menu-record-thermometer-sign-1">
+                <%= link_to 'PSS4', tests_pssfours_path, :class => "home-menu-record-PSS4-sign-link" %>
+            </div>
+            <div class="home-menu-record-thermometer-note-1">
+                中長期的な視点で自分のメンタルヘルス状態を振り返ることで、自分がストレスを感じやすい月や期の特徴を把握することができます。<br>「来月は〇〇な月だな。同じようなスケジュールだった△月はかなりストレスを感じていた。来月は今月より早く寝るように心がけよう。念のため精神科でカウンセリングの予約も取っておこう。」このように考えることができれば、何も考えなかった場合よりも安心してストレスを受け入れることができます。
+            </div>
+        </div>
+
+        <div class="home-menu-record-whiteboard">
+            <div class="home-menu-record-thermometer-sign-1">
+                <%= link_to '雑談', zatsudans_path, :class => "home-menu-record-zatsudan-sign-link" %>
+            </div>
+            <div class="home-menu-record-thermometer-note-1">
+                「始め方」「広げ方」「聞き方」「盛り上げ方」のうち、自分が苦手としている分野は分かりましたか？<br>苦手分野が分かったら、もう一度アンケート項目を見直して、「今週はこれを意識して雑談してみよう」というものを何か一つ選択してみてください。<br>例えば、「自分は『盛り上げ方』が苦手だから、今週は雑談で最低一度オノマトペを使ってみよう」など。繰り返すうちに、雑談がうまくなるはずです。
+            </div>
+
         </div>
 
     </div>

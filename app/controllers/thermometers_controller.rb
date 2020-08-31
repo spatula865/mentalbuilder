@@ -16,6 +16,7 @@ class ThermometersController < ApplicationController
 
   def show
     @thermometers = Thermometer.all.order("id DESC").page(params[:page]).per(7)
+    @user = User.find(params[:id])
   end
 
   def show2

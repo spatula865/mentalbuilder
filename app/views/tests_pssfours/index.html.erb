@@ -9,9 +9,12 @@
             </div>
 
             <h3 class="koremade-pss4">これまでの記録</h3>
-            <div class="commentary">
-                <p class="commentary-inner">最大値が100最小値が0です。値が大きいほど、ストレスがたまっています。50以上は要注意。今のうちに何かできる対策を講じることをお勧めします。75以上は一人で解決するのではなく、誰か他の人に相談するか病院に行った方が良いでしょう。</p>
-            </div>
+            
+            <!--
+                <div class="commentary">
+                    <p class="commentary-inner">最大値が100最小値が0です。値が大きいほど、ストレスがたまっています。50以上は要注意。今のうちに何かできる対策を講じることをお勧めします。75以上は一人で解決するのではなく、誰か他の人に相談するか病院に行った方が良いでしょう。</p>
+                </div>
+            -->
 
             <% @pss4.each do |t| %>
                 <% if user_signed_in? && current_user.id == t.user_id %>

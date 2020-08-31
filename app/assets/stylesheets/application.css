@@ -178,8 +178,13 @@
       }
 
       footer{
-        height: 0px;
+        height: 25px;
         background-color: rgba(0, 128, 0, 0.8);
+        text-align: center;
+        color: white;
+        width: 100%;
+        position: absolute;/*←絶対位置*/
+        bottom: 0; /*下に固定*/
       }
 
 /*application.html.erbのbody終わり*/
@@ -235,6 +240,16 @@
     overflow: hidden;
   }
 
+  .home-menu-sign-wrapper{
+    position: relative;
+    height: 400px;
+    width: 100%;
+  }
+
+  .home-menu-whiteboard-wrapper{
+    position: relative;
+  }
+
   .home-menu-record-whiteboard{ 
     margin: 0 auto;
     margin-top: 100px;
@@ -283,7 +298,7 @@
 
   .home-menu-record-whiteboard-top{ 
     margin: 0 auto;
-    margin-top: 400px;
+    margin-top: 0px;
     margin-bottom: 100px;
     position: relative;
     height: 600px;
@@ -406,11 +421,14 @@
 
   .hello-index-bottom{
     height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: MS mincho;
     font-weight: bolder;
     text-align: center;
     margin: 100px 0px 00px 0px;
-    padding: 50px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     font-size: 24px;
     background-color: white;
   }
@@ -526,15 +544,15 @@
   }
 
   .home-menu-record-thermometer-sign{
-    position: absolute; top: 30%; left: 28%
+    position: absolute; top: 10%; left: 28%
   }
 
   .home-menu-record-PSS4-sign{
-    position: absolute; top: 30%; left: 0; right: 0; margin: auto;
+    position: absolute; top: 10%; left: 0; right: 0; margin: auto;
   }
 
   .home-menu-record-zatsudan-sign{
-    position: absolute; top: 30%; right: 28% ;
+    position: absolute; top: 10%; right: 28% ;
   }
   .home-menu-record-thermometer-sign-link, .home-menu-record-PSS4-sign-link, .home-menu-record-zatsudan-sign-link{
     text-decoration: none;
@@ -606,7 +624,7 @@
 
   }
 
-  .commentary-inner, .pssfour-new-commentary-inner, .zatsudan-new-commentary-inner{
+  .pssfour-new-commentary-inner, .zatsudan-new-commentary-inner{
     display: table-cell;
     vertical-align: middle;
   }
@@ -642,7 +660,11 @@
     height:50px;
     width:100px;
     border-style: solid;
+    border-color: black;
     border-top:none;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
   }
 
   #box10, #box9, #box8, #box7, #box6, #box5, #box4, #box3, #box2 {
@@ -674,21 +696,52 @@
     height:60%;
     margin-bottom: 50px;
     padding: 20px;
-    background-color: rgba(54, 255, 47, 0.568);
+    background-color: transparent;
     text-align: center;
     border-radius: 10px;
-      
+    width: 40%;
+    position: relative;
+  }
+
+  .stresslevel-question{
+    font-size: 20px;
+    margin: 0px;
+    z-index: 1;
   }
 
   input[type="text"] {
   height: 100px;
   }
 
+  /* makimono
+    .makimono{
+      width: 80%;
+      position: absolute; top: -5%; left: 0%;
+      z-index: 0;
+
+    }
+  */
+
 
   textarea{
   resize:none;
   height: 100px;
   width: 400px;
+  }
+
+  #temperature{
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-align: center;
+    font-size: 60px;
+    width: 120px;
   }
 /*thermometers/new終わり*/
 
@@ -896,6 +949,15 @@
     width: 60% ;
     margin: 0 auto;
     padding: 24px 24px 0px 24px;
+  }
+
+  .zatsudan-index-memo{
+    margin: 10px 0px 0px 0px;
+    text-align: left;
+  }
+
+  .zatsudan-index-totalscore{
+    margin: 0;
   }
 
 /*zatsudan-index終わり*/

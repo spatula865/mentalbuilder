@@ -120,12 +120,14 @@
     </div>
 
     <div class="hello-index-bottom">
-        <p>さあ、メンタルビルディングの旅に出かけよう！</p>
-        <div class="login">
-            <% unless user_signed_in? %>
-                <%= button_to "ログイン", new_user_session_path, method: :get, :class => "hello-index-login" %>
-                <%= button_to "新規登録", new_user_registration_path, method: :get, :class=>"hello-index-sinki"  %>
-            <% end %>
+        <div>
+            <p>さあ、メンタルビルディングの旅に出かけよう！</p>
+            <div class="login">
+                <% unless user_signed_in? %>
+                    <%= button_to "ログイン", new_user_session_path, method: :get, :class => "hello-index-login" %>
+                    <%= button_to "新規登録", new_user_registration_path, method: :get, :class=>"hello-index-sinki"  %>
+                <% end %>
+            </div>
         </div>
     </div>
 

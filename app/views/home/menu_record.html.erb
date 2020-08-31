@@ -2,44 +2,52 @@
 
     <h1 class="home-menu-record-title">記録する</h1>
 
-    <div class="home-menu-record-thermometer-sign">
-        <%= link_to 'thermometer', new_thermometer_path, :class => "home-menu-record-thermometer-sign-link" %>
-    </div>
-   
-    <div class="home-menu-record-PSS4-sign">
-        <%= link_to 'PSS4', new_tests_pssfour_path, :class => "home-menu-record-PSS4-sign-link" %>
-    </div>
-    
+    <div class="home-menu-sign-wrapper">
 
-    <div class="home-menu-record-zatsudan-sign">
-        <%= link_to '雑談', new_zatsudan_path, :class => "home-menu-record-zatsudan-sign-link" %>
-    </div>
-    
-    <div class="home-menu-record-whiteboard-top">
-        <div class="home-menu-record-thermometer-sign-1">
+        <div class="home-menu-record-thermometer-sign">
             <%= link_to 'thermometer', new_thermometer_path, :class => "home-menu-record-thermometer-sign-link" %>
         </div>
-        <div class="home-menu-record-thermometer-note-1">
-            ストレスサーモメータは、短期的なストレスを測るのに役立ちます。心理カウンセリングの世界でも使われている、定番のテクニックです。<br>方法は簡単で、温度計のイラストを見ながら、「今のストレスは何点だろう？」と採点してください。「主観で決めて大丈夫なの？」と思われるかもしれませんが、これがバカにできない精度を持っています。<br>アメリカで行われたある実験では、学生たちに自分のストレスを10点満点で採点させたところ、数十問で構成された大がかりなストレス診断を受けた場合と、さほど結果は変わりませんでした。<br>とりあえず、大まかに現状をつかむには十分です。<br>また、このテクニックが良いのは、ストレスに点数をつけただけでも、ある程度イライラ解消の効果が得られるところです。「なんだかイライラする…」と思うだけではどうすればいいのか分かりませんが、数字で示されると「いまは7点だから、せめて4点くらいには下げよう」といった明確な指針ができます。その安心感が、心にゆとりを生むのです。<br>1日1回のペースでまずは2週間、計測を続けてみましょう。そうすることで、「自分がどのような時にストレスを感じやすいのか」が分かってきます。
-        </div>
-    </div>
-
-    <div class="home-menu-record-whiteboard">
-        <div class="home-menu-record-thermometer-sign-1">
+    
+        <div class="home-menu-record-PSS4-sign">
             <%= link_to 'PSS4', new_tests_pssfour_path, :class => "home-menu-record-PSS4-sign-link" %>
         </div>
-        <div class="home-menu-record-thermometer-note-1">
-           PSS4(Perceived Stress Scale 4)は、中長期的なストレスを測るのに役立ちます。このテストは、自分のストレスにどれだけちゃんと気づけているか？を測るために開発されました。<br>これもストレス研究の世界では定番の手法で、このテストのストレスの数値が悪いほど禁煙に失敗したり、風邪をひきやすくなったり、うつ病に苦しみやすくなったりと、さまざまな問題が起きやすくなることが分かっています。<br>本来は10個の質問に答えていくのですが、近年の研究によれば、たった4つの質問に答えるだけでも十分にストレスを把握できると報告されています。非常に手軽で正確性が高いテストです。できれば、1ヵ月おきにPSSS4に答えて自分のストレス度を記録し、長いスパンでどれだけストレスレベルが変わっていったかをチェックしていくといいでしょう。
-        </div>
-    </div>
+        
 
-    <div class="home-menu-record-whiteboard">
-        <div class="home-menu-record-thermometer-sign-1">
+        <div class="home-menu-record-zatsudan-sign">
             <%= link_to '雑談', new_zatsudan_path, :class => "home-menu-record-zatsudan-sign-link" %>
         </div>
-        <div class="home-menu-record-thermometer-note-1">
-        ストレスの発生源は多様です。しかし中でも人間関係からくるストレスは多くの人に共通なのではないでしょうか。<br>「人付き合いが苦手で、毎日学校（職場）に行くのが辛い。」<br>「友達が欲しいけどできなくて寂しい。」<br>そんな人はぜひこの「雑談」機能を使ってみてください。<br>アンケートを通して自分の雑談力を「始め方」「広げ方」「聞き方」「盛り上げ方」の４つの要素に分解し、定量的に評価、得意分野・苦手分野を抽出します。得意分野は伸ばし、苦手分野は改善する。これを繰り返すことで、雑談力を鍛えます。頻度は好きに決めて大丈夫です。
+
+    </div>
+
+    <div class="home-menu-whiteboard-wrapper">
+    
+        <div class="home-menu-record-whiteboard-top">
+            <div class="home-menu-record-thermometer-sign-1">
+                <%= link_to 'thermometer', new_thermometer_path, :class => "home-menu-record-thermometer-sign-link" %>
+            </div>
+            <div class="home-menu-record-thermometer-note-1">
+                ストレスサーモメータは、短期的なストレスを測るのに役立ちます。心理カウンセリングの世界でも使われている、定番のテクニックです。<br>方法は簡単で、温度計のイラストを見ながら、「今のストレスは何点だろう？」と採点してください。「主観で決めて大丈夫なの？」と思われるかもしれませんが、これがバカにできない精度を持っています。<br>アメリカで行われたある実験では、学生たちに自分のストレスを10点満点で採点させたところ、数十問で構成された大がかりなストレス診断を受けた場合と、さほど結果は変わりませんでした。<br>とりあえず、大まかに現状をつかむには十分です。<br>また、このテクニックが良いのは、ストレスに点数をつけただけでも、ある程度イライラ解消の効果が得られるところです。「なんだかイライラする…」と思うだけではどうすればいいのか分かりませんが、数字で示されると「いまは7点だから、せめて4点くらいには下げよう」といった明確な指針ができます。その安心感が、心にゆとりを生むのです。<br>1日1回のペースでまずは2週間、計測を続けてみましょう。そうすることで、「自分がどのような時にストレスを感じやすいのか」が分かってきます。
+            </div>
         </div>
+
+        <div class="home-menu-record-whiteboard">
+            <div class="home-menu-record-thermometer-sign-1">
+                <%= link_to 'PSS4', new_tests_pssfour_path, :class => "home-menu-record-PSS4-sign-link" %>
+            </div>
+            <div class="home-menu-record-thermometer-note-1">
+            PSS4(Perceived Stress Scale 4)は、中長期的なストレスを測るのに役立ちます。このテストは、自分のストレスにどれだけちゃんと気づけているか？を測るために開発されました。<br>これもストレス研究の世界では定番の手法で、このテストのストレスの数値が悪いほど禁煙に失敗したり、風邪をひきやすくなったり、うつ病に苦しみやすくなったりと、さまざまな問題が起きやすくなることが分かっています。<br>本来は10個の質問に答えていくのですが、近年の研究によれば、たった4つの質問に答えるだけでも十分にストレスを把握できると報告されています。非常に手軽で正確性が高いテストです。できれば、1ヵ月おきにPSSS4に答えて自分のストレス度を記録し、長いスパンでどれだけストレスレベルが変わっていったかをチェックしていくといいでしょう。
+            </div>
+        </div>
+
+        <div class="home-menu-record-whiteboard">
+            <div class="home-menu-record-thermometer-sign-1">
+                <%= link_to '雑談', new_zatsudan_path, :class => "home-menu-record-zatsudan-sign-link" %>
+            </div>
+            <div class="home-menu-record-thermometer-note-1">
+            ストレスの発生源は多様です。しかし中でも人間関係からくるストレスは多くの人に共通なのではないでしょうか。<br>「人付き合いが苦手で、毎日学校（職場）に行くのが辛い。」<br>「友達が欲しいけどできなくて寂しい。」<br>そんな人はぜひこの「雑談」機能を使ってみてください。<br>アンケートを通して自分の雑談力を「始め方」「広げ方」「聞き方」「盛り上げ方」の４つの要素に分解し、定量的に評価、得意分野・苦手分野を抽出します。得意分野は伸ばし、苦手分野は改善する。これを繰り返すことで、雑談力を鍛えます。頻度は好きに決めて大丈夫です。
+            </div>
+        </div>
+        
     </div>
 
 </html>
