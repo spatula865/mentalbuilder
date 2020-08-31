@@ -47,6 +47,9 @@
         <div id="progress1">
           <button type="button" id="box1"></button><div id="note1">1</div>
         </div>
+        <div id="progress0">
+          <button type="button" id="box0"></button><div id="note0">0</div><p class="note10-comment">(全くストレスを感じていない)</p>
+        </div>
       </div><!-- progress終わり -->
 
       <div class="stresslevel"><!-- ストレスレベルの表示・解説 -->
@@ -121,6 +124,11 @@
 
   //buttonをクリックしたら自動的に入力されるやつ
 
+    document.getElementById('box0').onclick = function(event) {
+      event.preventDefault();
+      document.getElementById( "temperature" ).value = 0
+    };
+
     document.getElementById('box1').onclick = function(event) {
         event.preventDefault();
         document.getElementById( "temperature" ).value = 1
@@ -175,6 +183,19 @@
   //buttonをクリックしたら自動的に入力されるやつ終わり
 
   //マウスオーバーの位置までbackgroundがオレンジになるやつ
+
+    document.getElementById('box0').addEventListener("mouseover", function (event) {
+      document.getElementById('box1').style.backgroundColor = "transparent";
+      document.getElementById('box2').style.backgroundColor = "transparent";
+      document.getElementById('box3').style.backgroundColor = "transparent";
+      document.getElementById('box4').style.backgroundColor = "transparent";
+      document.getElementById('box5').style.backgroundColor = "transparent";
+      document.getElementById('box6').style.backgroundColor = "transparent";
+      document.getElementById('box7').style.backgroundColor = "transparent";
+      document.getElementById('box8').style.backgroundColor = "transparent";
+      document.getElementById('box9').style.backgroundColor = "transparent";
+      document.getElementById('box10').style.backgroundColor = "transparent";
+    }, false);
 
     document.getElementById('box1').addEventListener("mouseover", function (event) {
       document.getElementById('box1').style.backgroundColor = "orange";
@@ -310,18 +331,20 @@
 
   //1から10以外の値になると送信できなくするやつ（うまくいってない）
     
-    document.getElementById("btn-submit").style.display = "none";
+    /*
+      document.getElementById("btn-submit").style.display = "none";
 
-    function clickBtn1(){
-      const p1 = document.getElementById("bt");
-    
-      if(p1.style.display=="block"){
-        // noneで非表示
-        p1.style.display ="none";
-      }else{
-        // blockで表示
-        p1.style.display ="block";
+      function clickBtn1(){
+        const p1 = document.getElementById("bt");
+      
+        if(p1.style.display=="block"){
+          // noneで非表示
+          p1.style.display ="none";
+        }else{
+          // blockで表示
+          p1.style.display ="block";
       }
+    */
 
   //1から10以外の値になると送信できなくするやつ終わり
 

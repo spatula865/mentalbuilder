@@ -17,175 +17,182 @@
 
 /*application.html.erbのheader*/
 
-      .users-registration-name{
-        height: 16px; width: 165px;
-      }
+    .wrapper{
+      min-height: 100vh;
+      position: relative;
+      padding-bottom: 25px;
+      box-sizing: border-box;
+    }
 
-      .menu{display:flex;
-            justify-content:flex-end;
-      }
+    .users-registration-name{
+      height: 16px; width: 165px;
+    }
 
-      .headertext{
-        font-size:24pt;
-        color:white;
-        font-family:Book Antiqua;
-        text-decoration: none;
-        margin: 0px 0px 0px 20px;
-        width:230px;
-      }
-      .menu-record, .menu-reflection, .menu-arm{
-        margin-left:25px;   
-        text-decoration: none;
-      }
-      .menu-arm{
-      margin-right: 25px;
-      }
+    .menu{display:flex;
+          justify-content:flex-end;
+    }
+
+    .headertext{
+      font-size:24pt;
+      color:white;
+      font-family:Book Antiqua;
+      text-decoration: none;
+      margin: 0px 0px 0px 20px;
+      width:230px;
+    }
+    .menu-record, .menu-reflection, .menu-arm{
+      margin-left:25px;   
+      text-decoration: none;
+    }
+    .menu-arm{
+    margin-right: 25px;
+    }
 
 
-      header{
-            background-color: rgba(0, 128, 0, 0.8);
-            width: 100%;
-            
-      }
+    header{
+          background-color: rgba(0, 128, 0, 0.8);
+          width: 100%;
+          
+    }
 
-      .title{
-        display:flex;
-        align-items:center;
-      }
+    .title{
+      display:flex;
+      align-items:center;
+    }
 
-      .header-title-span{
-        font-size: 14px;
-        margin-bottom: 0px;
-        margin-left: 5px;
-        color: white;
-        text-align: bottom;
-      }
+    .header-title-span{
+      font-size: 14px;
+      margin-bottom: 0px;
+      margin-left: 5px;
+      color: white;
+      text-align: bottom;
+    }
 
-      .headertext-logout{
-        text-decoration: none;
-        font-size: 14px;
-        padding: 10px 20px 0px 10px;
-        color: white;
-      }
+    .headertext-logout{
+      text-decoration: none;
+      font-size: 14px;
+      padding: 10px 20px 0px 10px;
+      color: white;
+    }
 
-      .headertext-mypage{
-        text-decoration: none;
-        font-size: 14px;
-        padding: 10px 10px 0px 10px;
-        color: white;
-      }
+    .headertext-mypage{
+      text-decoration: none;
+      font-size: 14px;
+      padding: 10px 10px 0px 10px;
+      color: white;
+    }
 
-      ul.header-dropmenu {
-        list-style: none;
-        display: table;
-        table-layout: fixed;
-        margin: 0px;
-        padding: 0px;
-        margin: 0 auto;
-      }
+    ul.header-dropmenu {
+      list-style: none;
+      display: table;
+      table-layout: fixed;
+      margin: 0px;
+      padding: 0px;
+      margin: 0 auto;
+    }
 
-      ul.header-dropmenu > li {
-        position: relative;
-        display: table-cell;
-        vertical-align: middle;
-        padding: 0.5em 1em;
-        text-decoration: none;
-        color: #FFF;
-        width: 140px;
-      }
+    ul.header-dropmenu > li {
+      position: relative;
+      display: table-cell;
+      vertical-align: middle;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      color: #FFF;
+      width: 140px;
+    }
 
-      ul.header-dropmenu-2{
-        list-style: none;
-        display: table;
-        table-layout: fixed;
-        margin: 0px;
-        padding: 0px;
-        width: 230px;
-      }
+    ul.header-dropmenu-2{
+      list-style: none;
+      display: table;
+      table-layout: fixed;
+      margin: 0px;
+      padding: 0px;
+      width: 230px;
+    }
 
-      ul.header-dropmenu-2 > li {
-        position: relative;
-        display: table-cell;
-        padding: 0.5em;
-        vertical-align: middle;
-        text-decoration: none;
-        color: #FFF;
-        width: 100px;
-      }
+    ul.header-dropmenu-2 > li {
+      position: relative;
+      display: table-cell;
+      padding: 0.5em;
+      vertical-align: middle;
+      text-decoration: none;
+      color: #FFF;
+      width: 100px;
+    }
 
-      .list {
-        display: block;
-        text-align: center;
-        line-height: 40px;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: lighter;
-        color:white;
-      }
+    .list {
+      display: block;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: lighter;
+      color:white;
+    }
 
-      .list-2{
-        display: block;
-        text-align: center;
-        line-height: 40px;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: lighter;
-        color:white;
-      }
+    .list-2{
+      display: block;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: lighter;
+      color:white;
+    }
 
-      ul.header-dropmenu li ul {
-        visibility: hidden;
-        width: 100%;
-        list-style: none;
-        position: absolute;
-        top: 100%;
-        left: -1px;
-        margin: 0;
-        padding: 0;
-        border-top: none;
-      }
-      ul.header-dropmenu li:hover ul {
-        visibility: visible;
-      }
-      ul.header-dropmenu li ul li {
-        background:rgba(0, 128, 0, 0.8);
-        transition: all .2s ease;
-      }
-      ul.header-dropmenu > li:hover {
-        border: 1px solid transparent; /* マウスオーバー時の枠線 */
-        border-bottom: none;
-      }
-      ul.header-dropmenu li:hover ul li:hover {
-        background:rgba(0, 128, 0, 1) ;
-      }
+    ul.header-dropmenu li ul {
+      visibility: hidden;
+      width: 100%;
+      list-style: none;
+      position: absolute;
+      top: 100%;
+      left: -1px;
+      margin: 0;
+      padding: 0;
+      border-top: none;
+    }
+    ul.header-dropmenu li:hover ul {
+      visibility: visible;
+    }
+    ul.header-dropmenu li ul li {
+      background:rgba(0, 128, 0, 0.8);
+      transition: all .2s ease;
+    }
+    ul.header-dropmenu > li:hover {
+      border: 1px solid transparent; /* マウスオーバー時の枠線 */
+      border-bottom: none;
+    }
+    ul.header-dropmenu li:hover ul li:hover {
+      background:rgba(0, 128, 0, 1) ;
+    }
 
-      .record-note-span, .reflection-note-span, .arm-note-span{
-        color:red;
-        font-size:36px;
-      }
+    .record-note-span, .reflection-note-span, .arm-note-span{
+      color:red;
+      font-size:36px;
+    }
 
 /*application.html.erbのheader終わり*/
 
 /*application.html.erbのbody*/
 
-      body {
-            background-image: url("/background0.jpg");
-            background-size: cover;
-            margin: 0;
+        body {
+              background-image: url("/background0.jpg");
+              background-size: cover;
+              margin: 0;
 
-      }
+        }
 
-      footer{
-        height: 25px;
-        background-color: rgba(0, 128, 0, 0.8);
-        text-align: center;
-        color: white;
-        width: 100%;
-        position: absolute;/*←絶対位置*/
-        bottom: 0; /*下に固定*/
-      }
+        footer{
+          height: 25px;
+          background-color: rgba(0, 128, 0, 0.8);
+          text-align: center;
+          color: white;
+          width: 100%;
+          position: absolute;/*←絶対位置*/
+          bottom: 0; /*下に固定*/
+        }
 
 /*application.html.erbのbody終わり*/
 
@@ -651,7 +658,7 @@
     margin-left: 100px;
   }
 
-  #progress10, #progress9, #progress8, #progress7, #progress6, #progress5, #progress4, #progress3, #progress2, #progress1{
+  #progress10, #progress9, #progress8, #progress7, #progress6, #progress5, #progress4, #progress3, #progress2, #progress1, #progress0{
     display:flex;
   }
 
@@ -662,6 +669,16 @@
     border-style: solid;
     border-color: black;
     border-top:none;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+  }
+
+  #box0{
+    background-color:transparent;
+    height:50px;
+    width:100px;
+    border-color: transparent;
     cursor: pointer;
     outline: none;
     appearance: none;
@@ -678,7 +695,7 @@
   }
 
 
-  #note10, #note9, #note8, #note7, #note6, #note5, #note4, #note3, #note2, #note1{
+  #note10, #note9, #note8, #note7, #note6, #note5, #note4, #note3, #note2, #note1, #note0{
     margin-left:10px;
     font-weight: bolder;
   }
@@ -686,10 +703,6 @@
   .note10-comment{
     margin: 0;
     font-weight: bolder;
-  }
-
-  #box1:hover + .box10{
-    background-color: red;
   }
 
   .stresslevel{

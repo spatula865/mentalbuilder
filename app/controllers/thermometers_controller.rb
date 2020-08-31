@@ -16,7 +16,7 @@ class ThermometersController < ApplicationController
 
   def show
     @thermometers = Thermometer.all.order("id DESC").page(params[:page]).per(7)
-    @user = User.find(params[:id])
+    @user = current_user.id
   end
 
   def show2
@@ -44,7 +44,7 @@ class ThermometersController < ApplicationController
   private
 
     def thermometer_params
-      params.require(:thermometer).permit(:temperature, :memo)
+      params.require(:thermometer).permit(:temperature, :memo, :user_id)
     end
 
 end

@@ -6,7 +6,7 @@
 <% if user_signed_in? %>
 
   <div class="graph">
-     <%= column_chart Thermometer.pluck(:created_at, :temperature) %>
+     <%= column_chart Thermometer.where(user_id: @user).pluck(:created_at, :temperature) %>
   </div>
 
 
