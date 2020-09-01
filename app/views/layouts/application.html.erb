@@ -56,17 +56,18 @@
               <% end %>
             </li>
             <li class="header-list-login">
-            <% if user_signed_in? %>
-              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => "list-2" %>
-            <% else %>
-            <%= link_to "新規登録", new_user_registration_path, :class=>"list-2"  %>
-            <% end %>
+              <% if user_signed_in? %>
+                <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, :class => "list-2" %>
+              <% else %>
+              <%= link_to "新規登録", new_user_registration_path, :class=>"list-2"  %>
+              <% end %>
             </li>
           </ul>
 
-      </div>
+        </div>
 
       </header>
+      
       <%= yield %>
 
       <footer>

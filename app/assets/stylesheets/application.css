@@ -320,12 +320,12 @@
   }
 
   .muscleman{
-    height: 700px;
+    height: 100%;
     position: absolute; left: -20%;
   }
 
   .strechingwoman{
-    height: 700px;
+    height: 100%;
     position: absolute; left: 0%;
   }
 
@@ -802,7 +802,7 @@
   }
   
   .container1{
-      font-size: 16px;
+      font-size: 24px;
       margin: 10px;
   }
   
