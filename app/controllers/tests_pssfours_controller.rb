@@ -1,5 +1,7 @@
 class TestsPssfoursController < ApplicationController
 
+  before_action :authenticate_user!, only: [:index]
+
     def new
       @pss4 = Pssfour.new
     end

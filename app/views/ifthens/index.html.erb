@@ -13,8 +13,8 @@
                     <div class="ifthen-index-ifthen"><p>Memo:</p><%= t.memo %></div>
                 </div>
                 <div class="ifthen-index-subbox">
-                    <%= button_to "編集・メモを追加", edit_ifthen_path(t.id), method: :get, :class => 'btn-edit' %>
-                    <%= button_to "削除", ifthen_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>  
+                <%= link_to(content_tag(:i, '', class: 'fas fa-pen'), edit_ifthen_path(t.id)) %>
+                <%= link_to content_tag(:i, '', class: 'fas fa-trash'), ifthen_path(t.id), method: :delete, data: { confirm: "「#{t.ifthen}#{t.todo}」を削除して大丈夫ですか？" } %>
                     <p class="ifthen-index-time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
                 </div>  
             </div>
@@ -31,6 +31,7 @@
         border: solid;
         border-radius: 20px;
         border-color: gray;
+        border-width: thin;
         width:60% ;
         margin: 0 auto;
     }
@@ -64,12 +65,6 @@
 
     .btn-edit{
     margin-right: 10px;
-    }
-
-    .ifthen-index-time{
-        text-align: right;
-        margin-left: 20px;
-        margin-right: 10px;
     }
 
     body{

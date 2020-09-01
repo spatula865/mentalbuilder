@@ -756,6 +756,12 @@
     font-size: 60px;
     width: 120px;
   }
+
+  .fa-pen, .fa-trash, .username{
+    margin: 0px 10px 0px 0px;
+    color: gray;
+  }
+
 /*thermometers/new終わり*/
 
 /*thermometers/show*/
@@ -764,6 +770,7 @@
         background-color:white;
         border: solid;
         border-radius: 20px;
+        border-width: thin;
         border-color: gray;
         padding: 24px 24px 0px 24px ;
     }
@@ -772,7 +779,8 @@
       background-color:white;
       border: solid;
       border-radius: 20px;
-      border-color: gray;       
+      border-color: gray;
+      border-width: thin;    
       width: 60% ;
       margin: 0 auto;
       padding: 24px 24px 0px 24px;
@@ -794,7 +802,7 @@
   }
   
   .container1{
-      font-size: 24px;
+      font-size: 16px;
       margin: 10px;
   }
   
@@ -822,10 +830,12 @@
       margin: 0px 10px 0px 10px;
   }
   
-  .time{
+  .time, .time-pss4, .zatsudan-index-time, .ifthen-index-time{
       text-align: right;
       margin-left: 20px;
       margin-right: 10px;
+      color: gray;
+      font-size: 12px;
   }
 
   .chart{
@@ -876,9 +886,11 @@
     margin-right: auto;
     width: 66%;
     border: solid;
+    border-width: thin;
+    border-color: gray;
     border-radius: 30px;
     background-color: white;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
   }
 
   .pss4-index-mainbox-memo{
@@ -894,16 +906,6 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  }
-
-  .btn-edit-pss4{
-    margin-right: 10px;
-  }
-
-  .time-pss4{
-    text-align: right;
-    margin-left: 20px;
-    margin-right: 10px;
   }
 
 /*tests_pssfours/index終わり*/
@@ -957,20 +959,50 @@
   .zatsudan-index-container{
     background-color:white;
     border: solid;
-    border-radius: 20px;
-    border-color: gray;       
-    width: 60% ;
+    border-radius: 30px;
+    text-align: center;
+    border-color: gray;
+    border-width: thin;       
+    width: 66% ;
     margin: 0 auto;
     padding: 24px 24px 0px 24px;
   }
 
   .zatsudan-index-memo{
-    margin: 10px 0px 0px 0px;
+    margin: 10px 0px 0px 20px;
     text-align: left;
   }
 
   .zatsudan-index-totalscore{
     margin: 0;
+  }
+
+  .zatsudan-index-title{
+    text-align: center;
+  }
+
+  .zatsudan-index-totalscore, .zatsudan-index-eachscore{
+      font-size: 24px;
+  }
+
+  .zatsudan-index-totalscore, .zatsudan-index-eachscore{
+      display: flex;
+      margin-left: 20px;
+      margin-top: 20px;
+  }
+
+  .zatsudan-index-categorytotal, .zatsudan-index-eachcategory{
+      margin: 0px 0px 0px 0px;
+  }
+
+  .zatsudan-index-container-mainbox{
+      display:flex;
+  }
+
+  .zatsudan-index-container-subbox{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
   }
 
 /*zatsudan-index終わり*/

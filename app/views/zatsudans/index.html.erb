@@ -34,10 +34,9 @@
                             </div>
                         </div>
                         <div class="zatsudan-index-memo"><%= t.memo %></div>
-                        <div class="zatsudan-index-container-subbox">
-                        
-                            <%= button_to "メモを追加・編集する", edit_zatsudan_path(t.id), method: :get, :class => 'btn-edit' %>
-                            <%= button_to "削除", zatsudan_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
+                        <div class="zatsudan-index-container-subbox">                       
+                            <%= link_to(content_tag(:i, '', class: 'fas fa-pen'), edit_zatsudan_path(t.id)) %>
+                            <%= link_to content_tag(:i, '', class: 'fas fa-trash'), zatsudan_path(t.id), method: :delete, data: { confirm: "「総合点#{([(([t.hajimekata1, t.hajimekata2, t.hajimekata3, t.hajimekata4, t.hajimekata5, t.hajimekata6].sum.to_f/18).to_f/0.01).round, (([t.hirogekata1, t.hirogekata2, t.hirogekata3, t.hirogekata4, t.hirogekata5, t.hirogekata6, t.hirogekata7, t.hirogekata8].sum.to_f/24).to_f/0.01).round, (([t.kikikata1, t.kikikata2, t.kikikata3, t.kikikata4, t.kikikata5, t.kikikata6].sum.to_f/18).to_f/0.01).round, (([t.moriagekata1, t.moriagekata2, t.moriagekata3, t.moriagekata4, t.moriagekata5, t.moriagekata6, t.moriagekata7, t.moriagekata8, t.moriagekata9].sum.to_f/24).to_f/0.01).round].sum.to_f/4).round}:#{t.memo}」を削除して大丈夫ですか？" } %>
                             <p class="zatsudan-index-time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
                         </div>  
                     </div>
@@ -60,48 +59,3 @@
     <% end %>
 
 </body>
-
-<style>
-    .zatsudan-index-title{
-        text-align: center;
-    }
-
-    .zatsudan-index-container{
-        width: 66% ;
-        border: solid;
-        border-radius: 30px;
-        text-align: center;
-        background-color: white;
-    }
-    
-    .zatsudan-index-totalscore, .zatsudan-index-eachscore{
-        font-size: 24px;
-    }
-
-    .zatsudan-index-totalscore, .zatsudan-index-eachscore{
-        display: flex;
-        margin-left: 20px;
-        margin-top: 20px;
-    }
-
-    .zatsudan-index-categorytotal, .zatsudan-index-eachcategory{
-        margin: 0px 0px 0px 0px;
-    }
-
-    .zatsudan-index-container-mainbox{
-        display:flex;
-    }
-
-    .zatsudan-index-container-subbox{
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-    }
-
-    .zatsudan-index-time{
-        text-align: right;
-        margin-left: 20px;
-        margin-right: 10px;
-      }
-
-</style>

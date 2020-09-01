@@ -9,8 +9,8 @@
             <div class="container1"><%= t.body %></div>
             </div>
             <div class="sub-box">
-            <%= button_to "編集", edit_weapon_path(t.id), method: :get, :class => 'btn-edit' %>
-            <%= button_to "削除", weapon_path(t.id), method: :delete, data: { confirm: '削除しますか？' } %>
+            <%= link_to(content_tag(:i, '', class: 'fas fa-pen'), edit_zatsudan_path(t.id)) %>
+            <%= link_to content_tag(:i, '', class: 'fas fa-trash'), zatsudan_path(t.id), method: :delete, data: { confirm: "「#{t.body}」を削除して大丈夫ですか？" } %>
             <p class="time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
             </div>  
         </div>
