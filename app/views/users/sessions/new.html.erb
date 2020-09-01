@@ -9,7 +9,6 @@
   <div class="users-sessions-new">
 
     <h2>ログイン</h2>
-    <p>※登録したメールアドレスとパスワードを入力してください。</p>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
@@ -47,13 +46,14 @@
     justify-content: center;
     position: relative;
     height: 95vh;
+    z-index: 0;
   }
 
   .users-sessions-new{
     text-align: center;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 60%;
     transform: translateY(-50%) translateX(20%);
     -webkit- transform: translateY(-50%) translateX(-50%);
     margin: auto;

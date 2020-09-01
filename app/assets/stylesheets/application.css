@@ -152,6 +152,7 @@
       margin: 0;
       padding: 0;
       border-top: none;
+      z-index: 1;
     }
     ul.header-dropmenu li:hover ul {
       visibility: visible;
@@ -192,6 +193,9 @@
           width: 100%;
           position: absolute;/*←絶対位置*/
           bottom: 0; /*下に固定*/
+        }
+        header{
+          top: 0;
         }
 
 /*application.html.erbのbody終わり*/
@@ -245,6 +249,7 @@
     background-color: transparent;
     background-size: cover;
     overflow: hidden;
+    z-index: 0;
   }
 
   .home-menu-sign-wrapper{
@@ -906,6 +911,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+  }
+
+  #myChart{
+    width: 100%;
   }
 
 /*tests_pssfours/index終わり*/

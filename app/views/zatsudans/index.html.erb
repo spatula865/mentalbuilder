@@ -3,7 +3,67 @@
     <% if user_signed_in? %>
         <div>
             <div class="graph">
-                <%= column_chart Zatsudan.pluck(:created_at, :hajimekata1) %>
+            <canvas id="myChart" width="960" height="200">
+                <script>
+                var ctx = document.getElementById('myChart');
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                            labels: gon.time,
+                            datasets: [{
+                            label: '始め方',
+                            data: gon.hajimekata,
+                            fill:false,
+                            borderColor:"#308af3",
+                            pointBackgroundColor: "#308af3",
+                            pointBorderWidth: 2,
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderWidth: 2
+                        }, {
+                            label: '広げ方',
+                            data: gon.hirogekata,
+                            fill:false,
+                            borderColor:"#48ba16",
+                            pointBackgroundColor: "#48ba16",
+                            pointBorderWidth: 2,
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderWidth: 2
+                        },{
+                            label: '聞き方',
+                            data: gon.kikikata,
+                            fill:false,
+                            borderColor:"rgba(255, 99, 132, 0.2)",
+                            pointBackgroundColor: "rgba(255, 99, 132, 0.2)",
+                            pointBorderWidth: 2,
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderWidth: 2
+                        },{
+                            label: '盛り上げ方',
+                            data: gon.moriagekata,
+                            fill:false,
+                            borderColor:"rgba(255, 206, 86, 0.2)",
+                            pointBackgroundColor: "rgba(255, 206, 86, 0.2)",
+                            pointBorderWidth: 2,
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderWidth: 2
+                        }]
+                    },
+                    options: {
+                        legend: { display: false },
+                        scales: {
+                        xAxes: [{
+                            gridLines: { display:false },
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                            color: "rgba(0, 0, 0, .05)",
+                            }
+                        }]
+                        },
+                    }
+                });
+                </script>
+            </canvas>
             </div>
 
             <h3 class="zatsudan-index-title">これまでの記録</h3>
@@ -30,7 +90,7 @@
                             </div>
                             <div class="zatsudan-index-eachscore">
                                 <p class="zatsudan-index-eachcategory">盛り上げ方：</p>
-                                <%= (([t.moriagekata1, t.moriagekata2, t.moriagekata3, t.moriagekata4, t.moriagekata5, t.moriagekata6, t.moriagekata7, t.moriagekata8, t.moriagekata9].sum.to_f/24).to_f/0.01).round %>
+                                <%= (([t.moriagekata1, t.moriagekata2, t.moriagekata3, t.moriagekata4, t.moriagekata5, t.moriagekata6, t.moriagekata7, t.moriagekata8, t.moriagekata9].sum.to_f/27).to_f/0.01).round %>
                             </div>
                         </div>
                         <div class="zatsudan-index-memo"><%= t.memo %></div>
@@ -57,5 +117,12 @@
         </div>
 
     <% end %>
+
+
+    <%= @time %><br>
+    <%= @hajimekata %><br>
+    <%= @hirogekata %><br>
+    <%= @kikikata %><br>
+    <%= @moriagekata %>
 
 </body>

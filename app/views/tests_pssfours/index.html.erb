@@ -1,11 +1,47 @@
 
+
+
 <body>
 
     <% if user_signed_in? %>
 
         <div>
             <div class="graph">
-                <%= column_chart @data %>
+
+                <canvas id="myChart" width="960" height="200">
+                <script>
+                    var ctx = document.getElementById('myChart');
+                    var myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                                labels: gon.time,
+                                datasets: [{
+                                    data: gon.sum,
+                                    borderColor:"lightblue",
+                                    backgroundColor:"rgba(173, 216, 230, 0.5)",
+                                    pointBackgroundColor: "lightblue",
+                                    pointBorderWidth: 2,
+                                    pointHoverBackgroundColor: "#fff",
+                                    pointHoverBorderWidth: 2,
+                                }]
+                        },
+                        options: {
+                            legend: { display: false },
+                            scales: {
+                                xAxes: [{
+                                    gridLines: { display:false },
+                                }],
+                                yAxes: [{
+                                    gridLines: {
+                                    color: "rgba(0, 0, 0, .05)",
+                                    }
+                                }]
+                            },
+                        }
+                    });
+                </script>
+                </canvas>
+            
             </div>
 
             <h3 class="koremade-pss4">これまでの記録</h3>
@@ -32,6 +68,7 @@
                     <br>
                 <% end %>
             <% end %>
+           
 
         </div>
 
@@ -54,4 +91,6 @@
     .koremade-pss4:hover + .commentary{
         display: block;
     }
+
+
 </style>

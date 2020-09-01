@@ -18,7 +18,17 @@ class ThermometersController < ApplicationController
 
   def show
     @thermometers = Thermometer.all.order("id DESC").page(params[:page]).per(7)
-    @user = current_user.id
+    @base = Thermometer.where(user_id: current_user.id).all
+    @arrayoftime = []
+    @arrayofsum = []
+    @array = []
+    @base.each do |s|
+      @arrayoftime.push(s.created_at.strftime('%Y-%m-%d %H:%M'))
+      @arrayofsum.push(s.temperature)
+      @array.push([s.created_at.strftime('%Y-%m-%d %H:%M'), s.temperature])
+    end
+    gon.time = @arrayoftime
+    gon.temperature = @arrayofsum
   end
 
   def show2
