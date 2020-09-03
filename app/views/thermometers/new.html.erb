@@ -66,22 +66,15 @@
           <%= f.number_field :temperature, id:"temperature" %>
           <br>
           <br>
-          <%= f.label :memo %>
-          <br>
-          <%= f.text_area :memo %>
+          <%= f.text_area :memo, placeholder: "メモ", class: "textlines" %>
           <br>
           <br>
           <% if user_signed_in? %>
-          <%= f.submit "送信", id: "btn-submit" %>
+          <%= f.submit "送信", class: "btn-submit" %>
           <% end %>
         <% end %>
 
-        <% if user_signed_in? %>
-          <br>
-          <br>
-          <br>
-          <%= link_to 'これまでの推移を見る', :controller => "thermometers", :action => "show" %>
-        <% else %>
+        <% unless user_signed_in? %>
           <p class="pleaselogin">ログインユーザーのみ利用できます。</p>
           <div class="pleaselogin-button">
             <%= button_to "ログイン", new_user_session_path, method: :get, :class => "hello-index-login" %>
@@ -353,17 +346,4 @@
 
 </script>
 
-<style>
 
-  .hello-index-login{
-    display: inline-block;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    background: #4CAF50;
-    color: #FFF;
-    border-bottom: solid 4px gray;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-
-</style>

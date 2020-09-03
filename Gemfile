@@ -67,5 +67,14 @@ group :production do
 end
 
 gem 'kaminari'
+#ページネーションのgem
 
 gem 'gon'
+#rubyのデータをjavascriptでも使えるようにするためのgem
+
+gem 'carrierwave'
+gem 'cloudinary'
+#画像投稿のgem
+
+gem 'dotenv-rails'
+#画像投稿の、APIキーを非公開にするgem

@@ -35,8 +35,12 @@
     <% @user.weapons.each do |t| %>
 
         <div class="users-show-container2">
-            <div class="main-box">
-                <div class="container1"><%= t.body %></div>
+            <div class="main-box-weapon">
+                <div class="container1-weapon"><%= t.body %></div>
+                <div class="weapon-image-container">
+                            <%= image_tag t.image_url, size: "cover", class:"weapon-image" if t.image? %>
+                            <%= image_tag t.image2_url, size: "cover", class:"weapon-image" if t.image2? %>
+                </div>
             </div>
             <div class="sub-box">
                 <% if user_signed_in? && current_user.id == t.user_id %>

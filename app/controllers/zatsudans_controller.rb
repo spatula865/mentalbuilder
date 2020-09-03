@@ -27,22 +27,31 @@ class ZatsudansController < ApplicationController
         @sumofmoriagekata = @post.moriagekata1+@post.moriagekata2+@post.moriagekata3+@post.moriagekata4+@post.moriagekata5+@post.moriagekata6+@post.moriagekata7+@post.moriagekata8+@post.moriagekata9
         @scoreofmoriagekata = ((@sumofmoriagekata.to_f/27).to_f/0.01).round
         @totalscore = ((@scoreofhajimekata+@scoreofhirogekata+@scoreofkikikata+@scoreofmoriagekata).to_f/4).round
+
+        gon.hajimekata = @scoreofhajimekata
+        gon.hirogekata = @scoreofhirogekata
+        gon.kikikata = @scoreofkikikata
+        gon.moriagekata = @scoreofmoriagekata
+        gon.total = @totalscore
+
     end
 
     def index
-        @zatsudan = Zatsudan.all.order("id DESC")
+        @zatsudan = Zatsudan.where(user_id: current_user.id).all.order("id DESC")
         @base = Zatsudan.where(user_id: current_user.id).all
         @time = []
         @hajimekata = []
         @hirogekata = []
         @kikikata = []
         @moriagekata = []
+        @total =[]
         @base.each do |t|
             @time.push(t.created_at.strftime('%Y-%m-%d'))
             @hajimekata.push((((t.hajimekata1+t.hajimekata2+t.hajimekata3+t.hajimekata4+t.hajimekata5+t.hajimekata6).to_f/18).to_f/0.01).round)
             @hirogekata.push((((t.hirogekata1 + t.hirogekata2 + t.hirogekata3 + t.hirogekata4 + t.hirogekata5 + t.hirogekata6 + t.hirogekata7 + t.hirogekata8).to_f/24).to_f/0.01).round)
             @kikikata.push((((t.kikikata1+t.kikikata2+t.kikikata3+t.kikikata4+t.kikikata5+t.kikikata6).to_f/18).to_f/0.01).round)
             @moriagekata.push((((t.moriagekata1+t.moriagekata2+t.moriagekata3+t.moriagekata4+t.moriagekata5+t.moriagekata6+t.moriagekata7+t.moriagekata8+t.moriagekata9).to_f/27).to_f/0.01).round)
+            @total.push((((((t.hajimekata1+t.hajimekata2+t.hajimekata3+t.hajimekata4+t.hajimekata5+t.hajimekata6).to_f/18).to_f/0.01).round+(((t.hirogekata1 + t.hirogekata2 + t.hirogekata3 + t.hirogekata4 + t.hirogekata5 + t.hirogekata6 + t.hirogekata7 + t.hirogekata8).to_f/24).to_f/0.01).round+(((t.kikikata1+t.kikikata2+t.kikikata3+t.kikikata4+t.kikikata5+t.kikikata6).to_f/18).to_f/0.01).round+(((t.moriagekata1+t.moriagekata2+t.moriagekata3+t.moriagekata4+t.moriagekata5+t.moriagekata6+t.moriagekata7+t.moriagekata8+t.moriagekata9).to_f/27).to_f/0.01).round).to_f/4).round)
         end
 
         gon.time = @time
@@ -50,7 +59,7 @@ class ZatsudansController < ApplicationController
         gon.hirogekata = @hirogekata
         gon.kikikata = @kikikata
         gon.moriagekata = @moriagekata
-
+        gon.total = @total
     end
 
     def destroy

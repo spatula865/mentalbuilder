@@ -38,6 +38,23 @@ class TestsPssfoursController < ApplicationController
 
     end
 
+    def index2
+      @pss4 = Pssfour.all.order("id DESC")
+
+      @base = Pssfour.where(user_id: current_user.id).all
+      @arrayoftime = []
+      @arrayofsum = []
+      @array = []
+      @base.each do |s|
+        @arrayoftime.push(s.created_at.strftime('%Y-%m-%d'))
+        @arrayofsum.push((((s.question1+s.question2+s.question3+s.question4).to_f/16).to_f/0.01).round)
+        @array.push([s.created_at.strftime('%Y-%m-%d'), (((s.question1+s.question2+s.question3+s.question4).to_f/16).to_f/0.01).round])
+      end
+      gon.time = @arrayoftime
+      gon.sum = @arrayofsum
+
+    end
+
     def destroy
       Pssfour.find(params[:id]).destroy
       redirect_to action: :index

@@ -14,8 +14,8 @@
                             label: '始め方',
                             data: gon.hajimekata,
                             fill:false,
-                            borderColor:"#308af3",
-                            pointBackgroundColor: "#308af3",
+                            borderColor:"rgba(0, 128, 0, 0.5)",
+                            pointBackgroundColor: "rgba(0, 128, 0, 0.5)",
                             pointBorderWidth: 2,
                             pointHoverBackgroundColor: "#fff",
                             pointHoverBorderWidth: 2
@@ -23,8 +23,8 @@
                             label: '広げ方',
                             data: gon.hirogekata,
                             fill:false,
-                            borderColor:"#48ba16",
-                            pointBackgroundColor: "#48ba16",
+                            borderColor:"rgba(255, 255, 0, 0.5)",
+                            pointBackgroundColor: "rgba(255, 255, 0, 0.5)",
                             pointBorderWidth: 2,
                             pointHoverBackgroundColor: "#fff",
                             pointHoverBorderWidth: 2
@@ -32,8 +32,8 @@
                             label: '聞き方',
                             data: gon.kikikata,
                             fill:false,
-                            borderColor:"rgba(255, 99, 132, 0.2)",
-                            pointBackgroundColor: "rgba(255, 99, 132, 0.2)",
+                            borderColor:"rgba(0, 0, 255, 0.5)",
+                            pointBackgroundColor: "rgba(0, 0, 255, 0.5)",
                             pointBorderWidth: 2,
                             pointHoverBackgroundColor: "#fff",
                             pointHoverBorderWidth: 2
@@ -41,8 +41,17 @@
                             label: '盛り上げ方',
                             data: gon.moriagekata,
                             fill:false,
-                            borderColor:"rgba(255, 206, 86, 0.2)",
-                            pointBackgroundColor: "rgba(255, 206, 86, 0.2)",
+                            borderColor: "rgba(255, 0, 0, 0.5)",
+                            pointBackgroundColor: "rgba(255, 0, 0, 0.5)",
+                            pointBorderWidth: 2,
+                            pointHoverBackgroundColor: "#fff",
+                            pointHoverBorderWidth: 2
+                        },{
+                            label: '総合点(平均)',
+                            data: gon.total,
+                            fill:false,
+                            borderColor: "rgba(128, 0, 128, 1)",
+                            pointBackgroundColor: "rgba(128, 0, 128, 1)",
                             pointBorderWidth: 2,
                             pointHoverBackgroundColor: "#fff",
                             pointHoverBorderWidth: 2
@@ -69,7 +78,6 @@
             <h3 class="zatsudan-index-title">これまでの記録</h3>
 
             <% @zatsudan.each do |t| %>
-                <% if user_signed_in? && current_user.id == t.user_id %>
                     <div class="zatsudan-index-container">
                         <div class="zatsudan-index-container-mainbox">
                             <div class="zatsudan-index-totalscore">
@@ -94,14 +102,14 @@
                             </div>
                         </div>
                         <div class="zatsudan-index-memo"><%= t.memo %></div>
-                        <div class="zatsudan-index-container-subbox">                       
+                        <div class="zatsudan-index-container-subbox">
+                            <%= link_to content_tag(:i, '', class: 'fas fa-info'), zatsudan_path(t.id) %>
                             <%= link_to(content_tag(:i, '', class: 'fas fa-pen'), edit_zatsudan_path(t.id)) %>
                             <%= link_to content_tag(:i, '', class: 'fas fa-trash'), zatsudan_path(t.id), method: :delete, data: { confirm: "「総合点#{([(([t.hajimekata1, t.hajimekata2, t.hajimekata3, t.hajimekata4, t.hajimekata5, t.hajimekata6].sum.to_f/18).to_f/0.01).round, (([t.hirogekata1, t.hirogekata2, t.hirogekata3, t.hirogekata4, t.hirogekata5, t.hirogekata6, t.hirogekata7, t.hirogekata8].sum.to_f/24).to_f/0.01).round, (([t.kikikata1, t.kikikata2, t.kikikata3, t.kikikata4, t.kikikata5, t.kikikata6].sum.to_f/18).to_f/0.01).round, (([t.moriagekata1, t.moriagekata2, t.moriagekata3, t.moriagekata4, t.moriagekata5, t.moriagekata6, t.moriagekata7, t.moriagekata8, t.moriagekata9].sum.to_f/24).to_f/0.01).round].sum.to_f/4).round}:#{t.memo}」を削除して大丈夫ですか？" } %>
                             <p class="zatsudan-index-time"><%= t.created_at.strftime("%Y-%m-%d %H:%M") %></p>
                         </div>  
                     </div>
                     <br>
-                <% end %>
             <% end %>
 
         </div>
@@ -117,12 +125,5 @@
         </div>
 
     <% end %>
-
-
-    <%= @time %><br>
-    <%= @hajimekata %><br>
-    <%= @hirogekata %><br>
-    <%= @kikikata %><br>
-    <%= @moriagekata %>
 
 </body>

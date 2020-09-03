@@ -6,6 +6,11 @@
             <br>
             <%= f.text_area :body  %>
             <br>
+            <div class="field">
+            <%= f.file_field :image %>
+            <%= f.file_field :image2 %>
+            </div>
+            <br>
             <% if user_signed_in? %>
                 <%= f.submit "送信" %>
             <% end %>

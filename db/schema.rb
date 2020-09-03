@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_30_122249) do
+ActiveRecord::Schema.define(version: 2020_09_01_235224) do
 
   create_table "ifthens", force: :cascade do |t|
     t.text "ifthen"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2020_08_30_122249) do
     t.datetime "updated_at", precision: 6, null: false
     t.text "body"
     t.integer "user_id"
+    t.string "image"
+    t.string "image2"
   end
 
   create_table "zatsudans", force: :cascade do |t|

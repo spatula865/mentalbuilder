@@ -21,6 +21,7 @@
       min-height: 100vh;
       position: relative;
       padding-bottom: 25px;
+      padding-top: 57px;
       box-sizing: border-box;
     }
 
@@ -52,6 +53,9 @@
     header{
           background-color: rgba(0, 128, 0, 0.8);
           width: 100%;
+          position: fixed;
+          height: 57px;
+          z-index: 3;
           
     }
 
@@ -131,6 +135,10 @@
       color:white;
     }
 
+    .list:hover{
+      transform: translate3d(0, 3px, 0);
+    }
+
     .list-2{
       display: block;
       text-align: center;
@@ -140,6 +148,10 @@
       font-size: 14px;
       font-weight: lighter;
       color:white;
+    }
+
+    .list-2:hover{
+      transform: translate3d(0, 3px, 0);
     }
 
     ul.header-dropmenu li ul {
@@ -731,6 +743,71 @@
   height: 100px;
   }
 
+  .textlines, .textlines-edit, #ifthen, #todo, .textlines-edit-ifthen{
+    border: 2px solid #0a0;  /* 枠線 */
+    border-radius: 0.67em;   /* 角丸 */
+    padding: 1em;          /* 内側の余白量 */
+    background-color: white;  /* 背景色 */
+    box-sizing: border-box;  /* ※これがないと横にはみ出る */
+    font-size: 1.2em;          /* 文字サイズ */
+    line-height: 1.2;        /* 行の高さ */
+    font-family: “Helvetica Neue”,Helvetica,Arial,sans-serif;
+  }
+  .textlines:focus, .textlines-edit:focus, #ifthen:focus, #todo:focus, .textlines-edit-ifthen:focus{
+    border-color: #0a0;   /* 枠線の色 */
+    background-color: #ffc;  /* 背景色 */
+    outline: none;           /* ※ブラウザが標準で付加する線を消したいとき */
+  }
+
+
+  .textlines{
+    width: 80%; height: 200px;
+  }
+
+  .textlines-edit{
+    width: 800px; height: 494px;
+  }
+
+  .textlines-edit-ifthen{
+    width: 800px; height: 160px;
+  }
+
+  .edit{
+    height: 700px; width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  ::-webkit-scrollbar{
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track{
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset 0 0 2px #777; 
+  }
+  ::-webkit-scrollbar-thumb{
+    background: #ccc;
+    border-radius: 10px;
+    box-shadow: none;
+  }
+
+  .hello-index-login, .hello-index-sinki{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #4CAF50;
+    color: #FFF;
+    border-color: transparent;
+    border-bottom: solid 2px gray;
+    border-right: solid 2px gray;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
   /* makimono
     .makimono{
       width: 80%;
@@ -762,9 +839,28 @@
     width: 120px;
   }
 
-  .fa-pen, .fa-trash, .username{
-    margin: 0px 10px 0px 0px;
+  .fa-pen, .fa-trash, .fa-info, .username{
+    margin: 0px 20px 0px 0px;
     color: gray;
+  }
+
+  .btn-submit{
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #4CAF50;
+    color: #FFF;
+    border-color: transparent;
+    border-bottom: solid 2px gray;
+    border-right: solid 2px gray;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    margin: 0px 0px 10px 0px; /*thermometerのshowページ用*/
+  }
+
+  .btn-submit:hover, .hello-index-login:hover, .hello-index-sinki:hover{
+    transform: translate3d(0, 3px, 0);
   }
 
 /*thermometers/new終わり*/
@@ -789,16 +885,59 @@
       width: 60% ;
       margin: 0 auto;
       padding: 24px 24px 0px 24px;
-      }
-
-    .stressnarabikae{
-        margin: 10px;
     }
+
 
 
   
   .graph{
-      margin: 50px;
+      margin: 0px 0px 50px 0px;
+      background-color: white;
+      padding: 50px 25px 25px 25px;
+
+  }
+
+  .graph-bar-zatsudan{
+    width: 60%; height: 60%;
+    background-color: white;
+    padding: 50px 25px 25px 25px;
+    margin: 0px 0px 00px 0px
+  }
+
+  .zatsudan-show-wrapper{
+    display: flex;
+    justify-content: center;
+  }
+
+  .zatsudan-show-title{
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    font-size: 24px;
+  }
+
+  .zatsudan-index{
+    font-weight: bolder;
+    font-size: 72px;
+  }
+
+  .zatsudan-index-text{
+    margin: 25px 0px 0px 0px;
+  }
+
+  .zatsudan-show-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:75px; width: 200px;
+    border-radius: 37.5px;
+    background-color: #4CAF50;
+    border-bottom: solid 2px gray;
+    border-right: solid 2px gray;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 25px;
   }
   
   .ichiran{
@@ -816,9 +955,13 @@
       text-align: left;
   }
   
+  .koremadenokiroku{
+    text-align: center;
+  }
   
   .koremade{
       text-align:center;
+      font-size: 24px;
   }
   
   .main-box{
@@ -851,10 +994,7 @@
     background-attachment: fixed;
   }
 
-  .graph{
-      background-color: white;
-      padding: 10px;
-  }
+
 
 /*thermometers/show終わり*/
 
@@ -882,10 +1022,7 @@
 
 /*tests_pssfours/index*/
 
-  .koremade-pss4{
-    text-align: center;
-    margin: 100px;
-  }
+
   .container-pss4{
     margin-left: auto;
     margin-right: auto;
@@ -1014,6 +1151,21 @@
       justify-content: flex-end;
   }
 
+  .container1-weapon{
+    font-size: 24px;
+    margin: 10px;
+  }
+
+  .weapon-image{
+    margin: 10px;
+  }
+
+  .weapon-image-container{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
 /*zatsudan-index終わり*/
 
 /*ifthens/new.html.erb*/
@@ -1030,9 +1182,34 @@
 
 /*home/menu_weapon*/
 
+.weapon-index-link, .weapon-index-link-2{
+  position: absolute;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:75px; width: 200px;
+  border-radius: 37.5px;
+  background-color: #4CAF50;
+  border-bottom: solid 2px gray;
+  border-right: solid 2px gray;
+  cursor: pointer;
+}
+
+.weapon-index-link:hover, .weapon-index-link-2:hover{
+  transform: translate3d(0, 3px, 0);
+}
+
 .weapon-index-link{
-  margin: 0 auto;
-  text-align: center;
+  bottom: 50px; right: 100px;
+}
+.weapon-index-link-2{
+  bottom: 150px; right: 100px;
+}
+
+.home-menu-weapon-link-entity{
+  text-decoration: none;
+  color: white;
 }
 
 .home-menu-weapon-container{

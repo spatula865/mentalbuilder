@@ -1,33 +1,71 @@
 <body>
-  <div class="zatsudan-show-container">
-    <h3 class="zatsudan-show-title">雑談力スコア</h3>
 
-    <div class="zatsudan-show-scoreboard">
-      <p class="zatsudan-show-category">始め方</p>
+<div class="zatsudan-show-title">
+  <p class="zatsudan-index-text">雑談インデックス<br><spam class="zatsudan-index"><%= @totalscore %></spam></p>
+</div>
 
-      <p class="zatsudan-show-score"><%= @scoreofhajimekata %>/100</p>
-    </div>
-    <div class="zatsudan-show-scoreboard">
-      <p class="zatsudan-show-category">広げ方</p>
-      <p class="zatsudan-show-score"><%= @scoreofhirogekata %>/100</p>
-    </div>
-    <div class="zatsudan-show-scoreboard">
-      <p class="zatsudan-show-category">聞き方</p>
-      <p class="zatsudan-show-score"><%= @scoreofkikikata %>/100</p>
-    </div>
-    <div class="zatsudan-show-scoreboard">
-      <p class="zatsudan-show-category">盛り上げ方</p>
-      <p class="zatsudan-show-score"><%= @scoreofmoriagekata %>/100</p>
-    </div>
-    <div class="zatsudan-show-scoreboard">
-      <p class="zatsudan-show-category">総合点（平均）</p>
-      <p class="zatsudan-show-score"><%= @totalscore %>/100</p>
-    </div>
+<div class="zatsudan-show-wrapper">
 
-    <br>
-    <%= link_to 'これまでの推移を見る', :controller => "zatsudans", :action => "index" %>
-
+  <div class="graph-bar-zatsudan">
+  <canvas id="myChart" width="960" height="300">
+    <script>
+      var ctx = document.getElementById('myChart');
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['始め方', '広げ方', '聞き方', '盛り上げ方'],
+          datasets: [{
+            data: [gon.hajimekata, gon.hirogekata, gon.kikikata, gon.moriagekata],
+            backgroundColor: ["rgba(0, 128, 0, 0.2)", "rgba(255, 255, 0, 0.2)", "rgba(0, 0, 255, 0.2)", "rgba(255, 0, 0, 0.2)"],
+            borderColor: ["rgba(0, 128, 0, 1)", "rgba(255, 255, 0, 1)", "rgba(0, 0, 255, 1)", "rgba(255, 0, 0, 1)"],
+            borderWidth: 1
+          },
+          {label: '総合点(平均)',
+          type: "line",
+          fill: false,
+          data: [gon.total, gon.total, gon.total, gon.total],
+          borderColor: "rgba(128, 0, 128, 1)"
+        }]
+        },
+        options: {
+          responsive: true,
+          legend: {
+            display: false
+          },
+          /*title{
+            display: false
+          },*/ //なんかここ効かせると表示されなくなる。
+          scales: {
+            yAxes: [{
+              display: true,
+              ticks: {
+                min: 30,
+                max: 100,
+                fontSize: 18,
+                stepSize: 10
+              }
+            }],
+            xAxes: [{
+              display: true,
+              barPercentage: 1,
+              categoryPercentage: 0.5,
+              ticks:{
+                fontSize: 18
+              }
+            }]
+          }
+        }
+      });
+    </script>
+  </canvas>
   </div>
+
+</div>
+
+  <div class="zatsudan-show-link">
+    <%= link_to 'これまでの推移を見る', zatsudans_path, :class => "home-menu-weapon-link-entity" %>
+  </div>
+
 </body>
 
 <style>

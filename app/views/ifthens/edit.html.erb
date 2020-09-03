@@ -1,36 +1,18 @@
+
 <body>
 
- <div class="edit">
-  <%= form_for @ifthen do |f| %>
-    <%= f.label :もし・いつ %>
-    <br>
-    <%= f.text_area :ifthen, :size => 140 %> 
-    <br>
-    <%= f.label :どうする %>
-    <br>
-    <%= f.text_area :todo, :size => 140 %> 
-    <br>
-    <%= f.label :memo %>
-    <br>
-    <%= f.text_area :memo, :size => 140 %> 
-    <br>
-    <%= f.submit "編集する" %>
-  <% end %>
- </div>
+  <div class="edit">
+    <div>
+      <%= form_for @ifthen do |f| %>
+        <%= f.text_area :ifthen, placeholder: "もし・いつ", class: "textlines-edit-ifthen" %> 
+        <br>
+        <%= f.text_area :todo, placeholder: "もし・いつ", class: "textlines-edit-ifthen" %>
+        <br>
+        <%= f.text_area :memo, placeholder: "メモ", class: "textlines-edit-ifthen" %>
+        <br>
+        <%= f.submit "編集する", class: "btn-submit" %>
+      <% end %>
+    </div>
+  </div>
 
 </body>
-
-<style>
-
-  .edit{
-    text-align: center;
-    margin: 100px;
-  }
-
-  textarea{
-      resize:none;
-      height: 200px;
-      width: 800px;
-}
-
-</style>

@@ -267,15 +267,12 @@
             <br>
             <br>
             <% if user_signed_in? %>
-                <%= f.submit "送信" %>
+                <%= f.submit "送信", class: "btn-submit" %>
             <% end %>
 
         <% end %>
 
-            <% if user_signed_in? %>
-                <br>
-                <%= link_to 'これまでの推移を見る', :controller => "zatsudans", :action => "index" %>
-            <% else %>
+            <% unless user_signed_in? %>
                 <p class="pleaselogin">ログインユーザーのみ利用できます。</p>
                 <div class="pleaselogin-button">
                     <%= button_to "ログイン", new_user_session_path, method: :get, :class => "hello-index-login" %>

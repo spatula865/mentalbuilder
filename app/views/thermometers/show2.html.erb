@@ -8,14 +8,46 @@
 <body>
 
   <div class="graph">
-     <%= column_chart Thermometer.pluck(:created_at, :temperature) %>
+    <canvas id="myChart" width="960" height="200">
+      <script>
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                    labels: gon.time,
+                    datasets: [{
+                      data: gon.temperature,
+                      borderColor:"orange",
+                      backgroundColor:"rgba(255, 166, 0, 0.5)",
+                      pointBackgroundColor: "orange",
+                      pointBorderWidth: 2,
+                      pointHoverBackgroundColor: "#fff",
+                      pointHoverBorderWidth: 2,
+                    }]
+            },
+            options: {
+                legend: { display: false },
+                scales: {
+                  xAxes: [{
+                      gridLines: { display:false },
+                  }],
+                  yAxes: [{
+                      gridLines: {
+                      color: "rgba(0, 0, 0, .05)",
+                      }
+                  }]
+                },
+            }
+        });
+      </script>
+    </canvas>
   </div>
 
 
   <div class="ichiran">
     <div class="koremadenokiroku">
       <h3 class="koremade">これまでの記録</h3>
-      <%= button_to "新着順に並び替え", thermometers_show_path, :class => 'stressnarabikae' %>
+      <%= button_to "新着順に並び替え", thermometers_show_path, :class => 'btn-submit' %>
     </div>
 
     <% @thermometers.each do |t| %>

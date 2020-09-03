@@ -10,7 +10,8 @@
                 <div class="ifthen-index-mainbox">
                     <div class="ifthen-index-ifthen"><%= t.ifthen %></div>
                     <div class="ifthen-index-ifthen"><%= t.todo %></div>
-                    <div class="ifthen-index-ifthen"><p>Memo:</p><%= t.memo %></div>
+                    <br>
+                    <div class="ifthen-index-ifthen"><%= t.memo %></div>
                 </div>
                 <div class="ifthen-index-subbox">
                 <%= link_to(content_tag(:i, '', class: 'fas fa-pen'), edit_ifthen_path(t.id)) %>
@@ -21,6 +22,11 @@
             <br>
         <% end %>
     <% end %>
+
+    <div class="weapon-index-link">
+        <%= link_to 'NEWプランを立てる', new_ifthen_path, :class => "home-menu-weapon-link-entity" %>
+    </div>
+
 
 </body>
 

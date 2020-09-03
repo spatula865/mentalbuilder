@@ -49,7 +49,7 @@ class WeaponsController < ApplicationController
     private
 
         def weapon_params
-            params.require(:weapon).permit(:body)
+            params.require(:weapon).permit(:body, :image, :image2)
         end
 
 end
