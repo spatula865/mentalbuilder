@@ -3,7 +3,7 @@ class WeaponsController < ApplicationController
     before_action :authenticate_user!, only: [:index]
 
     def index
-        @weapons = Weapon.all
+        @weapons = Weapon.all.order("id DESC")
     end
     
     def new
@@ -39,7 +39,7 @@ class WeaponsController < ApplicationController
     end
 
     def index_indiv
-        @weapons = Weapon.all
+        @weapons = Weapon.all.order("id DESC")
     end
 
     def show
